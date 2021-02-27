@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "HyperNAV_Spectrometer", "Spectrometer\Source\HyperNAV_Spectrometer\HyperNAV_Spectrometer.cproj", "{CAC93372-73DE-48DC-8105-F50C6D61DB82}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "HyperNAV_Controller", "Controller\Source\HyperNAV_Controller\HyperNAV_Controller.cproj", "{DCC4260A-D371-4C4A-960F-3EF34A0D88D5}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "BOOTLOADER_SPEC", "Spectrometer\Source\BOOTLOADER_SPEC\BOOTLOADER_SPEC.cproj", "{93ED2151-1C5E-4F73-979F-794877EB2641}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAC93372-73DE-48DC-8105-F50C6D61DB82}.Debug|AVR.ActiveCfg = Release|AVR
+		{CAC93372-73DE-48DC-8105-F50C6D61DB82}.Debug|AVR.Build.0 = Release|AVR
+		{CAC93372-73DE-48DC-8105-F50C6D61DB82}.Release|AVR.ActiveCfg = Release|AVR
+		{CAC93372-73DE-48DC-8105-F50C6D61DB82}.Release|AVR.Build.0 = Release|AVR
+		{DCC4260A-D371-4C4A-960F-3EF34A0D88D5}.Debug|AVR.ActiveCfg = Release|AVR
+		{DCC4260A-D371-4C4A-960F-3EF34A0D88D5}.Debug|AVR.Build.0 = Release|AVR
+		{DCC4260A-D371-4C4A-960F-3EF34A0D88D5}.Release|AVR.ActiveCfg = Release|AVR
+		{DCC4260A-D371-4C4A-960F-3EF34A0D88D5}.Release|AVR.Build.0 = Release|AVR
+		{93ED2151-1C5E-4F73-979F-794877EB2641}.Debug|AVR.ActiveCfg = Debug|AVR
+		{93ED2151-1C5E-4F73-979F-794877EB2641}.Debug|AVR.Build.0 = Debug|AVR
+		{93ED2151-1C5E-4F73-979F-794877EB2641}.Release|AVR.ActiveCfg = Release|AVR
+		{93ED2151-1C5E-4F73-979F-794877EB2641}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

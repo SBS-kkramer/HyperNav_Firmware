@@ -1,0 +1,2501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="controller\source\hypernav_controller\src\aux_data_acquisition.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\command.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\config.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\crc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\datalogfile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\data_exchange.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\data_exchange_packet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\dynamic_memory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\extern.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\filesystem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\frames.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\generic_serial.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\info.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\internal_adc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\io_funcs.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\main.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\numerical.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\profile_manager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\profile_packet.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\schedule.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\setup.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\spi.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\sram_memory_map.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\stream_log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\tasks.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\wavelength.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\adc\ads8344\ads8344.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\custom\pcbsupervisor\PCBSupervisor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\custom\sysmon\sysmon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\dac\ad420\AD420.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\dac\ltc1451\LTC1451.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\owmaster\ds2482\onewire.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\rtc\ds3234\ds3234.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\sensors\ds18s20\ds18s20.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\components\sensors\sht2x\sht2x.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\bbvars\bbvariables.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\errno\avr32rerrno.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\files.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\diskio_mci_df.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\ff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\mmcbb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\syscall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\croutine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\queue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\tasks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\timers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\portable\gcc\avr32_uc3\port.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\portable\memmang\heap_1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\portable\memmang\heap_2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\portable\memmang\heap_3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\gpio_i2c\i2c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\pdmabuffer\pdmabuffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\serial\modem\modem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\serial\telemetry\telemetry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\syslog\syslog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\time\systemtime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\version\avr32rlibVer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\watchdog\watchdog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\xmodem\xmodem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\adler32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\crc32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\deflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\inffast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\inflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\inftrees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\zutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\components\memory\sd_mmc\sd_mmc_mci\sd_mmc_mci.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\components\memory\sd_mmc\sd_mmc_mci\sd_mmc_mci_mem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\ebi\smc\smc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\eic\eic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\flashc\flashc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\gpio\gpio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\intc\intc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\mci\mci.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\pdca\pdca.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\pm\pm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\pm\pm_conf_clocks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\pm\power_clocks_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\rtc\rtc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\spi\spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\tc\tc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usart\usart.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\usb_drv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\usb_task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_descriptors.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_device_task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_specific_request.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_standard_request.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\host\usb_host_enum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\host\usb_host_task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\drivers\wdt\wdt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\delay\delay.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\fat\fat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\fat\fat_unusual.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\fat\file.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\fat\fsaccess.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\fat\navigation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\memory\ctrl_access\ctrl_access.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\cdc\uart_usb_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\device_mass_storage_task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\host_mass_storage_task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\host_mem\host_mem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\scsi_decoder\scsi_decoder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\utils\debug\debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\software_framework\utils\debug\print_funcs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\systemapi\hypernav.sys.controller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\source\hypernav_controller\src\systemapi\power.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\code_verify.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\profiles_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\profile_acquire.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\profile_description.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\Profile_Manager.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\profile_packet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\profile_receive.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\profile_transmit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\sensor_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\adler32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\crc32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\deflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\gzclose.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\gzlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\gzread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\gzwrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\infback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\inffast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\inflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\inftrees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\uncompr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\zutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\blast\blast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\infback9\infback9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\infback9\inftree9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\inflate86\inffas86.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\iostream\test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\iostream\zfstream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\iostream2\zstream_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\iostream3\test.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\iostream3\zfstream.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\masmx64\inffas8664.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\minizip\ioapi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\minizip\iowin32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\minizip\miniunz.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\minizip\minizip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\minizip\mztools.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\minizip\unzip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\minizip\zip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\puff\puff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\puff\pufftest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\testzlib\testzlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\contrib\untgz\untgz.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\enough.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\fitblk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\gun.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\gzappend.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\gzjoin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\gzlog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\zpipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\examples\zran.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\test\example.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\test\infcover.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilemanager\zlib-1.2.8\test\minigzip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\firmwaresimulator\HyperNav_Firmware.simulator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\firmwaresimulator\modem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\firmwaresimulator\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\firmwaresimulator\profile_processor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\firmwaresimulator\syslog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\gatewaysimulator\gateway.simulator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\rudicsd-server\rudicsd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\rudics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\chat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\crc16bit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\cstring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\download.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\expect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\logger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\login.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\pkt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\rx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\serial.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\socket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\tx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\upload.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rudics\test-client\xmodem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\comms.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\CRC.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\xmodem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\ast\ast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\flashc\flashc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\gpio\gpio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\pm\pm_uc3c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\pm\power_clocks_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\scif\scif_uc3c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\usart\usart.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\usbc\usbc_device.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\wdt\wdt4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\services\freq_detect\freq_detect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\debug\print_funcs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\uc3c\osc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\uc3c\pll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\uc3c\sysclk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\isp\flip\uc3\isp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\class\dfu_flip\device\udi_dfu_atmel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\class\dfu_flip\device\udi_dfu_atmel_desc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\class\dfu_flip\device\bootloader\avr32\at32uc3c\sysclk_auto.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\udc\udc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\bootloader_spec\src\intc\intc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\command.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\config.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\data_acquisition.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\data_exchange.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\data_exchange_packet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\extern.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\hypernav.sys.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\info.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\io_funcs.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\main.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\orientation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\power.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\pressure.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\profile_packet.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\profile_transmit.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\setup.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\shutters.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\SPECtasks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\spi.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\sram_memory_map.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\SunPosition.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\systemtime.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\tasks.spectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\twi_mux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\boards\stk600\rcuc3c0\led.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\boards\uc3c_ek\led.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\ast\ast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\ebi\smc\smc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\eic\eic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\flashc\flashc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\gpio\gpio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\intc\intc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pdca\pdca.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pevc\pevc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pm\pm_uc3c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pm\power_clocks_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\qdec\qdec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\scif\scif_uc3c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\spi\spi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\tc\tc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\twim\twim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\usart\usart.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\wdt\wdt4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\uc3c\osc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\uc3c\pll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\uc3c\sysclk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\croutine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\queue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\tasks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\timers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\port.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\read.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\write.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\memmang\heap_3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\accelerometer\lis3dsh\lis3dsh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\adc\ad7677\AD7677.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\compass\lsm303\lsm303.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\fifo\sn74v283\sn74v283.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\flashmemory\FlashMemory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\flashmemory\s25fl512s\slld.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\flashmemory\s25fl512s\slld_hal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\spectrometer\cgs\cgs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\spectrometer\temperature\max6633.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\errno\avr32rerrno.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\pdmabuffer\pdmabuffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\serial\telemetry\telemetry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\adler32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\crc32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\deflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\inffast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\inflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\inftrees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\zutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\mainSpectrometer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\Operation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\SPECtasks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\system.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\boards\stk600\rcuc3c0\led.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\boards\uc3c_ek\led.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\ast\ast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\flashc\flashc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\gpio\gpio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\intc\intc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\pm\pm_uc3c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\pm\power_clocks_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\scif\scif_uc3c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\tc\tc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\usart\usart.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\wdt\wdt4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\avr32_uc3_example\partest\ParTest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\avr32_uc3_example\serial\serial.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\AltBlckQ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\AltBlock.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\AltPollQ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\AltQTest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\BlockQ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\blocktim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\comtest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\countsem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\crflash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\crhook.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\death.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\dynamic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\flash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\flop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\GenQTest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\integer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\PollQ.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\QPeek.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\recmutex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\minimal\semtest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\croutine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\queue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\tasks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\timers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\port.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\read.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\write.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\memmang\heap_3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="profilemanager\zlib-1.2.8\contrib\masmx64\gvmat64.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\contrib\masmx64\inffasx64.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\contrib\masmx86\inffas32.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\contrib\masmx86\match686.asm">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\contrib\vstudio\vc10\zlibvc.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\contrib\vstudio\vc11\zlibvc.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\contrib\vstudio\vc9\zlibvc.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\old\os2\zlib.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\win32\zlib.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\as400\zlib.inc">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="profilemanager\zlib-1.2.8\examples\zlib_how.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller\source\hypernav_controller\src\aux_data_acquisition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\command.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\command.errorcodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config.errorcodes.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\crc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\datalogfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\data_exchange.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\dynamic_memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\errorcodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\extern.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\filesystem.errorcodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\filesystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\frames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\generic_serial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\internal_adc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\io_funcs.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\numerical.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\profile_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\profile_packet.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\schedule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\setup.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\spi.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\sram_memory_map.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\stream_log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\tasks.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\version.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\wavelength.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\adc\ads8344\ads8344.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\custom\pcbsupervisor\PCBSupervisor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\custom\sysmon\sysmon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\dac\ad420\AD420.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\dac\ltc1451\LTC1451.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\owmaster\ds2482\onewire.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\rtc\ds3234\ds3234.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\sensors\ds18s20\ds18s20.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\components\sensors\sht2x\sht2x.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\syslog_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e950068\AD420_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e950068\LTC1451_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e950068\SDI12_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e980030\ds3234_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e980030\i2c_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e980030\modem_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e980030\PCBSupervisor_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e980030\sysmon_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\config\e980030\telemetry_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\bbvars\bbvariables.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\debug\dbg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\errno\avr32rerrno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\files.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\diskio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\ff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\ffconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\files\fatfs\integer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\config\FreeRTOSConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\croutine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\FreeRTOS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\mpu_wrappers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\portable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\projdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\semphr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\StackMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\include\timers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\freertos\source\portable\gcc\avr32_uc3\portmacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\gpio_i2c\i2c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\pdmabuffer\pdmabuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\serial\modem\modem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\serial\telemetry\telemetry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\syslog\syslog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\time\systemtime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\version\avr32rlibVer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\watchdog\watchdog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\xmodem\xmodem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\crc32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\deflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\gzguts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\inffast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\inffixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\inflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\inftrees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\trees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\zconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\avr32rlib\utils\zlib-1.2.8\zutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config\conf_access.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config\conf_at45dbx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config\conf_ebi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config\conf_explorer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config\conf_sd_mmc_mci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config\conf_usb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\config\smc_sram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\boards\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\components\memory\sd_mmc\sd_mmc_mci\sd_mmc_cmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\components\memory\sd_mmc\sd_mmc_mci\sd_mmc_mci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\components\memory\sd_mmc\sd_mmc_mci\sd_mmc_mci_mem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\cpu\cycle_counter\cycle_counter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\ebi\smc\smc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\eic\eic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\flashc\flashc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\gpio\gpio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\intc\intc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\mci\mci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\pdca\pdca.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\pm\pm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\pm\power_clocks_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\rtc\rtc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\spi\spi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\tc\tc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usart\usart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\usbb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\usb_drv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\usb_task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_descriptors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_device_task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_specific_request.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\device\usb_standard_request.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\host\usb_host_enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\usbb\enum\host\usb_host_task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\drivers\wdt\wdt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\delay\delay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\fat\fat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\fat\file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\fat\fsaccess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\fat\fs_com.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\fat\navigation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\memory\ctrl_access\ctrl_access.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\usb\usb_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\cdc\cdc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\cdc\uart_usb_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\device_mass_storage_task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\host_mass_storage_task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\host_mem\host_mem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\services\usb\class\mass_storage\scsi_decoder\scsi_decoder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\compiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\conf_isp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\parts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\debug\debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\debug\print_funcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\libs\newlib_addons\include\nlao_cpu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\libs\newlib_addons\include\nlao_exceptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\libs\newlib_addons\include\nlao_interrupts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\libs\newlib_addons\include\nlao_io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\libs\newlib_addons\include\nlao_usart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\preprocessor\mrepeat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\preprocessor\preprocessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\preprocessor\stringz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\software_framework\utils\preprocessor\tpaste.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\systemapi\hypernav.sys.controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\systemapi\power.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\source\hypernav_controller\src\systemapi\hardwaredefinitions\SatlanticHardware.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\code_verify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\profiles_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\profile_acquire.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\profile_description.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\profile_packet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\profile_receive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\profile_transmit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\sensor_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\crc32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\deflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\gzguts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\inffast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\inffixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\inflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\inftrees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\trees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\zconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\zutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\blast\blast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\infback9\infback9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\infback9\inffix9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\infback9\inflate9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\infback9\inftree9.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\iostream\zfstream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\iostream2\zstream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\iostream3\zfstream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\minizip\crypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\minizip\ioapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\minizip\iowin32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\minizip\mztools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\minizip\unzip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\minizip\zip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\contrib\puff\puff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="profilemanager\zlib-1.2.8\examples\gzlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\firmwaresimulator\modem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\firmwaresimulator\network.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\firmwaresimulator\profile_processor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\firmwaresimulator\syslog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\firmwaresimulator\syslog_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\chat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\crc16bit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\cstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\download.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\expect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\pkt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\rx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\serial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\tx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\upload.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rudics\test-client\xmodem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\firmwaredefinitions\config_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\firmwaredefinitions\data_exchange_packet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\firmwaredefinitions\mcoms_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\firmwaredefinitions\ocr_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\firmwaredefinitions\profile_packet.shared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\firmwaredefinitions\spectrometer_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\firmwaredefinitions\version.hypernav.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\hardwaredefinitions\SatlanticHardware.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\hardwaredefinitions\hypernav\E980030.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shared\hardwaredefinitions\hypernav\E980031.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\comms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\CRC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\prelude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\sysclk_auto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\xmodem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\boards\dummy\dummy_board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\ast\ast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\cpu\cycle_counter\cycle_counter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\flashc\flashc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\gpio\gpio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\pm\pm_uc3c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\pm\power_clocks_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\pm\sleep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\scif\scif_uc3c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\usart\usart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\usbc\usbc_device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\usbc\usbc_otg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\drivers\wdt\wdt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\services\freq_detect\freq_detect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\compiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\status_codes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\debug\print_funcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\header_files\uc3d_defines_fix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\header_files\uc3l3_l4_defines_fix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\preprocessor\mrepeat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\preprocessor\preprocessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\preprocessor\stringz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\avr32\utils\preprocessor\tpaste.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\boards\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\genclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\osc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\pll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\sysclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\uc3c\genclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\uc3c\osc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\uc3c\pll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\clock\uc3c\sysclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\delay\delay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\isp\flip\flip_protocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\isp\flip\isp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\isp\flip\uc3\boot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\isp\flip\uc3\flash_api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\usb_atmel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\usb_protocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\class\dfu_flip\usb_protocol_dfu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\class\dfu_flip\device\udi_dfu_atmel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\class\dfu_flip\device\udi_dfu_atmel_conf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\udc\udc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\udc\udc_desc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\udc\udd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\services\usb\udc\udi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\utils\interrupt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\utils\parts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\asf\common\utils\interrupt\interrupt_avr32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\conf\conf_board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\config\conf_clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\config\conf_freq_detect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\config\conf_isp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\config\conf_usb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\bootloader_spec\src\intc\intc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\command.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\data_acquisition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\data_exchange.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\errorcodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\extern.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\gplp_trace.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\hypernav.sys.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\info.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\io_funcs.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\orientation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\power.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\pressure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\profile_packet.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\profile_transmit.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\setup.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\shutters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\SPECtasks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\spi.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\sram_memory_map.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\SunPosition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\systemtime.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\tasks.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\twi_mux.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\version.spectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\boards\stk600\rcuc3c0\led.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\boards\stk600\rcuc3c0\stk600_rcuc3c0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\boards\uc3c_ek\led.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\boards\uc3c_ek\uc3c_ek.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\ast\ast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\cpu\cycle_counter\cycle_counter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\ebi\smc\smc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\eic\eic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\flashc\flashc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\gpio\gpio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\intc\intc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pdca\pdca.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pevc\pevc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pevc\uc3c_pevc_ids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pm\pm_uc3c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pm\power_clocks_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\pm\sleep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\qdec\qdec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\scif\scif_uc3c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\spi\spi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\tc\tc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\twim\twim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\usart\usart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\drivers\wdt\wdt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\compiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\status_codes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\header_files\uc3d_defines_fix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\header_files\uc3l3_l4_defines_fix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\mrepeat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\preprocessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\stringz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\tpaste.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\avr32\utils\startup\trampoline_uc3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\boards\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\genclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\osc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\pll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\sysclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\uc3c\genclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\uc3c\osc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\uc3c\pll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\clock\uc3c\sysclk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\delay\delay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\twi\twi_master.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\services\twi\uc3_twim\twi_master.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\utils\interrupt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\utils\parts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\common\utils\interrupt\interrupt_avr32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\croutine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\FreeRTOS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\mpu_wrappers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\portable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\projdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\semphr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\StackMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\timers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\portmacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\components.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\accelerometer\lis3dsh\lis3dsh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\adc\ad7677\AD7677.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\adc\ad7677\AD7677_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\compass\lsm303\lsm303.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\fifo\sn74v283\sn74v283.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\flashmemory\FlashMemory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\flashmemory\s25fl512s\slld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\flashmemory\s25fl512s\slld_hal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\flashmemory\s25fl512s\slld_targetspecific.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\spectrometer\cgs\cgs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\spectrometer\cgs\cgs_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\components\spectrometer\temperature\max6633.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\errno\avr32rerrno.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\pdmabuffer\pdmabuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\serial\telemetry\telemetry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\crc32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\deflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\gzguts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\inffast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\inffixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\inflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\inftrees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\trees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\zconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\avr32rlib\utils\zlib-1.2.8\zutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\conf_clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\conf_ebi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\conf_twim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\conf_twis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\FreeRTOSConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\smc_fifo_A.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\smc_fifo_B.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\smc_sram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spectrometer\source\hypernav_spectrometer\src\config\telemetry_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\Operation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\SPECtasks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\boards\stk600\rcuc3c0\led.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\boards\stk600\rcuc3c0\stk600_rcuc3c0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\boards\uc3c_ek\led.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\boards\uc3c_ek\uc3c_ek.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\ast\ast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\flashc\flashc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\gpio\gpio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\intc\intc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\pm\pm_uc3c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\pm\power_clocks_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\pm\sleep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\scif\scif_uc3c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\tc\tc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\usart\usart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\drivers\wdt\wdt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\compiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\status_codes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\header_files\uc3d_defines_fix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\header_files\uc3l3_l4_defines_fix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\mrepeat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\preprocessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\stringz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\preprocessor\tpaste.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\avr32\utils\startup\trampoline_uc3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\common\boards\board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\common\utils\interrupt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\common\utils\parts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\common\utils\interrupt\interrupt_avr32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\avr32_uc3_example\at32uc3c0512c_uc3c_ek\conf_example.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\AltBlckQ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\AltBlock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\AltPollQ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\AltQTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\BlockQ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\blocktim.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\comtest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\comtest2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\countsem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\crflash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\crhook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\death.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\dynamic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\fileIO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\flash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\flop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\GenQTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\integer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\IntQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\mevents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\partest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\PollQ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\print.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\QPeek.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\recmutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\semtest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\demo\common\include\serial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\croutine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\FreeRTOS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\mpu_wrappers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\portable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\projdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\queue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\semphr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\StackMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\include\timers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\asf\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\portmacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\config\confSpectrometer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stk600\source\hypernav_spectrometer\hypernav_spectrometer\src\config\FreeRTOSConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="profilemanager\zlib-1.2.8\contrib\vstudio\vc10\zlib.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="profilemanager\zlib-1.2.8\contrib\vstudio\vc11\zlib.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="profilemanager\zlib-1.2.8\contrib\vstudio\vc9\zlib.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="profilemanager\zlib-1.2.8\win32\zlib1.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
