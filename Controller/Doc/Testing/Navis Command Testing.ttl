@@ -1,0 +1,310 @@
+;	Navis to HyperNav command interface
+
+GetTitle OriginalTitle
+
+ScriptID = 'Navis HyperNav Command Interface'  
+TheTitle = 'TeraTerm: '
+StrConCat TheTitle ScriptID
+Pause 2
+SetTitle TheTitle
+ 
+SetDlgPos 700 500
+
+MessageBox "Assuming serial port connected to HyperNav Controller at correct baud rate." ScriptID
+
+/************************  Waking up the HyperNav **********************/
+:Wakeup
+Command = "W"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' not acknowledged" Command
+  MessageBox StatusStr ScriptID
+Endif
+
+/*******************Checking the Status of HyperNav ***************************/
+:HNStatus
+Command = "HNVSTS"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s,OK'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "OK" "PRF" "TX" "FAIL"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Elseif 2 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Elseif 3 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  MessageBox StatusStr ScriptID
+Endif
+
+/*********************** Start Profiling ******************/
+:STProfile
+Command = "PRFBEG"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s,OK'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "OK"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Endif
+
+/************** Checking Profile Status *********************/
+:PFStatus
+Command = "PRFSTS"
+sprintf2 StatusStr "Sending '%s'" Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "PRFSTS,PRF" "DONE" "PRFSTS,NOPRF"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Elseif 2 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  MessageBox StatusStr ScriptID
+Endif
+
+/***************** End Profiling ***********************/
+:ENDProfile
+Command = "PRFEND"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> Error" Command
+  MessageBox StatusStr ScriptID
+Endif
+
+/***************** Begin Transfer ***********************/
+:BGNTransfer
+Command = "TXBEG"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s,OK'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "OK"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  MessageBox StatusStr ScriptID
+Endif
+
+/************** Checking Transfer Status *********************/
+:TXStatus
+Command = "TXSTS"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s,DONE'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "TXSTS,TX" "DONE" "TXSTS,NOTX"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Elseif 2 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  MessageBox StatusStr ScriptID
+Endif
+
+/***************** End Transfer ***********************/
+:EndTransfer
+Command = "TXEND"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s,End'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> Error" Command
+  MessageBox StatusStr ScriptID
+Endif
+
+/*********************** GPS, Latitude,longitude ******************/
+:GPSLTLG
+Command = "GPS,latitude,longitude"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$ACK" "$NAK"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Endif
+
+/***************** Time ***********************/
+:Time
+Command = "TIME,time"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> Not acknowledged" Command
+  MessageBox StatusStr ScriptID
+Endif
+
+/***************** Sending to Sleep ***********************/
+:Sleep
+Command = "SLP"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> Not acknowledged" Command
+  MessageBox StatusStr ScriptID
+Endif
+
+/***************** Checking FIRMWARE ***********************/
+:CKFirmware
+Command = "FIRMWARE"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s,#.#.#'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' not acknowledged" Command
+  MessageBox StatusStr ScriptID
+Endif
+
+/***************** Checking Serial Number ***********************/
+:SNumber
+Command = "SERIAL"
+sprintf2 StatusStr "Sending '%s' - Expecting '$ACK,%s,---'" Command Command 
+StatusBox StatusStr ScriptID
+Pause 2
+flushrecv
+SendLn Command
+
+timeout = 5
+WaitLn "$"
+
+If 1 == result Then
+  sprintf2 StatusStr "'%s' -> %s" Command InputStr
+  StatusBox StatusStr ScriptID
+  Pause 2
+Else
+  sprintf2 StatusStr "'%s' -> Not acknowledged" Command
+  MessageBox StatusStr ScriptID
+Endif
+
+/***************** Commands over ***********************/
+
+MessageBox "Test done." ScriptID
+
+SetTitle OriginalTitle

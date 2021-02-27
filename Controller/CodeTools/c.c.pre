@@ -1,0 +1,57 @@
+/*
+ *	ALERT: config.c is auto-generated from CodeTools files.
+ *	Do NOT edit.
+ *	Read file makeCode.sh for explanations / instructions.
+ *
+ *  File: config.c
+ *  Nitrate Sensor Firmware
+ *  Copyright 2010 Satlantic Inc.
+ */
+
+# include "config.controller.h"
+
+# include <compiler.h>
+# include <ctype.h>
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.h>
+# include <errno.h>
+
+
+# include "flashc.h"
+# include "systemtime.h"
+# include "onewire.h"
+# include "telemetry.h"
+# include "files.h"
+# include "power.h"
+# include "syslog.h"
+# include "sysmon.h"
+# include "watchdog.h"
+# include "usb_drv.h"
+# include "usb_standard_request.h"
+
+# include "errorcodes.h"
+# include "bbvariables.h"
+# include "io_funcs.controller.h"
+# include "version.controller.h"
+# include "crc.h"
+# include "extern.controller.h"
+# include "filesystem.h"
+
+// Use thread-safe dynamic memory allocation if available
+#ifdef FREERTOS_USED
+#include "FreeRTOS.h"
+#else
+#define pvPortMalloc	malloc
+#define vPortFree		free
+#endif
+
+# define CFG_BACK_SIZE 512
+
+static S16 cfg_SaveToBackup( char* mem );
+static S16 cfg_ReadFromBackup( char* mem );
+
+/*
+ *   Maintain same order as Get...() calls in config.h file
+ */
+

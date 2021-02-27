@@ -1,0 +1,39 @@
+Installation Instructions
+-------------------------
+
+1) Copy rudicsd into /usr/local/bin.
+
+2) Add the following entry to /etc/services:
+      rudics  1023/tcp         # Iridium RUDICS server 
+
+3) Add the following entry to /etc/syslog.conf
+      # Save rudics server messages 
+      local0.*               /var/log/rudics.log
+
+   Note: Under Fedora 9, this entry must be made to
+   /etc/rsyslog.conf 
+
+4) Add the following entries to /etc/hosts.allow:
+      ALL EXCEPT rudicsd: \
+        127.0.0.1, 192.168.1., iridium.com
+
+      rudicsd: 127.0.0.1, 192.168.1., iridium.com
+
+5) Add the following "rudics" file to /etc/xinetd.d:
+         
+      # default: on
+      # description: The rudics server serves iridium rudics sessions; it uses \
+      #       unencrypted username/password pairs for authentication.
+      service rudics
+      {
+              flags           = REUSE
+              socket_type     = stream        
+              wait            = no
+              user            = root
+              server          = /usr/local/bin/rudicsd
+              log_on_failure  += USERID
+              disable         = no
+      }
+
+6) Restart xinetd:
+      /etc/init.d/xinetd restart

@@ -1,0 +1,77 @@
+
+/*
+ *	Backup functions
+ */
+
+static char const* cfg_MakeBackupFileName () {
+
+	return EMMC_DRIVE "config.bck";
+}
+
+static S16 cfg_SaveToBackup( char* backupMemory ) {
+
+	char const* bfn = cfg_MakeBackupFileName();
+
+	bool have_to_write = true;
+
+	//	Compare content in backup file to backupMemory.
+	//	If identical, no need to write to file.
+	//	Do via CRC of file vs. CRC of backupMemory.
+	//	TODO: Confirm this is ok to do.
+
+	U16 crc_of_file = 0;
+	if ( CEC_Ok == FSYS_getCRCOfFile( bfn, &crc_of_file ) ) {
+	
+		if ( crc_of_file == fCrc16BitN ( (unsigned char*)backupMemory, CFG_BACK_SIZE ) ) {
+			have_to_write = false;
+		}
+	}
+
+	if ( have_to_write ) {
+
+		f_delete ( bfn );
+
+		fHandler_t fh;
+		if ( FILE_FAIL == f_open( bfn, O_WRONLY|O_CREAT, &fh ) ) {
+			return CFG_FAIL;
+		}
+
+		if ( CFG_BACK_SIZE != f_write ( &fh, backupMemory, CFG_BACK_SIZE ) ) {
+			f_close ( &fh );
+			f_delete ( bfn );
+			return CFG_FAIL;
+		}
+
+		f_close ( &fh );
+	}
+
+	return CFG_OK;
+}
+
+static S16 cfg_ReadFromBackup( char* backupMemory ) {
+
+	char const* bfn = cfg_MakeBackupFileName();
+
+	fHandler_t fh;
+	if ( FILE_FAIL == f_open( bfn, O_RDONLY, &fh ) ) {
+		return CFG_FAIL;
+	}
+
+	if ( CFG_BACK_SIZE != f_read ( &fh, backupMemory, CFG_BACK_SIZE ) ) {
+		f_close ( &fh );
+		f_delete ( bfn );
+		return CFG_FAIL;
+	}
+
+	f_close ( &fh );
+	return CFG_OK;
+}
+
+S16 CFG_WipeBackup() {
+
+	char const* bfn = cfg_MakeBackupFileName();
+
+	return FILE_OK == f_delete ( bfn )
+	     ? CFG_OK
+	     : CFG_FAIL;
+}

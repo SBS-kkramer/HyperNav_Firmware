@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DoxySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SettingsFile>C:\Users\Scott\feener-Firmware\feener3-Firmware\Firmware\Radiometers\Hyperspectral\Source\HyperNAV\Spectrometer\Source\HyperNAV_Spectrometer\HyperNAV_Spectrometer\doxySettings.xml</SettingsFile>
+  <ProjectName>HyperNAV_Spectrometer</ProjectName>
+  <DoxyExePath>C:\Users\Scott\AppData\Local\Atmel\AtmelStudio\6.2\Extensions\Atmel\Doxygen Integrator\1.2.0.14\Doxygen/doxygen.exe</DoxyExePath>
+  <UseDefaultSettings>true</UseDefaultSettings>
+  <GenerateAsPartOfBuild>true</GenerateAsPartOfBuild>
+  <ConfigFilePath>C:\Users\Scott\feener-Firmware\feener3-Firmware\Firmware\Radiometers\Hyperspectral\Source\HyperNAV\Spectrometer\Source\HyperNAV_Spectrometer\HyperNAV_Spectrometer\doxyfile</ConfigFilePath>
+  <OutputDirPath>C:\Users\Scott\feener-Firmware\feener3-Firmware\Firmware\Radiometers\Hyperspectral\Source\HyperNAV\Spectrometer\Source\HyperNAV_Spectrometer\HyperNAV_Spectrometer\doxygen</OutputDirPath>
+  <ShowErrorsAndWarnings>false</ShowErrorsAndWarnings>
+</DoxySettings>

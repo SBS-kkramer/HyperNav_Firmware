@@ -1,0 +1,89 @@
+Category	Parameter	Units	Possible	Default	Ship-Cfg	APM-Cfg	D-Type	Format	#bytes	CheckAdd	MemPtr	Short	Modify	Access	Setup	Store	Used	Comment	
+																			
+Build	Sensor Type	-	HyperNavRadiometer,HyperNavTestHead	HyperNavRadiometer	=	=	Enum	%s	1	256	256	senstype	Rarely	F	Y	UP	Any		
+Build	Sensor Version	-	V1	V1	V2	V2	Enum	%s	1	260	260	sensvers	Rarely	F	Y	UP	Any		
+Build	Serial Number	-	1:9999	0	=	=	U16	%hu	2	264	264	serialno	Rarely	F	Y	UP	Any		
+Build	Firmware Version	-	*	0	=	=	U32	%lx	4	268	268	frwrvers	Rarely	S		UP	Any	Is Patch + 256* Minor + 256*256 * Major	
+Build	PCB Supervisor	-	Available, Missing	Missing	=	=	Enum	%s	1	280	280	pwrsvisr	Rarely	F	Y	UP	Any		
+Build	USB Switch	-	Available, Missing	Missing	=	=	Enum	%s	1	284	284	usbswtch	Rarely	F	Y	UP	Any		
+Build	Spec Starboard Serial Number	-	*	0	=	=	U32	%lu	4	368	368	spcsbdsn	Rarely	F	Y	UP	Any		
+Build	Spec Port Serial Number	-	*	0	=	=	U32	%lu	4	372	372	spcprtsn	Rarely	F	Y	UP	Any		
+Build	Frame Starboard Serial Number	-	0:999	1	=	=	U16	%hu	2	376	376	frmsbdsn	Rarely	F	Y	UP	Any		
+Build	Frame Port Serial Number	-	0:999	1	=	=	U16	%hu	2	380	380	frmprtsn	Rarely	F	Y	UP	Any		
+Build	Admin Password	-	*	HyperNV	HyperNV	HyperNV	String	%s	8	416	416	admin_pw	Rarely	F	Y	UP	Any		
+Build	Factory Password	-	*	SAT+HNV	SAT+HNV	SAT+HNV	String	%s	8	424	424	fctry_pw	Rarely	F	Y	UP	Any		
+Build	Long Wait Flag	-	Wait, Skip	Wait	Skip	Skip	Enum	%s	1	448	448	waitflag	Rarely	S		UP	Any		
+																			
+Accelerometer	Accelerometer_Mounting	deg	*	0	=	=	F32	%f	4	292	292	accmntng	Rarely	*		UP	Any		
+Accelerometer	Accelerometer_Vertical_x	-	*	0	=	=	S16	%hd	2	296	296	accvertx	Rarely	*		UP	Any		
+Accelerometer	Accelerometer_Vertical_y	-	*	0	=	=	S16	%hd	2	300	300	accverty	Rarely	*		UP	Any		
+Accelerometer	Accelerometer_Vertical_z	-	*	0	=	=	S16	%hd	2	304	304	accvertz	Rarely	*		UP	Any		
+																			
+Compass	Magnetometer_Min_x	-	*	0	=	=	S16	%hd	2	320	320	mag_minx	Rarely	*		UP	Any		
+Compass	Magnetometer_Max_x	-	*	0	=	=	S16	%hd	2	324	324	mag_maxx	Rarely	*		UP	Any		
+Compass	Magnetometer_Min_y	-	*	0	=	=	S16	%hd	2	328	328	mag_miny	Rarely	*		UP	Any		
+Compass	Magnetometer_Max_y	-	*	0	=	=	S16	%hd	2	332	332	mag_maxy	Rarely	*		UP	Any		
+Compass	Magnetometer_Min_z	-	*	0	=	=	S16	%hd	2	336	336	mag_minz	Rarely	*		UP	Any		
+Compass	Magnetometer_Max_z	-	*	0	=	=	S16	%hd	2	340	340	mag_maxz	Rarely	*		UP	Any		
+																			
+GPS	Latitude	deg	*	0	=	=	F64	%lf	8	480	480	gps_lati	Rarely	*		UP	Any		
+GPS	Longitude	deg	*	0	=	=	F64	%lf	8	488	488	gps_long	Rarely	*		UP	Any		
+GPS	Magnetic Declination	deg	*	0	=	=	F64	%lf	8	496	496	magdecli	Rarely	*		UP	Any		
+																			
+Pressure	Digiquartz Serial Number	-	*	0	=	=	U32	%lu	4	128	128	digiqzsn	Rarely	F		UP	Any		
+Pressure	Digiquartz U0	us	*	0	=	=	F64	%lf	8	136	136	digiqzu0	Rarely	F		UP	Any		
+Pressure	Digiquartz Y1	C/us	*	0	=	=	F64	%lf	8	144	144	digiqzy1	Rarely	F		UP	Any		
+Pressure	Digiquartz Y2	C/us2	*	0	=	=	F64	%lf	8	152	152	digiqzy2	Rarely	F		UP	Any		
+Pressure	Digiquartz Y3	C/us3	*	0	=	=	F64	%lf	8	160	160	digiqzy3	Rarely	F		UP	Any		
+Pressure	Digiquartz C1	psia	*	0	=	=	F64	%lf	8	168	168	digiqzc1	Rarely	F		UP	Any		
+Pressure	Digiquartz C2	psia/us	*	0	=	=	F64	%lf	8	176	176	digiqzc2	Rarely	F		UP	Any		
+Pressure	Digiquartz C3	psia/us2	*	0	=	=	F64	%lf	8	184	184	digiqzc3	Rarely	F		UP	Any		
+Pressure	Digiquartz D1	-	*	0	=	=	F64	%lf	8	192	192	digiqzd1	Rarely	F		UP	Any		
+Pressure	Digiquartz D2	-	*	0	=	=	F64	%lf	8	200	200	digiqzd2	Rarely	F		UP	Any		
+Pressure	Digiquartz T1	us	*	0	=	=	F64	%lf	8	208	208	digiqzt1	Rarely	F		UP	Any		
+Pressure	Digiquartz T2	us/us	*	0	=	=	F64	%lf	8	216	216	digiqzt2	Rarely	F		UP	Any		
+Pressure	Digiquartz T3	us/us2	*	0	=	=	F64	%lf	8	224	224	digiqzt3	Rarely	F		UP	Any		
+Pressure	Digiquartz T4	us/us3	*	0	=	=	F64	%lf	8	232	232	digiqzt4	Rarely	F		UP	Any		
+Pressure	Digiquartz T5	us/us4	*	0	=	=	F64	%lf	8	240	240	digiqzt5	Rarely	F		UP	Any		
+Pressure	Digiquartz Temperature Divisor	-	*	1	=	=	S16	%hd	2	248	248	dqtempdv	Rarely	F		UP	Any		
+Pressure	Digiquartz Pressure Divisor	-	*	1	=	=	S16	%hd	2	252	252	dqpresdv	Rarely	F		UP	Any		
+Pressure	Simulated Start Depth	dBar	*	0	=	=	S16	%hd	2	344	344	simdepth	Rarely	F		UP	Any		
+Pressure	Sumulated Ascent Rate	dBar/100s	*	0	=	=	S16	%hd	2	348	348	simascnt	Rarely	F		UP	Any		
+																			
+Profile	Profile_Upper_Interval	dbar	*	0	=	=	F32	%f	4	96	96	puppival	Rarely	*		UP	Any		
+Profile	Profile_Upper_Start	dbar	*	0	=	=	F32	%f	4	100	100	puppstrt	Rarely	*		UP	Any		
+Profile	Profile_Middle_Interval	dbar	*	0	=	=	F32	%f	4	104	104	pmidival	Rarely	*		UP	Any		
+Profile	Profile_Middle_Start	dbar	*	0	=	=	F32	%f	4	108	108	pmidstrt	Rarely	*		UP	Any		
+Profile	Profile_Lower_Interval	dbar	*	0	=	=	F32	%f	4	112	112	plowival	Rarely	*		UP	Any		
+Profile	Profile_Lower_Start	dbar	*	0	=	=	F32	%f	4	116	116	plowstrt	Rarely	*		UP	Any		
+#Profile	Profile_Deep_Interval	dbar	*	0	=	=	F32	%f	4	120	120	pdepival	Rarely	*		UP	Any		
+#Profile	Profile_Deep_Start	dbar	*	0	=	=	F32	%f	4	124	124	pdepstrt	Rarely	*		UP	Any		
+																			
+Setup	Configuration Status	-	Required, Done	Required	Done	Done	Enum	%s	1	0	0	stupstus	Rarely	A		RTC	Any		
+Setup	Firmware Upgrade	-	Yes, No	No	=	=	Enum	%s	1	12	12	fwupgrad	Rarely	S		RTC	Any		
+																			
+Input_Output	Message Level	-	Error, Warn, Info, Debug, Trace	Info	Warn	Warn	Enum	%s	1	17	17	msglevel	Some	*		RTC	Any		
+Input_Output	Message File Size	MB	0:65	2	2	0	U8	%hhu	1	18	18	msgfsize	Rarely	*		RTC	Any		
+Input_Output	Data File Size	MB	1:65	2	2	2	U8	%hhu	1	35	35	datfsize	Rarely	*		RTC	Any		
+Input_Output	Data File Needs Header	-	Yes, No	Yes	=	=	Enum	%s	1	36	36	datfhead	Some	S		RTC	Any		
+Input_Output	Data File LastDayOfYear	-	*	0	=	=	U32	%lu	4	37	37	dflstdoy	Often	S		RTC	Any?		
+Input_Output	Output Frame Subsampling	Shift	0:12	4	4	4	U8	%hhu	1	41	41	outfrsub	Some	*		RTC	Any		
+Input_Output	Log Frames	-	Yes, No	Yes	Yes	Yes	Enum	%s	1	42	42	logframs	Some	*		RTC	Any		
+Input_Output	Acquisition Counter	-	*	0	0	0	U32	%lu	4	48	48	acqcount	Often	*		RTC	Any		
+Input_Output	Continuous Counter	-	*	0	0	0	U32	%lu	4	52	52	cntcount	Often	*		RTC	Any		
+																			
+Testing	Data Mode	-	Real, Fake	Real	Real	Real	Enum	%s	1	80	80	datamode	Rarely	A	Y	RTC	Any		
+																			
+Operational	Operation Mode	-	Continuous, APM	Continuous		APM	Enum	%s	1	96	96	opermode	Some	*		RTC	Any	Startup; replace FixedTime by Burnin command?	
+Operational	Operation Control	-	Duration, Samples	Duration	Duration	Duration	Enum	%s	1	97	97	operctrl	Some	*		RTC	Any		
+Operational	Operation State	-	Prompt, Streaming, Profiling, Transmitting	Streaming	Streaming	APMPrompt	Enum	%s	1	98	98	operstat	Often	S		RTC	Any		
+Operational	System Reset Time	-	*	0	=	=	U32	%lu	4	102	102	sysrsttm	Often	S		RTC	Any	Time when current execution started	
+Operational	System Reset Counter	-	*	0	=	=	U32	%lu	4	106	106	sysrstct	Often	S		RTC	Any		
+Operational	Power Cycle Counter	-	*	0	=	=	U32	%lu	4	110	110	pwrcycnt	Often	S		RTC	Any		
+Operational	Countdown	s	3:3600	15	15	15	U16	%hu	2	114	114	countdwn	Some	*		RTC	Any	most Operation Modes	
+Operational	APM Command Timeout	s	*	10	10	10	U16	%hu	2	116	116	apmcmdto	Some	*		RTC	Any	0 means no timeout	
+																			
+Acquisition	Saturation Counts	-	*	50000	50000	50000	U16	%hu	2	120	120	saturcnt	Some	*		RTC	Any		
+Acquisition	Number of Clearouts	-	*	3	3	3	U8	%hhu	1	122	122	numclear	Some	*		RTC	Any		
+																			
+																			

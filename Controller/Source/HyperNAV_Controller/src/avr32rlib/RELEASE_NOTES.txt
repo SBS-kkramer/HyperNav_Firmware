@@ -1,0 +1,79 @@
+Satlantic AVR32 Resources Library (avr32rlib) Release Notes 
+-----------------------------------------------------------
+
+
+v1.4
+------
+Released: 03-Jul-2012
+
+- CS5344: Fixed ADC readings. Using delay_ms() instead of cpu_delay_us()
+- Syslog: Changed max log size setting from MB to KB. Added path selection functionality.
+- XMODEM: Fixed transfer hanging when using Virtual COM. Added debug messages to XMODEM functions.
+	  Fixed WDT reset when taking too long to send files to the sensor.
+- Files: Added  'file_isDirEmpty()'.
+
+
+
+v1.3.1
+------
+Released: 06-Mar-2012
+
+- Bugfix. Fixed telemetry switch triggering a NULL pointer de-reference exception. F
+- Bugfix. Fixed telemetry baudrate change not remembering new baudrate.
+
+
+
+v1.3.0
+------
+
+Released: 31-Jan-2012
+
+- Added support for FATFs R0.09 (Disk I/O layer support for eMMC & DATAFlash) 
+- Added support for FreeRTOS v7.0.1
+- Added support for USB Virtual COM telemetry
+- Added support for DAC LTC1451 
+- Added support for DAC AD420
+- Added support for PCB supervisor
+- Improved lamp time tracking
+- Changed syslog NOTICE to INFO for compatibility with SUNA
+- Updated PDMA Buffers to use FreeRTOS memory allocation if needed
+- Reduced XModem timeout values for sensor to computer transfer 
+
+
+
+v1.2.0
+------
+
+Released: 09-Aug-2011
+
+>	Added spectrometer configuration to E950061A configuration folder
+>	Integrated changes from initial SUNA-LC repo setup: 
+		- Added 'Lamp driver'
+		- Fixed 'telemetry_cfg.h' include
+		- Fixed 'spectrometer_cfg.h' include
+		- Fixed 'syslog_cfg.h' include
+>	Added RTS pin definition.
+>	Integrated improvements from Nitrate-APF.
+>	Changed behaviour of 1-wire temperature sensors: Whenever received a measurement, will immediately start a new measurement.
+
+
+
+
+v1.1.0
+------
+
+Released: 28-Jul-2011
+
+>	Added syslog utility
+>	Integration change. Merged fixes and additions from pH sensor V0.2 codeline.
+>	Integrated bugfix in time utility.
+
+
+
+v1.0
+----
+
+Released: 08-Feb-2011
+
+>	First release. 
+ 

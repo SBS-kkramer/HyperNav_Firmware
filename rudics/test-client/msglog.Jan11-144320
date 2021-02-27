@@ -1,0 +1,3 @@
+(Jan 11 2016 14:43:20,       0 sec) LogOpen()            Enabling logging functions.
+(Jan 11 2016 14:43:20,       0 sec) OpenRudicsPort()     /etc/services entry: rudics/tcp not found.
+(Jan 11 2016 14:43:20,       0 sec) LogClose()           Disabling logging functions.

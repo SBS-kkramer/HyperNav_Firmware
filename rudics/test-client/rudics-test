@@ -1,0 +1,8 @@
+#!/bin/csh
+
+cd /app/swift/rudics/test-client
+./rudics 5037.001.{msg,log} >& /dev/null &
+sleep 2;
+./rudics 5038.001.{msg,log} >& /dev/null &
+sleep 2;
+./rudics 5039.001.{msg,log} >& /dev/null &

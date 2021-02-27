@@ -1,0 +1,45 @@
+Navis Firmware Iridium Modem Interface
+======================================
+
+npfmain.c :: main() { ... control.c :: MissionControlAgent(); ... }
+
+control.c :: MissionControlAgent() { ... state==TELEMETRY:  telemetry.c :: Telemetry(); ... }
+
+telemetry.c :: Telemetry() {
+ = lbt9522.c ::IrSkySearch()        = npficom.c :: ModemEnable (19200)
+                                    + lbt9522.c :: IrModemRegister ()
+                                    + npficom.c :: ModemDisable ()
+ + gps.c     ::GPSService()
+ + npficom.c ::ModemEnable(19200)
+ + lbt9522.c ::IrModemRegister()    = IrModemAttention()        [modem is responding to "AT" with "OK"]
+                                    + "AT I4" == "IRIDIUM"      [modem is iridium]
+                                    + "AT+CREG?" == "1" or "5"  [modem is registered]   [1==home network, 5==roaming]
+ + download.c::DownloadMissionCfg() = clogin.c   :: CLogin()   = npficom.c :: ModemDtrClear ()
+                                                               + npficom.c :: ModemDtrAssert ()
+                                                               + modem.c   :: connect ( "ATDT<phone-number>") [try primary, if fail alternate host]
+                                                               + login.c   :: login ( username, password )
+                                    + download.c :: RxConfig () = issue xmodem command to host, and initiate xmodem receive
+ + upload.c  ::UpLoad()             = repeat for up to number_of_tries:
+                                        clogin.c :: Clogin ()  [Checks for existing connected/login, and reconnects if non-existing, e.g., after loss of carrier]
+                                      + upload.c :: UpLoadFile () = issue xmodem command to host, and initiate xmodem send
+ + login.c   ::logout()
+ + npficom.c ::ModemDisable()
+}
+
+==== Adapted for HyperNAV ====
+
+transfer_profile.c :: transfer_profile() {
+??? gps.c       :: GPSService()   ???
+  + npficom.c   :: ModemEnable (19200)
+  + modemIO ( "AT" == "OK" )  [ with retries and timeout ]
+  + modemIO ( "AT I4" == "IRIDIUM" )
+  + modemIO ( "AT+CREG?" == "+CREG:1" or "+CREG:5" )  [check modem registered: 1==home network, 5==roaming]
+ ++ modemIO ( "AT+CSQ?" == "+CSQ:<value>" )   [check signal quality: value<4 means problem!]
+  + npficom.c   :: ModemDtrClear ()
+  + npficom.c   :: ModemDtrAssert ()
+  + modem.c     :: connect ( "ATDT<phone-number>") [try primary, if fail alternate host]
+//+ login.c     :: login ( username, password )
+  + packet_transfer_loop ( ... )
+//+ login.c     :: logout ()
+  + npficom.c   :: ModemDisable ()
+}

@@ -1,0 +1,10 @@
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/zlib.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/zlibstatic.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/example.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/list_install_components.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/minigzip.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/test.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/install.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+C:/code/Firmware/ProfileManager/zlib-1.2.8/out/build/x64-Debug (default)/CMakeFiles/install/local.dir

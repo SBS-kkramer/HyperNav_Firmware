@@ -1,0 +1,1322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.2</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC32.C</ToolchainName>
+    <ProjectGuid>{cac93372-73de-48dc-8105-f50c6d61db82}</ProjectGuid>
+    <avrdevice>AT32UC3C0512C</avrdevice>
+    <avrdeviceseries>uc3c</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>HyperNAV_Spectrometer</AssemblyName>
+    <Name>HyperNAV_Spectrometer</Name>
+    <RootNamespace>HyperNAV_Spectrometer</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options>
+          <option id="avr32.drivers.ast" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.ebi.smc" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.eic" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.flashc" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.gpio" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.intc" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.pdca" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.pm" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.spi" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.tc" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.usart" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.wdt" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.basic.clock" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.basic.twi" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.qdec" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.pevc" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="avr32.drivers.scif" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.freertos.demo.common.minimal" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.freertos.uc3_example" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="common.services.os.freertos" value="Add" config="" content-id="Atmel.ASF" />
+        </options>
+        <configurations>
+          <configuration key="config.avr32.utils.gccstartup" value="no" default="no" content-id="Atmel.ASF" />
+          <configuration key="config.compiler.iarew32.sys_stack_size" value="0x0800" default="0x0800" content-id="Atmel.ASF" />
+          <configuration key="config.avr32.drivers.intc.exception" value="no" default="no" content-id="Atmel.ASF" />
+          <configuration key="config.board.uc3c_ek.init" value="no" default="no" content-id="Atmel.ASF" />
+          <configuration key="config.compiler.iarew32.app_stack_size" value="0x0000" default="0x0000" content-id="Atmel.ASF" />
+          <configuration key="config.compiler.avr32gcc.programming_clock" value="int" default="int" content-id="Atmel.ASF" />
+          <configuration key="config.compiler.iarew32.heap_size" value="0xF300" default="0xF300" content-id="Atmel.ASF" />
+          <configuration key="config.compiler.avr32gcc.use_startfiles" value="yes" default="yes" content-id="Atmel.ASF" />
+          <configuration key="config.board.uc3c_ek.led" value="yes" default="yes" content-id="Atmel.ASF" />
+          <configuration key="config.avr32.utils.trampoline" value="yes" default="yes" content-id="Atmel.ASF" />
+          <configuration key="config.utils.interrupt.intc" value="yes" default="yes" content-id="Atmel.ASF" />
+          <configuration key="config.common.services.basic.twi.mode" value="both" default="both" content-id="Atmel.ASF" />
+        </configurations>
+        <files>
+          <file path="src/ASF/avr32/boards/uc3c_ek/led.c" framework="" version="" source="avr32/boards/uc3c_ek/led.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/boards/uc3c_ek/led.h" framework="" version="" source="avr32/boards/uc3c_ek/led.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/boards/uc3c_ek/uc3c_ek.h" framework="" version="" source="avr32/boards/uc3c_ek/uc3c_ek.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/flashc/flashc.c" framework="" version="" source="avr32/drivers/flashc/flashc.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/flashc/flashc.h" framework="" version="" source="avr32/drivers/flashc/flashc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/gpio/gpio.c" framework="" version="" source="avr32/drivers/gpio/gpio.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/gpio/gpio.h" framework="" version="" source="avr32/drivers/gpio/gpio.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/intc/intc.c" framework="" version="" source="avr32/drivers/intc/intc.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/intc/intc.h" framework="" version="" source="avr32/drivers/intc/intc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pm/pm_uc3c.c" framework="" version="" source="avr32/drivers/pm/pm_uc3c.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pm/pm_uc3c.h" framework="" version="" source="avr32/drivers/pm/pm_uc3c.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pm/power_clocks_lib.c" framework="" version="" source="avr32/drivers/pm/power_clocks_lib.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pm/power_clocks_lib.h" framework="" version="" source="avr32/drivers/pm/power_clocks_lib.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pm/sleep.h" framework="" version="" source="avr32/drivers/pm/sleep.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/scif/scif_uc3c.c" framework="" version="" source="avr32/drivers/scif/scif_uc3c.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/scif/scif_uc3c.h" framework="" version="" source="avr32/drivers/scif/scif_uc3c.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/tc/tc.c" framework="" version="" source="avr32/drivers/tc/tc.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/tc/tc.h" framework="" version="" source="avr32/drivers/tc/tc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/usart/usart.c" framework="" version="" source="avr32/drivers/usart/usart.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/usart/usart.h" framework="" version="" source="avr32/drivers/usart/usart.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/compiler.h" framework="" version="" source="avr32/utils/compiler.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/header_files/uc3d_defines_fix.h" framework="" version="" source="avr32/utils/header_files/uc3d_defines_fix.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/header_files/uc3l3_l4_defines_fix.h" framework="" version="" source="avr32/utils/header_files/uc3l3_l4_defines_fix.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/linker_scripts/at32uc3c/0512c/gcc/link_uc3c0512c.lds" framework="" version="" source="avr32/utils/linker_scripts/at32uc3c/0512c/gcc/link_uc3c0512c.lds" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/make/Makefile.avr32.in" framework="" version="" source="avr32/utils/make/Makefile.avr32.in" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/make/Makefile.avr32program.in" framework="" version="" source="avr32/utils/make/Makefile.avr32program.in" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/make/Makefile.batchisp.in" framework="" version="" source="avr32/utils/make/Makefile.batchisp.in" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/preprocessor/mrepeat.h" framework="" version="" source="avr32/utils/preprocessor/mrepeat.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/preprocessor/preprocessor.h" framework="" version="" source="avr32/utils/preprocessor/preprocessor.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/preprocessor/stringz.h" framework="" version="" source="avr32/utils/preprocessor/stringz.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/preprocessor/tpaste.h" framework="" version="" source="avr32/utils/preprocessor/tpaste.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/startup/trampoline_uc3.S" framework="" version="" source="avr32/utils/startup/trampoline_uc3.S" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/startup/trampoline_uc3.h" framework="" version="" source="avr32/utils/startup/trampoline_uc3.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/utils/status_codes.h" framework="" version="" source="avr32/utils/status_codes.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/boards/board.h" framework="" version="" source="common/boards/board.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/interrupt.h" framework="" version="" source="common/utils/interrupt.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/interrupt/interrupt_avr32.h" framework="" version="" source="common/utils/interrupt/interrupt_avr32.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/utils/parts.h" framework="" version="" source="common/utils/parts.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/config/FreeRTOSConfig.h" framework="" version="" source="thirdparty/freertos/demo/avr32_uc3_example/FreeRTOSConfig.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek/conf_example.h" framework="" version="" source="thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek/conf_example.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/avr32_uc3_example/documentation.h" framework="" version="" source="thirdparty/freertos/demo/avr32_uc3_example/documentation.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/avr32_uc3_example/main.c" framework="" version="" source="thirdparty/freertos/demo/avr32_uc3_example/main.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/avr32_uc3_example/partest/ParTest.c" framework="" version="" source="thirdparty/freertos/demo/avr32_uc3_example/partest/ParTest.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/avr32_uc3_example/serial/serial.c" framework="" version="" source="thirdparty/freertos/demo/avr32_uc3_example/serial/serial.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/AltBlckQ.h" framework="" version="" source="thirdparty/freertos/demo/common/include/AltBlckQ.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/AltBlock.h" framework="" version="" source="thirdparty/freertos/demo/common/include/AltBlock.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/AltPollQ.h" framework="" version="" source="thirdparty/freertos/demo/common/include/AltPollQ.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/AltQTest.h" framework="" version="" source="thirdparty/freertos/demo/common/include/AltQTest.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/BlockQ.h" framework="" version="" source="thirdparty/freertos/demo/common/include/BlockQ.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/GenQTest.h" framework="" version="" source="thirdparty/freertos/demo/common/include/GenQTest.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/IntQueue.h" framework="" version="" source="thirdparty/freertos/demo/common/include/IntQueue.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/PollQ.h" framework="" version="" source="thirdparty/freertos/demo/common/include/PollQ.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/QPeek.h" framework="" version="" source="thirdparty/freertos/demo/common/include/QPeek.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/blocktim.h" framework="" version="" source="thirdparty/freertos/demo/common/include/blocktim.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/comtest.h" framework="" version="" source="thirdparty/freertos/demo/common/include/comtest.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/comtest2.h" framework="" version="" source="thirdparty/freertos/demo/common/include/comtest2.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/countsem.h" framework="" version="" source="thirdparty/freertos/demo/common/include/countsem.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/crflash.h" framework="" version="" source="thirdparty/freertos/demo/common/include/crflash.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/crhook.h" framework="" version="" source="thirdparty/freertos/demo/common/include/crhook.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/death.h" framework="" version="" source="thirdparty/freertos/demo/common/include/death.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/dynamic.h" framework="" version="" source="thirdparty/freertos/demo/common/include/dynamic.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/fileIO.h" framework="" version="" source="thirdparty/freertos/demo/common/include/fileIO.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/flash.h" framework="" version="" source="thirdparty/freertos/demo/common/include/flash.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/flop.h" framework="" version="" source="thirdparty/freertos/demo/common/include/flop.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/integer.h" framework="" version="" source="thirdparty/freertos/demo/common/include/integer.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/mevents.h" framework="" version="" source="thirdparty/freertos/demo/common/include/mevents.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/partest.h" framework="" version="" source="thirdparty/freertos/demo/common/include/partest.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/print.h" framework="" version="" source="thirdparty/freertos/demo/common/include/print.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/recmutex.h" framework="" version="" source="thirdparty/freertos/demo/common/include/recmutex.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/semtest.h" framework="" version="" source="thirdparty/freertos/demo/common/include/semtest.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/include/serial.h" framework="" version="" source="thirdparty/freertos/demo/common/include/serial.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/AltBlckQ.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/AltBlckQ.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/AltBlock.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/AltBlock.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/AltPollQ.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/AltPollQ.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/AltQTest.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/AltQTest.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/BlockQ.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/BlockQ.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/GenQTest.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/GenQTest.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/PollQ.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/PollQ.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/QPeek.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/QPeek.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/blocktim.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/blocktim.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/comtest.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/comtest.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/countsem.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/countsem.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/crflash.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/crflash.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/crhook.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/crhook.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/death.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/death.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/dynamic.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/dynamic.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/flash.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/flash.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/flop.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/flop.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/integer.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/integer.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/recmutex.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/recmutex.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/demo/common/minimal/semtest.c" framework="" version="" source="thirdparty/freertos/demo/common/minimal/semtest.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/ATMEL-disclaimer.txt" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/ATMEL-disclaimer.txt" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/license/license.txt" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/license/license.txt" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/readme.txt" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/readme.txt" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/croutine.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/croutine.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/FreeRTOS.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/FreeRTOS.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/StackMacros.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/StackMacros.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/croutine.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/croutine.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/list.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/list.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/mpu_wrappers.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/mpu_wrappers.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/portable.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/portable.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/projdefs.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/projdefs.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/queue.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/queue.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/semphr.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/semphr.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/task.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/task.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/include/timers.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/include/timers.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/list.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/list.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/exception.S" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/exception.S" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/port.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/port.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/portmacro.h" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/portmacro.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/read.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/read.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/write.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3/write.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/memmang/heap_3.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/portable/memmang/heap_3.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/queue.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/queue.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/tasks.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/tasks.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/thirdparty/freertos/freertos-7.0.0/source/timers.c" framework="" version="" source="thirdparty/freertos/freertos-7.0.0/source/timers.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/wdt/wdt4.c" framework="" version="3.24.2" source="avr32\drivers\wdt\wdt4.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/wdt/wdt.h" framework="" version="3.24.2" source="avr32\drivers\wdt\wdt.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/ast/ast.c" framework="" version="3.24.2" source="avr32\drivers\ast\ast.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/ast/ast.h" framework="" version="3.24.2" source="avr32\drivers\ast\ast.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/cpu/cycle_counter/cycle_counter.h" framework="" version="3.24.2" source="avr32\drivers\cpu\cycle_counter\cycle_counter.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/uc3c/pll.c" framework="" version="3.24.2" source="common\services\clock\uc3c\pll.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/uc3c/sysclk.c" framework="" version="3.24.2" source="common\services\clock\uc3c\sysclk.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/uc3c/osc.c" framework="" version="3.24.2" source="common\services\clock\uc3c\osc.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/uc3c/pll.h" framework="" version="3.24.2" source="common\services\clock\uc3c\pll.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/genclk.h" framework="" version="3.24.2" source="common\services\clock\genclk.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/osc.h" framework="" version="3.24.2" source="common\services\clock\osc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/uc3c/genclk.h" framework="" version="3.24.2" source="common\services\clock\uc3c\genclk.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/uc3c/osc.h" framework="" version="3.24.2" source="common\services\clock\uc3c\osc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/uc3c/sysclk.h" framework="" version="3.24.2" source="common\services\clock\uc3c\sysclk.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/sysclk.h" framework="" version="3.24.2" source="common\services\clock\sysclk.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/clock/pll.h" framework="" version="3.24.2" source="common\services\clock\pll.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_clock.h" framework="" version="3.24.2" source="common\services\clock\uc3c\module_config\conf_clock.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/delay/delay.h" framework="" version="3.24.2" source="common\services\delay\delay.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/ebi/smc/smc.c" framework="" version="3.24.2" source="avr32\drivers\ebi\smc\smc.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/ebi/smc/smc.h" framework="" version="3.24.2" source="avr32\drivers\ebi\smc\smc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_ebi.h" framework="" version="3.24.2" source="avr32\drivers\ebi\smc\module_config\conf_ebi.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/twim/twim.c" framework="" version="3.24.2" source="avr32\drivers\twim\twim.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/twim/twim.h" framework="" version="3.24.2" source="avr32\drivers\twim\twim.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_twim.h" framework="" version="3.24.2" source="avr32\drivers\twim\module_config\conf_twim.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/twis/twis.c" framework="" version="3.24.2" source="avr32\drivers\twis\twis.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/twis/twis.h" framework="" version="3.24.2" source="avr32\drivers\twis\twis.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/Config/conf_twis.h" framework="" version="3.24.2" source="avr32\drivers\twis\module_config\conf_twis.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/twi/uc3_twim/twi_master.h" framework="" version="3.24.2" source="common\services\twi\uc3_twim\twi_master.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/services/twi/twi_master.h" framework="" version="3.24.2" source="common\services\twi\twi_master.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/spi/spi.c" framework="" version="3.10.1" source="avr32\drivers\spi\spi.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/spi/spi.h" framework="" version="3.10.1" source="avr32\drivers\spi\spi.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pdca/pdca.c" framework="" version="3.10.1" source="avr32\drivers\pdca\pdca.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pdca/pdca.h" framework="" version="3.10.1" source="avr32\drivers\pdca\pdca.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/eic/eic.c" framework="" version="3.20.1" source="avr32\drivers\eic\eic.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/eic/eic.h" framework="" version="3.20.1" source="avr32\drivers\eic\eic.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pevc/pevc.c" framework="" version="3.20.1" source="avr32\drivers\pevc\pevc.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pevc/uc3c_pevc_ids.h" framework="" version="3.20.1" source="avr32\drivers\pevc\uc3c_pevc_ids.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/pevc/pevc.h" framework="" version="3.20.1" source="avr32\drivers\pevc\pevc.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/qdec/qdec.c" framework="" version="3.20.1" source="avr32\drivers\qdec\qdec.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/avr32/drivers/qdec/qdec.h" framework="" version="3.20.1" source="avr32\drivers\qdec\qdec.h" changed="False" content-id="Atmel.ASF" />
+        </files>
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.20.1" />
+        </dependencies>
+        <project id="common.services.freertos.uc3_example.uc3c_ek" value="Add" config="" content-id="Atmel.ASF" />
+        <board id="board.uc3c_ek" value="Add" config="" content-id="Atmel.ASF" />
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.avrdragon</avrtool>
+    <com_atmel_avrdbg_tool_stk600>
+      <ToolOptions>
+        <InterfaceProperties>
+          <AWireMaxBaud>0</AWireMaxBaud>
+          <JtagDbgClock>0</JtagDbgClock>
+        </InterfaceProperties>
+        <InterfaceName>aWire</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.stk600</ToolType>
+      <ToolNumber>00C00000075D</ToolNumber>
+      <ToolName>STK600</ToolName>
+    </com_atmel_avrdbg_tool_stk600>
+    <avrtoolinterface>aWire</avrtoolinterface>
+    <com_atmel_avrdbg_tool_avrdragon>
+      <ToolOptions>
+        <InterfaceProperties>
+          <AWireMaxBaud>2000000</AWireMaxBaud>
+          <JtagDbgClock>0</JtagDbgClock>
+        </InterfaceProperties>
+        <InterfaceName>aWire</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.avrdragon</ToolType>
+      <ToolNumber>00A20006100B</ToolNumber>
+      <ToolName>AVR Dragon</ToolName>
+    </com_atmel_avrdbg_tool_avrdragon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <Avr32Gcc>
+  <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
+  <avr32gcc.common.outputfiles.lss>True</avr32gcc.common.outputfiles.lss>
+  <avr32gcc.common.outputfiles.eep>True</avr32gcc.common.outputfiles.eep>
+  <avr32gcc.common.outputfiles.srec>True</avr32gcc.common.outputfiles.srec>
+  <avr32gcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>BOARD=USER_BOARD</Value>
+      <Value>__FREERTOS__</Value>
+      <Value>configDBG=1</Value>
+      <Value>HNV_SPECTROMETER_FIRMWARE</Value>
+      <Value>MCU_BOARD_DN=E980031</Value>
+      <Value>WATERMARKING</Value>
+      <Value>MCU_BOARD_REV=REV_B</Value>
+      <Value>NDEBUG</Value>
+      <Value>OPERATION_AUTONOMOUS</Value>
+      <Value>OPERATION_NAVIS</Value>
+    </ListValues>
+  </avr32gcc.compiler.symbols.DefSymbols>
+  <avr32gcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../src</Value>
+      <Value>../src/config</Value>
+      <Value>../src/ASF/avr32/boards</Value>
+      <Value>../src/ASF/avr32/boards/uc3c_ek</Value>
+      <Value>../src/ASF/avr32/drivers/ast</Value>
+      <Value>../src/ASF/avr32/drivers/cpu/cycle_counter</Value>
+      <Value>../src/ASF/avr32/drivers/ebi/smc</Value>
+      <Value>../src/ASF/avr32/drivers/eic</Value>
+      <Value>../src/ASF/avr32/drivers/flashc</Value>
+      <Value>../src/ASF/avr32/drivers/gpio</Value>
+      <Value>../src/ASF/avr32/drivers/intc</Value>
+      <Value>../src/ASF/avr32/drivers/pdca</Value>
+      <Value>../src/ASF/avr32/drivers/pm</Value>
+      <Value>../src/ASF/avr32/drivers/scif</Value>
+      <Value>../src/ASF/avr32/drivers/spi</Value>
+      <Value>../src/ASF/avr32/drivers/tc</Value>
+      <Value>../src/ASF/avr32/drivers/twim</Value>
+      <Value>../src/ASF/avr32/drivers/twis</Value>
+      <Value>../src/ASF/avr32/drivers/usart</Value>
+      <Value>../src/ASF/avr32/drivers/wdt</Value>
+      <Value>../src/ASF/avr32/utils</Value>
+      <Value>../src/ASF/avr32/utils/preprocessor</Value>
+      <Value>../src/ASF/common/boards</Value>
+      <Value>../src/ASF/common/services/clock</Value>
+      <Value>../src/ASF/common/services/delay</Value>
+      <Value>../src/ASF/common/services/twi</Value>
+      <Value>../src/ASF/common/utils</Value>
+      <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/include</Value>
+      <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3</Value>
+      <Value>../src/avr32rlib/Components</Value>
+      <Value>../src/avr32rlib/Components/Accelerometer/LIS3DSH</Value>
+      <Value>../src/avr32rlib/Components/ADC/AD7677</Value>
+      <Value>../src/avr32rlib/Components/Compass/lsm303</Value>
+      <Value>../src/avr32rlib/Components/FIFO/SN74V283</Value>
+      <Value>../src/avr32rlib/Components/FlashMemory</Value>
+      <Value>../src/avr32rlib/Components/FlashMemory/S25FL512S</Value>
+      <Value>../src/avr32rlib/Components/Spectrometer/CGS</Value>
+      <Value>../src/avr32rlib/Components/Spectrometer/Temperature</Value>
+      <Value>../../../../Shared/FirmwareDefinitions</Value>
+      <Value>../../../../Shared/HardwareDefinitions</Value>
+      <Value>../src/avr32rlib/Utils/zlib-1.2.8</Value>
+      <Value>../src/avr32rlib/Utils/Errno</Value>
+      <Value>../src/avr32rlib/Utils/PDMABuffer</Value>
+      <Value>../src/avr32rlib/Utils/Serial/Telemetry</Value>
+      <Value>../src/ASF/avr32/drivers/pevc</Value>
+      <Value>../src/ASF/avr32/drivers/qdec</Value>
+    </ListValues>
+  </avr32gcc.compiler.directories.IncludePaths>
+  <avr32gcc.compiler.optimization.OtherFlags>-fdata-sections</avr32gcc.compiler.optimization.OtherFlags>
+  <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
+  <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
+  <avr32gcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -mno-cond-exec-before-reload</avr32gcc.compiler.miscellaneous.OtherFlags>
+  <avr32gcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avr32gcc.linker.libraries.Libraries>
+  <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
+  <avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>
+  <avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>
+  <avr32gcc.linker.miscellaneous.LinkerFlags>-Wl,--relax -T../src/ASF/avr32/utils/linker_scripts/at32uc3c/0512c/gcc/link_uc3c0512c.lds -Wl,-e,_trampoline</avr32gcc.linker.miscellaneous.LinkerFlags>
+  <avr32gcc.assembler.general.AssemblerFlags>-mrelax</avr32gcc.assembler.general.AssemblerFlags>
+  <avr32gcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>../thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+      <Value>../src/ASF/avr32/utils</Value>
+      <Value>../src/config</Value>
+      <Value>../src/ASF/thirdparty/freertos/demo/common/include</Value>
+      <Value>../src/ASF/common/utils</Value>
+      <Value>../src</Value>
+      <Value>../src/ASF/avr32/drivers/scif</Value>
+      <Value>../src/ASF/avr32/boards</Value>
+      <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example</Value>
+      <Value>../src/ASF/avr32/drivers/tc</Value>
+      <Value>../src/ASF/avr32/drivers/gpio</Value>
+      <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/include</Value>
+      <Value>../src/ASF/avr32/boards/uc3c_ek</Value>
+      <Value>../src/ASF/common/boards</Value>
+      <Value>../src/ASF/avr32/utils/preprocessor</Value>
+      <Value>../src/ASF/avr32/drivers/intc</Value>
+      <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+      <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3</Value>
+      <Value>../src/ASF/avr32/drivers/pm</Value>
+      <Value>../src/ASF/avr32/drivers/usart</Value>
+      <Value>../src/ASF/avr32/drivers/flashc</Value>
+      <Value>../src/ASF/avr32/drivers/wdt</Value>
+      <Value>../src/ASF/avr32/drivers/ast</Value>
+      <Value>../src/ASF/avr32/drivers/cpu/cycle_counter</Value>
+      <Value>../src/ASF/common/services/clock</Value>
+      <Value>../src/ASF/common/services/delay</Value>
+      <Value>../src/ASF/avr32/drivers/ebi/smc</Value>
+      <Value>../src/ASF/avr32/drivers/twim</Value>
+      <Value>../src/ASF/avr32/drivers/twis</Value>
+      <Value>../src/ASF/common/services/twi</Value>
+      <Value>../src/ASF/avr32/drivers/spi</Value>
+      <Value>../src/ASF/avr32/drivers/pdca</Value>
+      <Value>../src/ASF/avr32/drivers/eic</Value>
+      <Value>../src/ASF/avr32/drivers/pevc</Value>
+      <Value>../src/ASF/avr32/drivers/qdec</Value>
+    </ListValues>
+  </avr32gcc.assembler.general.IncludePaths>
+  <avr32gcc.preprocessingassembler.general.AssemblerFlags>-mrelax -DBOARD=UC3C_EK -D__FREERTOS__</avr32gcc.preprocessingassembler.general.AssemblerFlags>
+  <avr32gcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>../thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+      <Value>../src/ASF/avr32/utils</Value>
+      <Value>../src/config</Value>
+      <Value>../src/ASF/thirdparty/freertos/demo/common/include</Value>
+      <Value>../src/ASF/common/utils</Value>
+      <Value>../src</Value>
+      <Value>../src/ASF/avr32/drivers/scif</Value>
+      <Value>../src/ASF/avr32/boards</Value>
+      <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example</Value>
+      <Value>../src/ASF/avr32/drivers/tc</Value>
+      <Value>../src/ASF/avr32/drivers/gpio</Value>
+      <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/include</Value>
+      <Value>../src/ASF/avr32/boards/uc3c_ek</Value>
+      <Value>../src/ASF/common/boards</Value>
+      <Value>../src/ASF/avr32/utils/preprocessor</Value>
+      <Value>../src/ASF/avr32/drivers/intc</Value>
+      <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+      <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3</Value>
+      <Value>../src/ASF/avr32/drivers/pm</Value>
+      <Value>../src/ASF/avr32/drivers/usart</Value>
+      <Value>../src/ASF/avr32/drivers/flashc</Value>
+      <Value>../src/ASF/avr32/drivers/wdt</Value>
+      <Value>../src/ASF/avr32/drivers/ast</Value>
+      <Value>../src/ASF/avr32/drivers/cpu/cycle_counter</Value>
+      <Value>../src/ASF/common/services/clock</Value>
+      <Value>../src/ASF/common/services/delay</Value>
+      <Value>../src/ASF/avr32/drivers/ebi/smc</Value>
+      <Value>../src/ASF/avr32/drivers/twim</Value>
+      <Value>../src/ASF/avr32/drivers/twis</Value>
+      <Value>../src/ASF/common/services/twi</Value>
+      <Value>../src/ASF/avr32/drivers/spi</Value>
+      <Value>../src/ASF/avr32/drivers/pdca</Value>
+      <Value>../src/ASF/avr32/drivers/eic</Value>
+      <Value>../src/ASF/avr32/drivers/pevc</Value>
+      <Value>../src/ASF/avr32/drivers/qdec</Value>
+    </ListValues>
+  </avr32gcc.preprocessingassembler.general.IncludePaths>
+</Avr32Gcc>
+    </ToolchainSettings>
+    <PreBuildEvent>powershell -Command "(gci ..\src\extern.spectrometer.c).LastWriteTime = Get-Date"</PreBuildEvent>
+    <PostBuildEvent>..\packELF.bat HyperNAV_Spectrometer_Release</PostBuildEvent>
+    <OutputFileName>HyperNAV_Spectrometer_Release</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <Avr32Gcc>
+        <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
+        <avr32gcc.common.outputfiles.lss>True</avr32gcc.common.outputfiles.lss>
+        <avr32gcc.common.outputfiles.eep>True</avr32gcc.common.outputfiles.eep>
+        <avr32gcc.common.outputfiles.srec>True</avr32gcc.common.outputfiles.srec>
+        <avr32gcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>BOARD=USER_BOARD</Value>
+            <Value>__FREERTOS__</Value>
+            <Value>configDBG=1</Value>
+            <Value>HNV_SPECTROMETER_FIRMWARE</Value>
+            <Value>MCU_BOARD_DN=E980031</Value>
+            <Value>WATERMARKING</Value>
+            <Value>MCU_BOARD_REV=REV_A</Value>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avr32gcc.compiler.symbols.DefSymbols>
+        <avr32gcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+            <Value>../src/ASF/avr32/boards</Value>
+            <Value>../src/ASF/avr32/boards/uc3c_ek</Value>
+            <Value>../src/ASF/avr32/drivers/ast</Value>
+            <Value>../src/ASF/avr32/drivers/cpu/cycle_counter</Value>
+            <Value>../src/ASF/avr32/drivers/ebi/smc</Value>
+            <Value>../src/ASF/avr32/drivers/eic</Value>
+            <Value>../src/ASF/avr32/drivers/flashc</Value>
+            <Value>../src/ASF/avr32/drivers/gpio</Value>
+            <Value>../src/ASF/avr32/drivers/intc</Value>
+            <Value>../src/ASF/avr32/drivers/pdca</Value>
+            <Value>../src/ASF/avr32/drivers/pm</Value>
+            <Value>../src/ASF/avr32/drivers/scif</Value>
+            <Value>../src/ASF/avr32/drivers/spi</Value>
+            <Value>../src/ASF/avr32/drivers/tc</Value>
+            <Value>../src/ASF/avr32/drivers/twim</Value>
+            <Value>../src/ASF/avr32/drivers/twis</Value>
+            <Value>../src/ASF/avr32/drivers/usart</Value>
+            <Value>../src/ASF/avr32/drivers/wdt</Value>
+            <Value>../src/ASF/avr32/utils</Value>
+            <Value>../src/ASF/avr32/utils/preprocessor</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/common/services/clock</Value>
+            <Value>../src/ASF/common/services/delay</Value>
+            <Value>../src/ASF/common/services/twi</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/include</Value>
+            <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3</Value>
+            <Value>../src/avr32rlib/Components/Accelerometer/LIS3DSH</Value>
+            <Value>../src/avr32rlib/Components/ADC/AD7677</Value>
+            <Value>../src/avr32rlib/Components/Compass/lsm303</Value>
+            <Value>../src/avr32rlib/Components/Spectrometer/CGS</Value>
+            <Value>../src/avr32rlib/Components/Spectrometer/Temperature</Value>
+            <Value>../../../../Shared/FirmwareDefinitions</Value>
+            <Value>../../../../Shared/HardwareDefinitions</Value>
+            <Value>../src/avr32rlib/Utils/zlib-1.2.8</Value>
+            <Value>../src/avr32rlib/Utils/Errno</Value>
+            <Value>../src/avr32rlib/Utils/PDMABuffer</Value>
+            <Value>../src/avr32rlib/Utils/Serial/Telemetry</Value>
+            <Value>../src/ASF/avr32/drivers/pevc</Value>
+            <Value>../src/ASF/avr32/drivers/qdec</Value>
+          </ListValues>
+        </avr32gcc.compiler.directories.IncludePaths>
+        <avr32gcc.compiler.optimization.OtherFlags>-fdata-sections</avr32gcc.compiler.optimization.OtherFlags>
+        <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
+        <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
+        <avr32gcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -mno-cond-exec-before-reload</avr32gcc.compiler.miscellaneous.OtherFlags>
+        <avr32gcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avr32gcc.linker.libraries.Libraries>
+        <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
+        <avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>
+        <avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>
+        <avr32gcc.linker.miscellaneous.LinkerFlags>-Wl,--relax -T../src/ASF/avr32/utils/linker_scripts/at32uc3c/0512c/gcc/link_uc3c0512c.lds -Wl,-e,_trampoline</avr32gcc.linker.miscellaneous.LinkerFlags>
+        <avr32gcc.assembler.general.AssemblerFlags>-mrelax</avr32gcc.assembler.general.AssemblerFlags>
+        <avr32gcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>../thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+            <Value>../src/ASF/avr32/utils</Value>
+            <Value>../src/config</Value>
+            <Value>../src/ASF/thirdparty/freertos/demo/common/include</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src</Value>
+            <Value>../src/ASF/avr32/drivers/scif</Value>
+            <Value>../src/ASF/avr32/boards</Value>
+            <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example</Value>
+            <Value>../src/ASF/avr32/drivers/tc</Value>
+            <Value>../src/ASF/avr32/drivers/gpio</Value>
+            <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/include</Value>
+            <Value>../src/ASF/avr32/boards/uc3c_ek</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/avr32/utils/preprocessor</Value>
+            <Value>../src/ASF/avr32/drivers/intc</Value>
+            <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+            <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3</Value>
+            <Value>../src/ASF/avr32/drivers/pm</Value>
+            <Value>../src/ASF/avr32/drivers/usart</Value>
+            <Value>../src/ASF/avr32/drivers/flashc</Value>
+            <Value>../src/ASF/avr32/drivers/wdt</Value>
+            <Value>../src/ASF/avr32/drivers/ast</Value>
+            <Value>../src/ASF/avr32/drivers/cpu/cycle_counter</Value>
+            <Value>../src/ASF/common/services/clock</Value>
+            <Value>../src/ASF/common/services/delay</Value>
+            <Value>../src/ASF/avr32/drivers/ebi/smc</Value>
+            <Value>../src/ASF/avr32/drivers/twim</Value>
+            <Value>../src/ASF/avr32/drivers/twis</Value>
+            <Value>../src/ASF/common/services/twi</Value>
+            <Value>../src/ASF/avr32/drivers/spi</Value>
+            <Value>../src/ASF/avr32/drivers/pdca</Value>
+            <Value>../src/ASF/avr32/drivers/eic</Value>
+            <Value>../src/ASF/avr32/drivers/pevc</Value>
+            <Value>../src/ASF/avr32/drivers/qdec</Value>
+          </ListValues>
+        </avr32gcc.assembler.general.IncludePaths>
+        <avr32gcc.preprocessingassembler.general.AssemblerFlags>-mrelax -DBOARD=UC3C_EK -D__FREERTOS__</avr32gcc.preprocessingassembler.general.AssemblerFlags>
+        <avr32gcc.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>../thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+            <Value>../src/ASF/avr32/utils</Value>
+            <Value>../src/config</Value>
+            <Value>../src/ASF/thirdparty/freertos/demo/common/include</Value>
+            <Value>../src/ASF/common/utils</Value>
+            <Value>../src</Value>
+            <Value>../src/ASF/avr32/drivers/scif</Value>
+            <Value>../src/ASF/avr32/boards</Value>
+            <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example</Value>
+            <Value>../src/ASF/avr32/drivers/tc</Value>
+            <Value>../src/ASF/avr32/drivers/gpio</Value>
+            <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/include</Value>
+            <Value>../src/ASF/avr32/boards/uc3c_ek</Value>
+            <Value>../src/ASF/common/boards</Value>
+            <Value>../src/ASF/avr32/utils/preprocessor</Value>
+            <Value>../src/ASF/avr32/drivers/intc</Value>
+            <Value>../src/ASF/thirdparty/freertos/demo/avr32_uc3_example/at32uc3c0512c_uc3c_ek</Value>
+            <Value>../src/ASF/thirdparty/freertos/freertos-7.0.0/source/portable/gcc/avr32_uc3</Value>
+            <Value>../src/ASF/avr32/drivers/pm</Value>
+            <Value>../src/ASF/avr32/drivers/usart</Value>
+            <Value>../src/ASF/avr32/drivers/flashc</Value>
+            <Value>../src/ASF/avr32/drivers/wdt</Value>
+            <Value>../src/ASF/avr32/drivers/ast</Value>
+            <Value>../src/ASF/avr32/drivers/cpu/cycle_counter</Value>
+            <Value>../src/ASF/common/services/clock</Value>
+            <Value>../src/ASF/common/services/delay</Value>
+            <Value>../src/ASF/avr32/drivers/ebi/smc</Value>
+            <Value>../src/ASF/avr32/drivers/twim</Value>
+            <Value>../src/ASF/avr32/drivers/twis</Value>
+            <Value>../src/ASF/common/services/twi</Value>
+            <Value>../src/ASF/avr32/drivers/spi</Value>
+            <Value>../src/ASF/avr32/drivers/pdca</Value>
+            <Value>../src/ASF/avr32/drivers/eic</Value>
+            <Value>../src/ASF/avr32/drivers/pevc</Value>
+            <Value>../src/ASF/avr32/drivers/qdec</Value>
+          </ListValues>
+        </avr32gcc.preprocessingassembler.general.IncludePaths>
+        <avr32gcc.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcc.compiler.optimization.DebugLevel>
+        <avr32gcc.assembler.debugging.DebugLevel>Default (-g)</avr32gcc.assembler.debugging.DebugLevel>
+        <avr32gcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</avr32gcc.preprocessingassembler.debugging.DebugLevel>
+      </Avr32Gcc>
+    </ToolchainSettings>
+    <OutputFileName>HyperNAV_Spectrometer_Debug</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <PreBuildEvent>powershell -Command "(gci ..\src\extern.spectrometer.c).LastWriteTime = Get-Date"</PreBuildEvent>
+    <PostBuildEvent>..\packELF.bat HyperNAV_Spectrometer_Debug</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\ASF\" />
+    <Folder Include="src\ASF\avr32\" />
+    <Folder Include="src\ASF\avr32\boards\" />
+    <Folder Include="src\ASF\avr32\boards\stk600\" />
+    <Folder Include="src\ASF\avr32\boards\stk600\rcuc3c0\" />
+    <Folder Include="src\ASF\avr32\drivers\" />
+    <Folder Include="src\ASF\avr32\drivers\ast\" />
+    <Folder Include="src\ASF\avr32\drivers\cpu\" />
+    <Folder Include="src\ASF\avr32\drivers\cpu\cycle_counter\" />
+    <Folder Include="src\ASF\avr32\drivers\ebi\" />
+    <Folder Include="src\ASF\avr32\drivers\ebi\smc\" />
+    <Folder Include="src\ASF\avr32\drivers\eic\" />
+    <Folder Include="src\ASF\avr32\drivers\flashc\" />
+    <Folder Include="src\ASF\avr32\drivers\gpio\" />
+    <Folder Include="src\ASF\avr32\drivers\intc\" />
+    <Folder Include="src\ASF\avr32\drivers\pdca\" />
+    <Folder Include="src\ASF\avr32\drivers\pevc\" />
+    <Folder Include="src\ASF\avr32\drivers\pm\" />
+    <Folder Include="src\ASF\avr32\drivers\qdec\" />
+    <Folder Include="src\ASF\avr32\drivers\scif\" />
+    <Folder Include="src\ASF\avr32\drivers\spi\" />
+    <Folder Include="src\ASF\avr32\drivers\tc\" />
+    <Folder Include="src\ASF\avr32\drivers\twim\" />
+    <Folder Include="src\ASF\avr32\drivers\usart\" />
+    <Folder Include="src\ASF\avr32\drivers\wdt\" />
+    <Folder Include="src\ASF\avr32\utils\" />
+    <Folder Include="src\ASF\avr32\utils\header_files\" />
+    <Folder Include="src\ASF\avr32\utils\linker_scripts\" />
+    <Folder Include="src\ASF\avr32\utils\linker_scripts\at32uc3c\" />
+    <Folder Include="src\ASF\avr32\utils\linker_scripts\at32uc3c\0512c\" />
+    <Folder Include="src\ASF\avr32\utils\linker_scripts\at32uc3c\0512c\gcc\" />
+    <Folder Include="src\ASF\avr32\utils\make\" />
+    <Folder Include="src\ASF\avr32\utils\preprocessor\" />
+    <Folder Include="src\ASF\avr32\utils\startup\" />
+    <Folder Include="src\ASF\common\" />
+    <Folder Include="src\ASF\common\boards\" />
+    <Folder Include="src\ASF\common\services\" />
+    <Folder Include="src\ASF\common\services\clock\" />
+    <Folder Include="src\ASF\common\services\clock\uc3c\" />
+    <Folder Include="src\ASF\common\services\delay\" />
+    <Folder Include="src\ASF\common\services\twi\" />
+    <Folder Include="src\ASF\common\services\twi\uc3_twim\" />
+    <Folder Include="src\ASF\common\utils\" />
+    <Folder Include="src\ASF\common\utils\interrupt\" />
+    <Folder Include="src\ASF\thirdparty\" />
+    <Folder Include="src\ASF\thirdparty\freertos\" />
+    <Folder Include="src\ASF\thirdparty\freertos\freertos-7.0.0\" />
+    <Folder Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\" />
+    <Folder Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\" />
+    <Folder Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\" />
+    <Folder Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\" />
+    <Folder Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\" />
+    <Folder Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\memmang\" />
+    <Folder Include="src\avr32rlib\" />
+    <Folder Include="src\avr32rlib\" />
+    <Folder Include="src\avr32rlib\Components\" />
+    <Folder Include="src\avr32rlib\Components\Accelerometer\" />
+    <Folder Include="src\avr32rlib\Components\Accelerometer\LIS3DSH\" />
+    <Folder Include="src\avr32rlib\Components\ADC" />
+    <Folder Include="src\avr32rlib\Components\ADC\AD7677" />
+    <Folder Include="src\avr32rlib\Components\Compass" />
+    <Folder Include="src\avr32rlib\Components\Compass\lsm303" />
+    <Folder Include="src\avr32rlib\Components\FIFO" />
+    <Folder Include="src\avr32rlib\Components\FIFO\SN74V283" />
+    <Folder Include="src\avr32rlib\Components\FlashMemory" />
+    <Folder Include="src\avr32rlib\Components\FlashMemory\S25FL512S" />
+    <Folder Include="src\avr32rlib\Components\Spectrometer\" />
+    <Folder Include="src\avr32rlib\Components\Spectrometer\CGS\" />
+    <Folder Include="src\avr32rlib\Components\Spectrometer\Temperature\" />
+    <Folder Include="src\avr32rlib\Utils\" />
+    <Folder Include="src\avr32rlib\Utils\" />
+    <Folder Include="src\avr32rlib\Utils\Errno\" />
+    <Folder Include="src\avr32rlib\Utils\Errno\" />
+    <Folder Include="src\avr32rlib\Utils\PDMABuffer" />
+    <Folder Include="src\avr32rlib\Utils\Serial" />
+    <Folder Include="src\avr32rlib\Utils\Serial\Telemetry" />
+    <Folder Include="src\avr32rlib\Utils\zlib-1.2.8" />
+    <Folder Include="src\config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ASF\avr32\drivers\cpu\cycle_counter\cycle_counter.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\genclk.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\osc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\uc3c\genclk.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\sysclk.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\clock\pll.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="..\..\..\Shared\FirmwareDefinitions\config_data.h">
+      <SubType>compile</SubType>
+      <Link>src\config_data.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\FirmwareDefinitions\data_exchange_packet.h">
+      <SubType>compile</SubType>
+      <Link>src\data_exchange_packet.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\FirmwareDefinitions\mcoms_data.h">
+      <SubType>compile</SubType>
+      <Link>src\mcoms_data.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\FirmwareDefinitions\ocr_data.h">
+      <SubType>compile</SubType>
+      <Link>src\ocr_data.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\FirmwareDefinitions\profile_packet.shared.h">
+      <SubType>compile</SubType>
+      <Link>src\profile_packet.shared.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\FirmwareDefinitions\spectrometer_data.h">
+      <SubType>compile</SubType>
+      <Link>src\spectrometer_data.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\FirmwareDefinitions\version.hypernav.h">
+      <SubType>compile</SubType>
+      <Link>src\version.hypernav.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\HardwareDefinitions\HyperNAV\E980031.h">
+      <SubType>compile</SubType>
+      <Link>src\E980031.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\Shared\HardwareDefinitions\SatlanticHardware.h">
+      <SubType>compile</SubType>
+      <Link>src\config\SatlanticHardware.h</Link>
+    </Compile>
+    <Compile Include="src\ASF\avr32\drivers\ebi\smc\smc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\ebi\smc\smc.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\eic\eic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\eic\eic.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\pdca\pdca.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\pdca\pdca.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\pevc\pevc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\pevc\uc3c_pevc_ids.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\pevc\pevc.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\qdec\qdec.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\qdec\qdec.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\spi\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\spi\spi.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\twim\twim.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\twim\twim.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\clock\uc3c\osc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\clock\uc3c\osc.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\clock\uc3c\pll.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\clock\uc3c\pll.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\services\clock\uc3c\sysclk.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\services\clock\uc3c\sysclk.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\delay\delay.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\twi\uc3_twim\twi_master.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\services\twi\twi_master.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\avr32rlib\Components\Accelerometer\LIS3DSH\lis3dsh.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Accelerometer\LIS3DSH\lis3dsh.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\ADC\AD7677\AD7677.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\ADC\AD7677\AD7677.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\ADC\AD7677\AD7677_cfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Compass\lsm303\lsm303.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Compass\lsm303\lsm303.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FIFO\SN74V283\sn74v283.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FIFO\SN74V283\sn74v283.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\components.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FlashMemory\FlashMemory.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FlashMemory\FlashMemory.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FlashMemory\S25FL512S\slld.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FlashMemory\S25FL512S\slld.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FlashMemory\S25FL512S\slld_hal.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FlashMemory\S25FL512S\slld_hal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\FlashMemory\S25FL512S\slld_targetspecific.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Spectrometer\CGS\cgs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Spectrometer\CGS\cgs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Spectrometer\CGS\cgs_cfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Spectrometer\Temperature\max6633.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Components\Spectrometer\Temperature\max6633.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\Errno\avr32rerrno.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\Errno\avr32rerrno.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\Errno\avr32rerrno.h" />
+    <Compile Include="src\avr32rlib\Utils\PDMABuffer\pdmabuffer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\PDMABuffer\pdmabuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\Serial\Telemetry\telemetry.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\Serial\Telemetry\telemetry.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\adler32.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\crc32.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\crc32.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\deflate.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\deflate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\gzguts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\inffast.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\inffast.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\inffixed.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\inflate.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\inflate.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\inftrees.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\inftrees.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\trees.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\trees.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\zconf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\zlib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\zutil.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\avr32rlib\Utils\zlib-1.2.8\zutil.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\smc_fifo_B.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\extern.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\gplp_trace.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\orientation.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\orientation.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\pressure.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\pressure.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\shutters.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\shutters.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\SunPosition.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\SunPosition.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\twi_mux.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\twi_mux.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\command.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\command.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\config\conf_clock.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\config.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\config\conf_ebi.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_twim.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_twis.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\config\smc_fifo_A.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\smc_sram.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\config\telemetry_cfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\data_acquisition.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\data_acquisition.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\data_exchange.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\data_exchange.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\data_exchange_packet.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\errorcodes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\extern.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\hypernav.sys.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\hypernav.sys.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\info.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\info.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\io_funcs.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\io_funcs.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\main.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\power.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\power.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\profile_packet.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\profile_packet.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\profile_transmit.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\profile_transmit.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\setup.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\setup.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\SPECtasks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\SPECtasks.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\spi.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\spi.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sram_memory_map.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\sram_memory_map.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\systemtime.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\systemtime.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\tasks.spectrometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\tasks.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\version.spectrometer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\wdt\wdt.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\ast\ast.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\ast\ast.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\wdt\wdt4.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\asf.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\linker_scripts\at32uc3c\0512c\gcc\link_uc3c0512c.lds">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\make\Makefile.avr32.in">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\make\Makefile.avr32program.in">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\make\Makefile.batchisp.in">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\ATMEL-disclaimer.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\readme.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\queue.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\compiler.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\utils\parts.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\list.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\timers.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\utils\interrupt.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\intc\intc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\FreeRTOSConfig.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\preprocessor\tpaste.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\tc\tc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\flashc\flashc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\preprocessor\stringz.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\pm\pm_uc3c.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\projdefs.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\mpu_wrappers.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\preprocessor\preprocessor.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\portmacro.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\pm\power_clocks_lib.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\portable.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\startup\trampoline_uc3.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\semphr.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\StackMacros.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\boards\board.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\header_files\uc3d_defines_fix.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\gpio\gpio.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\common\utils\interrupt\interrupt_avr32.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\drivers\scif\scif_uc3c.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\header_files\uc3l3_l4_defines_fix.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\status_codes.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\avr32\utils\preprocessor\mrepeat.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\FreeRTOS.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\task.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\include\croutine.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\flashc\flashc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\avr32\drivers\gpio\gpio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\avr32\drivers\intc\intc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\avr32\drivers\pm\pm_uc3c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\avr32\drivers\pm\power_clocks_lib.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\pm\sleep.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\drivers\scif\scif_uc3c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\avr32\drivers\tc\tc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\avr32\drivers\usart\usart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\avr32\drivers\usart\usart.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\avr32\utils\startup\trampoline_uc3.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\croutine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\exception.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\port.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\read.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\gcc\avr32_uc3\write.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\portable\memmang\heap_3.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\queue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\tasks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\thirdparty\freertos\freertos-7.0.0\source\timers.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

@@ -1,0 +1,62 @@
+.\"   Copyright (C) 2006 Dana Swift
+.\"                                                                               
+.\"   This program is free software; you can redistribute it and/or modify      
+.\"   it under the terms of the GNU General Public License as published by      
+.\"   the Free Software Foundation; either version 2 of the License, or         
+.\"   (at your option) any later version.                                       
+.\"                                                                               
+.\"   This program is distributed in the hope that it will be useful,           
+.\"   but WITHOUT ANY WARRANTY; without even the implied warranty of            
+.\"   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             
+.\"   GNU General Public License for more details.                              
+.\"                                                                               
+.\"   You should have received a copy of the GNU General Public License         
+.\"   along with this program; if not, write to the Free Software               
+.\"   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+.\"
+.TH RUDICSD 1 "$Date: 2006/05/21 17:31:08 $" "Printed: \n(yr-\n(mo-\n(dy" "SwiftWare"
+.SH NAME
+rudicsd \- Iridium RUDICS server
+.SH SYNOPSIS
+.ft B
+.HP
+rudicsd
+.nh
+\%[-?]
+\%[-h]
+\%[-i]
+\%[-t \fIMin\fP]
+.hy
+.ft
+.SH DESCRIPTION
+\fBRudicsd\fP is the server for Iridium RUDICS connections. 
+.SH OPTIONS
+.IP "\fB-? -h\fP"
+Print a terse usage summary.
+.IP "\fB-i\fP"
+Inhibit syslog entries in \fI/var/log/rudics.log\fP.
+.IP "\fB-t\fP \fIMin\fP"
+This option implements a financial safety valve that will kill the RUDICS
+server after a specified number of minutes so that orphaned Iridium
+connections will not remain connected indefinitely.  The argument (ie.,
+\fIMin\fP) to this option represents the maximum number of minutes allowed
+for the connection.  The argument must be in the range of 5-60 minutes and
+the default value is 15 minutes.
+.SH SECURITY
+.LP
+Since \fBrudicsd\fP does not encrypt communications and attempts very little
+by way of client authentication, then \fBrudicsd\fP should be placed under
+the control of \fBxinetd(8)\fP in order to take advantage of TCP wrappers
+for access control.  Rudics connections are always initiated by the iridium
+gateway and therefore the IP address of the client can be known in advance.
+Configure TCP wrappers so that xinetd(8) will accept RUDICS connections only
+from this IP address.
+.RE
+.SH "SEE ALSO"
+.LP
+.BR xinetd(8),
+.BR xinetd.conf(5),
+.BR xinetd.log(5)
+.SH AUTHOR
+.LP
+Dana Swift

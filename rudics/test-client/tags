@@ -1,0 +1,227 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACK	xmodem.c	46;"	d	file:
+ACK	xmodem.h	46;"	d
+BS	xmodem.c	47;"	d	file:
+BS	xmodem.h	47;"	d
+BadPkt	xmodem.c	115;"	d	file:
+BadPkt	xmodem.h	115;"	d
+BinMode	rx.c	/^int BinMode=1;$/;"	v
+BufSize	xmodem.c	/^int BufSize(struct Packet *pkt)$/;"	f
+ByteTimeout	xmodem.c	/^const int ByteTimeout=2, PacketTimeout=10, EotTimeout=60;$/;"	v
+CAN	xmodem.c	49;"	d	file:
+CAN	xmodem.h	49;"	d
+CFLAGS	makefile	/^CFLAGS= -gstabs -I. -Wall -Wno-implicit$/;"	m
+CHAT_H	chat.c	2;"	d	file:
+CHAT_H	chat.h	2;"	d
+CMD	login.c	34;"	d	file:
+CRC16BIT_H	crc16bit.c	2;"	d	file:
+CRC16BIT_H	crc16bit.h	2;"	d
+CSTRING_H	cstring.c	2;"	d	file:
+CSTRING_H	cstring.h	2;"	d
+CanPkt	xmodem.c	111;"	d	file:
+CanPkt	xmodem.h	111;"	d
+CheckCanPkt	xmodem.c	/^int CheckCanPkt(const struct SerialPort *port)$/;"	f
+CheckEotPkt	rx.c	/^static int CheckEotPkt(const struct SerialPort *port,struct Packet *pkt,unsigned char PktNum)$/;"	f	file:
+CloseRudicsPort	socket.c	/^int CloseRudicsPort(void)$/;"	f
+Crc16Bit	crc16bit.c	/^unsigned int Crc16Bit(const unsigned char *msg,unsigned int len)$/;"	f
+CrcMode	rx.c	/^int CrcMode='C';$/;"	v
+CrcMode	tx.c	/^static int CrcMode='C';$/;"	v	file:
+DOWNLOAD_H	download.c	2;"	d	file:
+DOWNLOAD_H	download.h	2;"	d
+EOT	xmodem.c	45;"	d	file:
+EOT	xmodem.h	45;"	d
+EXPECT_H	expect.c	2;"	d	file:
+EXPECT_H	expect.h	2;"	d
+EotPkt	xmodem.c	119;"	d	file:
+EotPkt	xmodem.h	119;"	d
+EotTimeout	xmodem.c	/^const int ByteTimeout=2, PacketTimeout=10, EotTimeout=60;$/;"	v
+FalseEot	xmodem.c	110;"	d	file:
+FalseEot	xmodem.h	110;"	d
+GetReceiverResponse	tx.c	/^static int GetReceiverResponse(const struct SerialPort *port, time_t timeout)$/;"	f	file:
+LOGGER_H	logger.c	2;"	d	file:
+LOGGER_H	logger.h	2;"	d
+LOGIN_H	login.c	2;"	d	file:
+LOGIN_H	login.h	2;"	d
+LogAdd	logger.c	/^long int LogAdd(const char *format,...)$/;"	f
+LogAttach	logger.c	/^int LogAttach(FILE *stream) $/;"	f
+LogClose	logger.c	/^int LogClose(void)$/;"	f
+LogEntry	logger.c	/^long int LogEntry(cc *function_name,cc *format,...)$/;"	f
+LogOpen	logger.c	/^int LogOpen(const char *fname,char mode)$/;"	f
+LogOpenAuto	logger.c	/^int LogOpenAuto(const char *basepath)$/;"	f
+LogPacket	xmodem.c	/^int LogPacket(struct Packet *pkt)$/;"	f
+LogSize	logger.c	/^long int LogSize(void)$/;"	f
+LogStream	logger.c	/^FILE *LogStream(void)$/;"	f
+LoggerChangeLog	logger.c	92;"	d	file:
+LoggerChangeLog	logger.h	89;"	d
+MAXBUFSIZE	xmodem.c	41;"	d	file:
+MAXBUFSIZE	xmodem.h	41;"	d
+MAXFMTLEN	logger.c	138;"	d	file:
+MAXLEN	logger.c	455;"	d	file:
+MAXLEN	logger.c	480;"	d	file:
+MaxLogSize	logger.c	/^persistent long int MaxLogSize;$/;"	v
+MaxSessionTime	xmodem.c	/^long int MaxSessionTime=0;$/;"	v
+NAK	xmodem.c	48;"	d	file:
+NAK	xmodem.h	48;"	d
+NRetry	xmodem.c	/^const int NRetry = 10;$/;"	v
+NUL	xmodem.c	42;"	d	file:
+NUL	xmodem.h	42;"	d
+NegotiateCrcMode	tx.c	/^static int NegotiateCrcMode(const struct SerialPort *port,time_t timeout)$/;"	f	file:
+NoPkt	xmodem.c	117;"	d	file:
+NoPkt	xmodem.h	117;"	d
+NullArg	xmodem.c	116;"	d	file:
+NullArg	xmodem.h	116;"	d
+OkPkt	xmodem.c	118;"	d	file:
+OkPkt	xmodem.h	118;"	d
+OpenRudicsPort	socket.c	/^int OpenRudicsPort(const char *hostname)$/;"	f
+PAD	xmodem.c	50;"	d	file:
+PAD	xmodem.h	50;"	d
+PKT_H	pkt.c	2;"	d	file:
+PKT_H	pkt.h	2;"	d
+Packet	xmodem.c	/^struct Packet$/;"	s	file:
+Packet	xmodem.h	/^struct Packet$/;"	s
+PacketTimeout	xmodem.c	/^const int ByteTimeout=2, PacketTimeout=10, EotTimeout=60;$/;"	v
+Pkt128b	pkt.c	/^void Pkt128b(void)$/;"	f
+Pkt1k	pkt.c	/^void Pkt1k(void)$/;"	f
+PktChangeLog	pkt.c	22;"	d	file:
+PktChangeLog	pkt.h	22;"	d
+PktMonitor	pkt.c	/^unsigned char PktMonitor(int status)$/;"	f
+PktNum	xmodem.c	/^   unsigned char PktNum;$/;"	m	struct:Packet	file:
+PktNum	xmodem.h	/^   unsigned char PktNum;$/;"	m	struct:Packet
+PktNum1C	xmodem.c	/^   unsigned char PktNum1C;$/;"	m	struct:Packet	file:
+PktNum1C	xmodem.h	/^   unsigned char PktNum1C;$/;"	m	struct:Packet
+PktType	pkt.c	/^unsigned char PktType(void)$/;"	f
+PrevPkt	xmodem.c	113;"	d	file:
+PrevPkt	xmodem.h	113;"	d
+RX_H	rx.c	2;"	d	file:
+RX_H	rx.h	2;"	d
+RefTime	socket.c	/^time_t RefTime=0L;$/;"	v
+Rx	rx.c	/^long int Rx(const struct SerialPort *port,FILE *dest)$/;"	f
+RxChangeLog	rx.c	42;"	d	file:
+RxConfig	download.c	/^int RxConfig(const struct SerialPort *modem)$/;"	f
+RxPacket	rx.c	/^static int RxPacket(const struct SerialPort *port,struct Packet *pkt,unsigned char PktNum)$/;"	f	file:
+RxStartByte	rx.c	/^static int RxStartByte(const struct SerialPort *port,struct Packet *pkt)$/;"	f	file:
+SERIAL_H	serial.c	2;"	d	file:
+SERIAL_H	serial.h	2;"	d
+SHELL	makefile	/^SHELL=\/bin\/csh$/;"	m
+SOCKET_H	socket.c	2;"	d	file:
+SOCKET_H	socket.h	2;"	d
+SOH	xmodem.c	43;"	d	file:
+SOH	xmodem.h	43;"	d
+STX	xmodem.c	44;"	d	file:
+STX	xmodem.h	44;"	d
+SYSLIBS	makefile	/^SYSLIBS= -lm -lutil$/;"	m
+SerialChangeLog	serial.c	60;"	d	file:
+SerialChangeLog	serial.h	57;"	d
+SerialPort	serial.c	/^struct SerialPort$/;"	s	file:
+SerialPort	serial.h	/^struct SerialPort$/;"	s
+SessionTimeOut	xmodem.c	109;"	d	file:
+SessionTimeOut	xmodem.h	109;"	d
+ShortPkt	xmodem.c	114;"	d	file:
+ShortPkt	xmodem.h	114;"	d
+StackOk	download.c	66;"	d	file:
+StackOk	upload.c	60;"	d	file:
+StartByte	xmodem.c	/^   unsigned char StartByte;$/;"	m	struct:Packet	file:
+StartByte	xmodem.h	/^   unsigned char StartByte;$/;"	m	struct:Packet
+TX_H	tx.c	2;"	d	file:
+TX_H	tx.h	2;"	d
+Tx	tx.c	/^long int Tx(const struct SerialPort *port,FILE *source)$/;"	f
+TxChangeLog	tx.c	43;"	d	file:
+TxPacket	tx.c	/^static int TxPacket(const struct SerialPort *port,struct Packet *pkt)$/;"	f	file:
+UPLOAD_H	upload.c	2;"	d	file:
+UPLOAD_H	upload.h	2;"	d
+UpLoadFile	upload.c	/^int UpLoadFile(const struct SerialPort *modem, const char *localpath, const char *hostpath)$/;"	f
+WatchDog	download.c	65;"	d	file:
+WatchDog	logger.c	134;"	d	file:
+WatchDog	upload.c	59;"	d	file:
+WrongPkt	xmodem.c	112;"	d	file:
+WrongPkt	xmodem.h	112;"	d
+XMODEM_H	xmodem.c	2;"	d	file:
+XMODEM_H	xmodem.h	2;"	d
+XmodemChangeLog	xmodem.c	35;"	d	file:
+XmodemChangeLog	xmodem.h	35;"	d
+abort_transfer	xmodem.c	/^int abort_transfer(const struct SerialPort *port)$/;"	f
+cc	logger.c	/^   typedef code const char cc;$/;"	t	file:
+cc	logger.c	/^   typedef const char cc;$/;"	t	file:
+cc	logger.h	/^   typedef code const char cc;$/;"	t
+cc	logger.h	/^   typedef const char cc;$/;"	t
+cd	serial.c	/^      int (*cd)(void);$/;"	m	struct:SerialPort	file:
+cd	serial.h	/^      int (*cd)(void);$/;"	m	struct:SerialPort
+cd	socket.c	/^static int cd(void) {return 1;}$/;"	f	file:
+chat	chat.c	/^int chat(const struct SerialPort *port, const char *cmd,$/;"	f
+chatChangeLog	chat.c	76;"	d	file:
+checksum	xmodem.c	/^int checksum(struct Packet *pkt,unsigned char *crc1,unsigned char *crc2)$/;"	f
+config_path	download.c	/^static const char *config_path="mission.cfg";$/;"	v	file:
+crc1	xmodem.c	/^   unsigned char crc1;$/;"	m	struct:Packet	file:
+crc1	xmodem.h	/^   unsigned char crc1;$/;"	m	struct:Packet
+crc16bit	xmodem.c	/^int crc16bit(struct Packet *pkt,unsigned char *crc1,unsigned char *crc2)$/;"	f
+crc2	xmodem.c	/^   unsigned char crc2;$/;"	m	struct:Packet	file:
+crc2	xmodem.h	/^   unsigned char crc2;$/;"	m	struct:Packet
+csnprintf	cstring.c	/^int csnprintf(char *str, size_t size, code const char *format, ...)$/;"	f
+cstringChangeLog	cstring.c	39;"	d	file:
+cstringChangeLog	cstring.h	36;"	d
+cstrncpy	cstring.c	/^char *cstrncpy(char *dest, code const char *src, size_t n)$/;"	f
+cts	serial.c	/^      int (*cts)(void);$/;"	m	struct:SerialPort	file:
+cts	serial.h	/^      int (*cts)(void);$/;"	m	struct:SerialPort
+data	xmodem.c	/^   unsigned char data[MAXBUFSIZE];$/;"	m	struct:Packet	file:
+data	xmodem.h	/^   unsigned char data[MAXBUFSIZE];$/;"	m	struct:Packet
+debuglevel	logger.c	/^persistent unsigned int debuglevel;$/;"	v
+downloadChangeLog	download.c	45;"	d	file:
+downloadChangeLog	download.h	45;"	d
+dsr	serial.c	/^      int (*dsr)(void);$/;"	m	struct:SerialPort	file:
+dsr	serial.h	/^      int (*dsr)(void);$/;"	m	struct:SerialPort
+dtr	serial.c	/^      int (*dtr)(int state);$/;"	m	struct:SerialPort	file:
+dtr	serial.h	/^      int (*dtr)(int state);$/;"	m	struct:SerialPort
+expect	expect.c	/^int expect(const struct SerialPort *port, const char *prompt,$/;"	f
+expectChangeLog	expect.c	69;"	d	file:
+fixed_pkt_type	pkt.c	/^static int fixed_pkt_type=0;$/;"	v	file:
+getb	serial.c	/^      int (*getb)(unsigned char *byte);$/;"	m	struct:SerialPort	file:
+getb	serial.h	/^      int (*getb)(unsigned char *byte);$/;"	m	struct:SerialPort
+getb	socket.c	/^int getb(unsigned char *byte)$/;"	f
+iflush	serial.c	/^      int (*iflush)(void);$/;"	m	struct:SerialPort	file:
+iflush	serial.h	/^      int (*iflush)(void);$/;"	m	struct:SerialPort
+iflush	socket.c	/^int iflush(void)$/;"	f
+ioflush	serial.c	/^      int (*ioflush)(void);$/;"	m	struct:SerialPort	file:
+ioflush	serial.h	/^      int (*ioflush)(void);$/;"	m	struct:SerialPort
+ioflush	socket.c	/^int ioflush(void) {return iflush();}$/;"	f
+itimer	socket.c	/^time_t itimer(void) {return (time_t)((RefTime)?difftime(time(NULL),RefTime):-1);}$/;"	f
+login	login.c	/^int login(const struct SerialPort *port,const char *user, const char *pwd)$/;"	f
+loginChangeLog	login.c	17;"	d	file:
+loginChangeLog	login.h	17;"	d
+logout	login.c	/^int logout(const struct SerialPort *port)$/;"	f
+logstream	logger.c	/^FILE *persistent logstream;$/;"	v
+main	rudics.cpp	/^int main(int argc,char *argv[])$/;"	f
+na	socket.c	/^static int na(void) {return -1;}$/;"	f	file:
+na_	socket.c	/^static int na_(int i) {return -1;}$/;"	f	file:
+obytes	serial.c	/^      int (*obytes)(void);$/;"	m	struct:SerialPort	file:
+obytes	serial.h	/^      int (*obytes)(void);$/;"	m	struct:SerialPort
+oflush	serial.c	/^      int (*oflush)(void);$/;"	m	struct:SerialPort	file:
+oflush	serial.h	/^      int (*oflush)(void);$/;"	m	struct:SerialPort
+oflush	socket.c	/^int oflush(void) {return 1;}$/;"	f
+persistent	logger.c	100;"	d	file:
+persistent	logger.h	97;"	d
+pflushio	serial.c	/^int pflushio(const struct SerialPort *port)$/;"	f
+pflushrx	serial.c	/^int pflushrx(const struct SerialPort *port)$/;"	f
+pflushtx	serial.c	/^int pflushtx(const struct SerialPort *port)$/;"	f
+pgetb	serial.c	/^int pgetb(const struct SerialPort *port, unsigned char *byte, time_t sec)$/;"	f
+pgetbuf	serial.c	/^int pgetbuf(const struct SerialPort *port, void *buf, int size, time_t sec)$/;"	f
+pgets	serial.c	/^int pgets(const struct SerialPort *port, char *buf, int size, time_t sec, const char *trm)$/;"	f
+pkt_history	pkt.c	/^static unsigned char pkt_history=0x38;$/;"	v	file:
+pputb	serial.c	/^int pputb(const struct SerialPort *port,unsigned char byte, time_t sec)$/;"	f
+pputbuf	serial.c	/^int pputbuf(const struct SerialPort *port, const void *buf, int size, time_t sec)$/;"	f
+pputs	serial.c	/^int pputs(const struct SerialPort *port, const char *buf, time_t sec, const char *trm)$/;"	f
+putb	serial.c	/^      int (*putb)(unsigned char byte);$/;"	m	struct:SerialPort	file:
+putb	serial.h	/^      int (*putb)(unsigned char byte);$/;"	m	struct:SerialPort
+putb	socket.c	/^int putb(unsigned char byte)$/;"	f
+rts	serial.c	/^      int (*rts)(int state);$/;"	m	struct:SerialPort	file:
+rts	serial.h	/^      int (*rts)(int state);$/;"	m	struct:SerialPort
+rxcmd	upload.c	/^static const char *rxcmd = "rx -c ";$/;"	v	file:
+sock	socket.c	/^static int sock=-1;$/;"	v	file:
+sxcmd	download.c	/^static const char *sxcmd = "sx -a ";$/;"	v	file:
+tcp	socket.c	/^struct SerialPort tcp={getb,putb,iflush,ioflush,oflush,na,cd,na_,na,na_,na};$/;"	v	typeref:struct:SerialPort
+uploadChangeLog	upload.c	39;"	d	file:
+uploadChangeLog	upload.h	39;"	d

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?fileVersion 1.0.0?>
+<framework-data>
+  <options>
+    <option id="com.atmel.avr32.sf.uc3a3.dsplib" value="none"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.ebi.smc" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.ssc" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.nand_ebi" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.flashc" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.aes" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.accelerometer" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.cpu.cc" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.memory.ecchamming" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.pictures.jpg" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.wdt" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.rtc" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.abdac" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.fat" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.freertos" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.usart" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.autobaud" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.debug.dsplib" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.audiomixer" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.tc" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.newlibaddon" value="none"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.delay" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.dataflash.at25dfx" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.mci" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.joystick" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.clock_synthesizer.cs2200" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.touch.qt1081" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.sdram" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.pm" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.adc" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.memory" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.audio.tlv320aic23b" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.dmaca" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.display.et024006dhu" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.eic" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.ebi.sdramc" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.debug" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.nand_gpio" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.audio.tpa6130a2" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.dataflash" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.touch.at42qt1060" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.usbb" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.usbb" value="none"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.sdmmc.mci" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.intc" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.twis" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.gpio" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.cpu.mpu" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.sdmmc.spi" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.twim" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.ecchrs" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.service.option.polarssl" value="false"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.spi" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.driver.option.pdca" value="true"/>
+    <option id="com.atmel.avr32.sf.uc3a3.component.option.touch.qt60168" value="false"/>
+  </options>
+  <files>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci.c" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/PM/pm.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/DEBUG/debug.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/parts.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/parts.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/navigation.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/navigation.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/WDT/wdt.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/WDT/wdt.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/INTC/intc.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/fat.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/fat.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/STARTUP_FILES/GCC/crt0.x" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="UTILS/STARTUP_FILES/GCC/crt0.S" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/PM/power_clocks_lib.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/BOARDS/EVK1104/led.c" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="BOARDS/EVK1104/led.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/stringz.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/PREPROCESSOR/stringz.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/BOARDS/board.h" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="BOARDS/board.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/preprocessor.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/PREPROCESSOR/preprocessor.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/fat_unusual.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/fat_unusual.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/SPI/spi.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_cmd.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_cmd.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/BOARDS/EVK1104/evk1104.h" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="BOARDS/EVK1104/evk1104.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/WDT/wdt.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/WDT/wdt.c" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/conf_isp.h" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="SERVICES/USB/CLASS/DFU/EXAMPLES/ISP/CONF/conf_isp.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/PDCA/pdca.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/BOARDS/EVK1104/led.h" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="BOARDS/EVK1104/led.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/file.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/file.c" changed="false"/>
+    <file path="src/CONFIG/conf_at45dbx.h" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="SERVICES/FAT/FAT_EXAMPLE/conf_at45dbx.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/fat.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/fat.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER/cycle_counter.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/CPU/CYCLE_COUNTER/cycle_counter.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/USART/usart.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/MCI/mci.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/MCI/mci.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/exception.x" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/INTC/exception.S" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/ASM/trampoline.x" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="UTILS/STARTUP_FILES/GCC/trampoline.S" changed="false"/>
+    <file path="src/CONFIG/conf_access.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/EXAMPLE/conf_access.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/INTC/intc.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/DEBUG/print_funcs.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci_mem.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci_mem.c" changed="true"/>
+    <file path="src/CONFIG/conf_sd_mmc_mci.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/EXAMPLE/CONF/conf_sd_mmc_mci.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/mrepeat.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/PREPROCESSOR/mrepeat.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/navigation.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/navigation.c" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/USART/usart.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/GPIO/gpio.h" changed="false"/>
+    <file path="src/CONFIG/conf_explorer.h" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="SERVICES/FAT/FAT_EXAMPLE/conf_explorer.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/DEBUG/debug.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/fsaccess.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/fsaccess.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/compiler.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/compiler.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/EIC/eic.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/GPIO/gpio.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/EIC/eic.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/PM/power_clocks_lib.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/file.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/file.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR/tpaste.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/PREPROCESSOR/tpaste.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/DEBUG/print_funcs.h" changed="false"/>
+    <file path="src/fat_example.c" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="SERVICES/FAT/FAT_EXAMPLE/fat_example.c" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/PM/pm.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci_mem.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/SD_MMC/SD_MMC_MCI/sd_mmc_mci_mem.h" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/LINKER_SCRIPTS/AT32UC3A3/256/GCC/link_uc3a3256.lds" framework="com.atmel.avr32.sf.uc3" version="1.7.0" source="UTILS/LINKER_SCRIPTS/AT32UC3A3/256/GCC/link_uc3a3256.lds" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/fs_com.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/fs_com.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/SERVICES/FAT/fsaccess.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="SERVICES/FAT/fsaccess.c" changed="true"/>
+    <file path="src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/PDCA/pdca.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/PM/pm_conf_clocks.c" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/MCI/mci.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/MCI/mci.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.h" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="DRIVERS/SPI/spi.h" changed="false"/>
+    <file path="src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/libnewlib_addons-at32ucr2-speed_opt.a" framework="com.atmel.avr32.sf.uc3a3" version="1.7.0" source="UTILS/LIBS/NEWLIB_ADDONS/AT32UCR2/libnewlib_addons-at32ucr2-speed_opt.a" changed="false"/>
+  </files>
+</framework-data>

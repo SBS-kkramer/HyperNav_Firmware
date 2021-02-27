@@ -1,0 +1,82 @@
+/*
+ *	ALERT: config.h is auto-generated from CodeTools files.
+ *	Do NOT edit.
+ *	Read file makeCode.sh for explanations / insructions.
+ *
+ *  File: config.h
+ *  Nitrate Sensor Firmware
+ *  Copyright 2010 Satlantic Inc.
+ */
+
+#ifndef CONFIG_H_
+#define CONFIG_H_
+
+# include <compiler.h>
+# include "flashc.h"
+# include "command.controller.h"
+
+# define CFG_OK		 0
+# define CFG_FAIL	-1
+
+//# define ELC_FLASH_CARD_FULL		0x0101
+//# define ELC_FILE_OPEN_FAILURE	0x0102
+//# define ELC_CFG_NOT_AVAILABE	0x0201
+//# define ELC_MEAS_SPEC			0x0401
+//# define ELC_MEAS_LAMP			0x0402
+//# define ELC_MEAS_TIMEOUT		0x0403
+//# define ELC_NO_CALFILE			0x0801
+//# define ELC_BAD_CALFILE		0x0802
+//# define ELC_PROCESSING			0x0811
+//# define ELC_PROCESSING			0x0811
+
+// Some hard coded values, not to be configured.
+
+# define CFG_Get_Watchdog_Duration()	15000000L	//	15 seconds (in microseconds)
+# define CFG_Get_Supercap_Charge_Duration() 2		//	2 seconds
+
+# define CFG_GetFullFrameChannelBegin() 0	//	We are null based
+# define CFG_GetFullFrameChannelEnd() 256
+
+# define CFG_GetReducedFrameChannelBegin() 34
+# define CFG_GetReducedFrameChannelEnd() 66	//	For a total of 32 channels
+
+//
+//	Derived, not set directly.
+//		reference sample data rate during the spec's integration period
+//		spectrometer integration period (period var) is in milliseconds
+//		then convert to milliseconds
+//
+
+# define CFG_Get_Reference_Sample_Period() \
+	( (U32) ((float) (CFG_Get_Spectrometer_Integration_Period()*CFG_Get_Light_Averages()) \
+	        /(float) CFG_Get_Reference_Samples()) - 3 )
+
+
+//	Configuration management functions
+
+//!	\brief	Save configuration to persistent memory
+S16 CFG_Save( bool useBackup );
+//!	\brief	Retrieve configuration from persistent memory
+S16 CFG_Retrieve( bool useBackup );
+//!	\brief	Write all configuration values to user output
+void CFG_OORToDefault();
+void CFG_Print();
+S16 CFG_VarSaveToUPG ( char* m, U16 location, U8* src, U8 size );
+S16 CFG_VarSaveToRTC ( char* m, U16 location, U8* src, U8 size );
+S16 CFG_WipeBackup();
+
+//	Accessing individual configuration parameters
+//	With some exceptions, for a parameter <P> of a given
+//	data type <T>, there are two access functions:
+//	<T> GFG_Get<P> ( void );
+//	bool CFG_Set<P> ( <T> new_value );
+//	The "Get" function returns the currently configured parameter value,
+//	the "Set" function returns CFG_OK if successful,
+//						   and CFG_FAIL if unsuccessful (e.g., out-of-range).
+//	For enumerated data types, there are also Set..._AsString() functions,
+//	that parse a string matching the name of the enumerated value, and
+//	will assign the enumerated type via the regular Set() function.
+//	Default, min, and max values for the parameters are given via #define
+//	For some parameters, named #defines are provided to give meaning to values.
+//	All defines use a 8-letter code, followed by an underscore, followed by a designator.
+
