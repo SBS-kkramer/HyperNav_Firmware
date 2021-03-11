@@ -237,26 +237,39 @@ S16 CFG_Save ( bool useBackup ) {
 	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_USBSWTCH, (U8*)&mVar, 4 ) ) {
 		rv = CFG_FAIL;
 	}
-	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_SPCSBDSN, (U8*)&(cfg_data.spcsbdsn), 4 ) ) {
+
+	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_SPCSBDSN, (U8*)&(cfg_data.spcsbdsn), 4))
+	{
 		rv = CFG_FAIL;
 	}
-	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_SPCPRTSN, (U8*)&(cfg_data.spcprtsn), 4 ) ) {
+
+	if  (CFG_OK != saveToU (backupMem, UPG_LOC_SPCPRTSN, (U8*) & (cfg_data.spcprtsn), 4))
+	{
 		rv = CFG_FAIL;
 	}
+
 	mVar = (U32)cfg_data.frmsbdsn;
 	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_FRMSBDSN, (U8*)&mVar, 4 ) ) {
 		rv = CFG_FAIL;
 	}
+	
+	
 	mVar = (U32)cfg_data.frmprtsn;
 	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_FRMPRTSN, (U8*)&mVar, 4 ) ) {
 		rv = CFG_FAIL;
 	}
+
+
 	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_ADMIN_PW, (U8*)cfg_data.admin_pw, 8 ) ) {
 		rv = CFG_FAIL;
 	}
+	
+	
 	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_FCTRY_PW, (U8*)cfg_data.fctry_pw, 8 ) ) {
 		rv = CFG_FAIL;
 	}
+	
+	
 	mVar = (U32)cfg_data.waitflag;
 	if ( CFG_OK != saveToU ( backupMem, UPG_LOC_WAITFLAG, (U8*)&mVar, 4 ) ) {
 		rv = CFG_FAIL;
@@ -1243,20 +1256,26 @@ S16 CFG_Set_Spec_Starboard_Serial_Number_AsString( char* new_value ) {
 //	Configuration Parameter Spec_Port_Serial_Number
 //	
 //
-U32 CFG_Get_Spec_Port_Serial_Number(void) {
+U32 CFG_Get_Spec_Port_Serial_Number(void)
+{
 	return cfg_data.spcprtsn;
 }
 
-S16 CFG_Set_Spec_Port_Serial_Number( U32 new_value ) {
-	if ( CFG_OK == CFG_VarSaveToUPG( 0, UPG_LOC_SPCPRTSN, (void*)&new_value, 4 ) ) {
+S16 CFG_Set_Spec_Port_Serial_Number( U32 new_value )
+{
+	if ( CFG_OK == CFG_VarSaveToUPG( 0, UPG_LOC_SPCPRTSN, (void*)&new_value, 4 ) )
+	{
 		cfg_data.spcprtsn = new_value;
 		return CFG_OK;
-	} else {
+	}
+	else
+	{
 		return CFG_FAIL;
 	}
 }
 
-void CFG_Setup_Spec_Port_Serial_Number() {
+void CFG_Setup_Spec_Port_Serial_Number()
+{
 
 	char input[64];
 
@@ -1265,8 +1284,11 @@ void CFG_Setup_Spec_Port_Serial_Number() {
 		io_out_string ( "\r\nSpec_Port_Serial_Number [" );
 		io_out_S32 ( "%ld]: ", (S32)CFG_Get_Spec_Port_Serial_Number() );
 		io_in_getstring( input, sizeof(input), 0, 0 );
-		if ( !input[0] ) snprintf ( input, sizeof(input), "%lu", CFG_Get_Spec_Port_Serial_Number() );
-	} while ( CFG_FAIL == CFG_Set_Spec_Port_Serial_Number_AsString( input ) );
+		if ( !input[0] )
+			snprintf ( input, sizeof(input), "%lu", CFG_Get_Spec_Port_Serial_Number() );
+	}
+	  while ( CFG_FAIL == CFG_Set_Spec_Port_Serial_Number_AsString( input ) );
+
 	io_out_string ( "Spec_Port_Serial_Number " );
 	io_out_S32 ( "%ld\r\n", (S32)CFG_Get_Spec_Port_Serial_Number() );
 
@@ -3165,38 +3187,67 @@ S16 CFG_CmdGet ( char* option, char* result, S16 r_max_len ) {
 
 	//	Build Parameters
 
-	if ( 0 == strcasecmp ( option, "SENSTYPE" ) ) {
+	if ( 0 == strcasecmp ( option, "SENSTYPE" ) )
+	{
 		strncpy ( result, CFG_Get_Sensor_Type_AsString(), r_max_len_m1 );
-	} else if ( 0 == strcasecmp ( option, "SENSVERS" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "SENSVERS" ) )
+	{
 		strncpy ( result, CFG_Get_Sensor_Version_AsString(), r_max_len_m1 );
-	} else if ( 0 == strcasecmp ( option, "SERIALNO" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "SERIALNO" ) )
+	{
 		snprintf ( result, r_max_len, "%hu", CFG_Get_Serial_Number() );
-	} else if ( 0 == strcasecmp ( option, "PWRSVISR" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "PWRSVISR" ) )
+	{
 		strncpy ( result, CFG_Get_PCB_Supervisor_AsString(), r_max_len_m1 );
-	} else if ( 0 == strcasecmp ( option, "USBSWTCH" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "USBSWTCH" ) )
+	{
 		strncpy ( result, CFG_Get_USB_Switch_AsString(), r_max_len_m1 );
-	} else if ( 0 == strcasecmp ( option, "SPCSBDSN" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "SPCSBDSN" ) )
+	{
 		snprintf ( result, r_max_len, "%lu", CFG_Get_Spec_Starboard_Serial_Number() );
-	} else if ( 0 == strcasecmp ( option, "SPCPRTSN" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "SPCPRTSN" ) )
+	{
 		snprintf ( result, r_max_len, "%lu", CFG_Get_Spec_Port_Serial_Number() );
-	} else if ( 0 == strcasecmp ( option, "FRMSBDSN" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "FRMSBDSN" ) )
+	{
 		snprintf ( result, r_max_len, "%hu", CFG_Get_Frame_Starboard_Serial_Number() );
-	} else if ( 0 == strcasecmp ( option, "FRMPRTSN" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "FRMPRTSN" ) )
+	{
 		snprintf ( result, r_max_len, "%hu", CFG_Get_Frame_Port_Serial_Number() );
-	} else if ( 0 == strcasecmp ( option, "ADMIN_PW" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "ADMIN_PW" ) )
+	{
 		strncpy ( result, CFG_Get_Admin_Password(), r_max_len_m1 );
-	} else if ( 0 == strcasecmp ( option, "FCTRY_PW" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "FCTRY_PW" ) )
+	{
 		strncpy ( result, CFG_Get_Factory_Password(), r_max_len_m1 );
 
 	//	Accelerometer Parameters
 
-	} else if ( 0 == strcasecmp ( option, "ACCMNTNG" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "ACCMNTNG" ) )
+	{
 		snprintf ( result, r_max_len, "%f", printAbleF32 ( CFG_Get_Accelerometer_Mounting() ) );
-	} else if ( 0 == strcasecmp ( option, "ACCVERTX" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "ACCVERTX" ) )
+	{
 		snprintf ( result, r_max_len, "%hd", CFG_Get_Accelerometer_Vertical_x() );
-	} else if ( 0 == strcasecmp ( option, "ACCVERTY" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "ACCVERTY" ) )
+	{
 		snprintf ( result, r_max_len, "%hd", CFG_Get_Accelerometer_Vertical_y() );
-	} else if ( 0 == strcasecmp ( option, "ACCVERTZ" ) ) {
+	}
+	else if ( 0 == strcasecmp ( option, "ACCVERTZ" ) )
+	{
 		snprintf ( result, r_max_len, "%hd", CFG_Get_Accelerometer_Vertical_z() );
 
 	//	Compass Parameters

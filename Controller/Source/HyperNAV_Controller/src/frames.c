@@ -115,7 +115,9 @@ static char* frm_DecimalTimeString ( time_t time_secs, suseconds_t time_ticks )
 int16_t frm_out_or_log (
         Spectrometer_Data_t* hsd,
         uint8_t tlm_frame_subsampling,
-        uint8_t log_frame_subsampling ) {
+        uint8_t log_frame_subsampling
+       )
+{
 
     int i;
     U32 log_check_sum = 0;
@@ -163,22 +165,30 @@ int16_t frm_out_or_log (
     }
 
     char frameType = 'N';
-    if ( hsd->aux.tag & SAD_TAG_DARK ) {
+    if ( hsd->aux.tag & SAD_TAG_DARK )
+    {
       frameType = 'D';
-    } else if ( hsd->aux.tag & SAD_TAG_LIGHT ) {
+    }
+    else if ( hsd->aux.tag & SAD_TAG_LIGHT )
+    {
       frameType = 'L';
-    } else if ( hsd->aux.tag & SAD_TAG_CHAR_DARK ) {
+    } else if ( hsd->aux.tag & SAD_TAG_CHAR_DARK )
+    {
       frameType = 'D';
-    } else if ( hsd->aux.tag & SAD_TAG_LIGHT_MINUS_DARK ) {
+    }
+    else if ( hsd->aux.tag & SAD_TAG_LIGHT_MINUS_DARK )
+    {
       frameType = 'C';
     }
 
-    if ( 0 == frame_sn ) {
+    if ( 0 == frame_sn )
+    {
       log_frame_subsampling = 12;
       tlm_frame_subsampling = 12;
     }
 
-    if ( to_file ) {
+    if ( to_file )
+    {
       snprintf ( tmp_buf, sizeof(tmp_buf), "SATX%c%c%04lu", frameType, 'Z'-log_frame_subsampling, frame_sn%10000 );
       to_write = strlen(tmp_buf);
 # if WRITE_EACH
@@ -187,19 +197,28 @@ int16_t frm_out_or_log (
       memcpy ( frame_before_spectrum, tmp_buf, to_write );
       n_before_spectrum += to_write;
 # endif
-      for ( i=0; i<to_write; i++) log_check_sum -= tmp_buf[i];
+      for ( i=0; i<to_write; i++)
+        log_check_sum -= tmp_buf[i];
 
     }
 
-    if ( to_tlm ) {
-      if ( ASCII ) {
+    if ( to_tlm )
+    {
+      if ( ASCII )
+      {
         snprintf ( tmp_buf, sizeof(tmp_buf), "SATY%c%c%04lu", frameType, 'Z'-tlm_frame_subsampling, frame_sn%10000 );
-      } else {
+      }
+      else
+      {
         snprintf ( tmp_buf, sizeof(tmp_buf), "SATX%c%c%04lu", frameType, 'Z'-tlm_frame_subsampling, frame_sn%10000 );
       }
       to_write = strlen(tmp_buf);
-      if ( to_write != tlm_send  ( tmp_buf, to_write, 0 ) ) { return (int16_t)-2; }
-      for ( i=0; i<to_write; i++) tlm_check_sum -= tmp_buf[i];
+      if ( to_write != tlm_send  ( tmp_buf, to_write, 0 ) )
+      {
+        return (int16_t)-2;
+      }
+      for ( i=0; i<to_write; i++)
+        tlm_check_sum -= tmp_buf[i];
     }
 
     //  Date as YYYYDDD
@@ -207,7 +226,8 @@ int16_t frm_out_or_log (
     V.tmp_S32 = frm_YearYdayValue ( hsd->aux.acquisition_time.tv_sec );
     to_write = 4;
 
-    if( to_file ) {
+    if  ( to_file )
+    {
 # if WRITE_EACH
       if ( to_write != DLF_Write ( V.tmp_mem, to_write ) )    { return (int16_t)-3; }
 # else
@@ -216,13 +236,18 @@ int16_t frm_out_or_log (
 # endif
       for ( i=0; i<to_write; i++) log_check_sum -= V.tmp_mem[i];
     }
-    if ( to_tlm ) {
-      if ( ASCII ) {
+
+    if ( to_tlm )
+    {
+      if ( ASCII )
+      {
         snprintf ( tmp_buf, sizeof(tmp_buf), ",%7ld", V.tmp_S32 );
         to_write = strlen(tmp_buf);
         if ( to_write != tlm_send  ( tmp_buf, to_write, 0 ) ) { return (int16_t)-4; }
         for ( i=0; i<to_write; i++) tlm_check_sum -= tmp_buf[i];
-      } else {
+      }
+      else
+      {
         if ( to_write != tlm_send  ( V.tmp_mem, to_write, 0 ) ) { return (int16_t)-4; }
         for ( i=0; i<to_write; i++) tlm_check_sum -= V.tmp_mem[i];
       }
@@ -230,7 +255,7 @@ int16_t frm_out_or_log (
 
     //  Hour as decimal
     //
-    V.tmp_BD8 = frm_DecimalTime( hsd->aux.acquisition_time.tv_sec, hsd->aux.acquisition_time.tv_usec );
+    V.tmp_BD8 = frm_DecimalTime ( hsd->aux.acquisition_time.tv_sec, hsd->aux.acquisition_time.tv_usec );
     to_write =  8;
 
     if( to_file ) {
@@ -268,15 +293,23 @@ int16_t frm_out_or_log (
 # endif
       for ( i=0; i<to_write; i++) log_check_sum -= V.tmp_mem[i];
     }
-    if ( to_tlm ) {
-      if ( ASCII ) {
+    if ( to_tlm )
+    {
+      if ( ASCII )
+      {
         snprintf ( tmp_buf, sizeof(tmp_buf), ",%hu", V.tmp_U16 );
         to_write = strlen(tmp_buf);
         if ( to_write != tlm_send  ( tmp_buf, to_write, 0 ) ) { return (int16_t)-8; }
         for ( i=0; i<to_write; i++) tlm_check_sum -= tmp_buf[i];
-      } else {
-        if ( to_write != tlm_send  ( V.tmp_mem, to_write, 0 ) ) { return (int16_t)-8; }
-        for ( i=0; i<to_write; i++) tlm_check_sum -= V.tmp_mem[i];
+      }
+      else
+      {
+        if ( to_write != tlm_send  ( V.tmp_mem, to_write, 0 ) )
+        {
+          return (int16_t)-8;
+        }
+        for ( i=0; i<to_write; i++)
+          tlm_check_sum -= V.tmp_mem[i];
       }
     }
 

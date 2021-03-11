@@ -388,11 +388,18 @@ static int16_t write_spec_data ( uint16_t profileID, Spectrometer_Data_t* spec_d
   if ( !spec_data ) return -1;
 
   char const* extension;
-  if ( 0 == spec_data->aux.side  ) {
+  if ( 0 == spec_data->aux.side)
+  {
     extension = pmg_datafile_extension[PMG_DT_Port_Radiometer];
-  } else if ( 1 == spec_data->aux.side  ) {
+  }
+  
+  else if ( 1 == spec_data->aux.side  )
+  {
     extension = pmg_datafile_extension[PMG_DT_Starboard_Radiometer];
-  } else {
+  }
+
+  else
+  {
     return -2;
   }
 
@@ -413,19 +420,23 @@ static int16_t write_spec_data ( uint16_t profileID, Spectrometer_Data_t* spec_d
       //
       return -3;
 
-  } else {
-
+  }
+  
+  else
+  {
       //  Append to data log file.
       //
       fHandler_t fh;
 
-      if ( FILE_OK != f_open ( data_file_name, O_WRONLY | O_APPEND, &fh ) ) {
+      if ( FILE_OK != f_open ( data_file_name, O_WRONLY | O_APPEND, &fh ) )
+      {
         return -10;
       }
 
       int16_t written = -12;
 
-      if ( sizeof(Spectrometer_Data_t) == f_write( &fh, spec_data, sizeof(Spectrometer_Data_t) ) ) {
+      if ( sizeof(Spectrometer_Data_t) == f_write( &fh, spec_data, sizeof(Spectrometer_Data_t) ) )
+      {
         written = 1;
       }
 
@@ -959,10 +970,11 @@ static int data_packet_bursts_transmit ( Profile_Data_Packet_t* packet, int burs
 //  Later, during transfer, the finished packets can be read
 //  and written as they are.
 //
-static int16_t profile_package ( uint16_t* tx_profile_id,
-                                 Profile_Packet_Definition_t* ppd,
-                                 transmit_instructions_t const* tx_instruct ) {
-
+static int16_t profile_package (uint16_t*                      tx_profile_id,
+                                Profile_Packet_Definition_t*   ppd,
+                                transmit_instructions_t const* tx_instruct
+                               )
+{
   char numString[16];
 
   //  Use the profile_id value in the data structure to mark its content as valid
@@ -989,22 +1001,27 @@ static int16_t profile_package ( uint16_t* tx_profile_id,
   strcat ( ppd_file_name, numString );
   strcat ( ppd_file_name, ".PPD" );
   
-  if ( f_exists( ppd_file_name ) ) {
+  if ( f_exists( ppd_file_name ) )
+  {
 
     //  Retrieve existing ppd
 
     fHandler_t fh;
 
-    if ( FILE_OK != f_open ( ppd_file_name, O_RDONLY, &fh ) ) {
+    if ( FILE_OK != f_open ( ppd_file_name, O_RDONLY, &fh ) )
+    {
       return -11;
     }
 
-    if ( sizeof(Profile_Packet_Definition_t) != f_read ( &fh, ppd, sizeof(Profile_Packet_Definition_t) ) ) {
+    if ( sizeof(Profile_Packet_Definition_t) != f_read ( &fh, ppd, sizeof(Profile_Packet_Definition_t) ) )
+    {
       f_close ( &fh );
       return -12;
     }
 
-  } else {
+  }
+  else
+  {
 
     //  Get general information and at the end write ppd to file (for future re-use)
     //
@@ -1019,7 +1036,8 @@ static int16_t profile_package ( uint16_t* tx_profile_id,
   
     fHandler_t fh;
 
-    if ( FILE_OK != f_open ( status_file_name, O_RDONLY, &fh ) ) {
+    if ( FILE_OK != f_open ( status_file_name, O_RDONLY, &fh ) )
+    {
       return -3;
     }
 
@@ -1027,7 +1045,8 @@ static int16_t profile_package ( uint16_t* tx_profile_id,
 
     //  Read number of Starboard data sets
     //
-    if ( 8 != f_read( &fh, msg, 8 ) ) {
+    if ( 8 != f_read( &fh, msg, 8 ) )
+    {
       f_close ( &fh );
       return -4;
     }
@@ -1036,7 +1055,8 @@ static int16_t profile_package ( uint16_t* tx_profile_id,
 
     //  Read number of Port data sets
     //
-    if ( 8 != f_read( &fh, msg, 8 ) ) {
+    if ( 8 != f_read( &fh, msg, 8 ) )
+    {
       f_close ( &fh );
       return -4;
     }
@@ -1045,7 +1065,8 @@ static int16_t profile_package ( uint16_t* tx_profile_id,
 
     //  Read number of OCR data sets
     //
-    if ( 8 != f_read( &fh, msg, 8 ) ) {
+    if ( 8 != f_read( &fh, msg, 8 ) )
+    {
       f_close ( &fh );
       return -4;
     }
@@ -1054,7 +1075,8 @@ static int16_t profile_package ( uint16_t* tx_profile_id,
 
     //  Read number of MCOMS data sets
     //
-    if ( 8 != f_read( &fh, msg, 8 ) ) {
+    if ( 8 != f_read( &fh, msg, 8 ) )
+    {
       f_close ( &fh );
       return -4;
     }
@@ -1188,9 +1210,10 @@ tlm_send ( "PIP\r\n", 5, 0 );
     }
 
     uint16_t sP;
-    for ( sP=1; sP<=ppd->numPackets_SBRD; sP++, num_packets++  ) {
+    for ( sP=1; sP<=ppd->numPackets_SBRD; sP++, num_packets++  )
+    {
 
-tlm_send ( "SBP\r\n", 5, 0 );
+      tlm_send ( "SBP\r\n", 5, 0 );
 
       Profile_Data_Packet_t* raw = (Profile_Data_Packet_t*)sram_PMG_1;
 
@@ -1203,7 +1226,8 @@ tlm_send ( "SBP\r\n", 5, 0 );
       memcpy ( raw->header.sensor_ID, "SATYLU0000", 10 );  //  FIXME
 
       uint16_t number_of_data;
-      if ( sP<ppd->numPackets_SBRD ) {
+      if ( sP<ppd->numPackets_SBRD )
+      {
        number_of_data = MXHNV;
       } else {  //  The last packet may contain fewer items
        number_of_data =  ppd->numData_SBRD
@@ -1228,7 +1252,8 @@ tlm_send ( "SBP\r\n", 5, 0 );
         //  In-place: LSB-round and gray-code.
         //
         int p;
-        for ( p=0; p<N_SPEC_PIX; p++ ) {
+        for ( p=0; p < N_SPEC_PIX; p++ )
+        {
           uint16_t const rndPx = (uint16_t) round ( ( (double)static_spec_data->hnv_spectrum[p] ) / LSB_Divisor );
           static_spec_data->hnv_spectrum[p] = rndPx ^ (rndPx>>1);
         }
@@ -1240,29 +1265,39 @@ tlm_send ( "SBP\r\n", 5, 0 );
         //
         int plane_item = 0;
         int bit_mask;
-        for ( bit_mask = 0x8000>>tx_instruct->noise_bits_remove; bit_mask >= 0x0001; bit_mask >>= 1 ) {
+        for ( bit_mask = 0x8000>>tx_instruct->noise_bits_remove; bit_mask >= 0x0001; bit_mask >>= 1 )
+        {
           uint8_t plane_byte = 0;
           uint8_t plane_mask = 0x80;
 
           int dd;
-          for ( dd=0; dd<number_of_data; dd++ ) {  //  Here is the KLUNKY part: Will only use the d==dd part of the loop, the d!=dd part is used to ensure the proper plane_item is generated.
-          for ( p=0; p<N_SPEC_PIX; p++ ) {
-            if ( d==dd ) {
-              if ( static_spec_data->hnv_spectrum[p] & bit_mask ) {
-                plane_byte |= plane_mask;
+          for (dd = 0;  dd < number_of_data;  ++dd)
+          {  
+            //  Here is the KLUNKY part: Will only use the d==dd part of the loop, the d!=dd part is used to ensure the proper plane_item is generated.
+            for ( p=0; p<N_SPEC_PIX; p++ )
+            {
+              if ( d==dd )
+              {
+                if ( static_spec_data->hnv_spectrum[p] & bit_mask )
+                {
+                  plane_byte |= plane_mask;
+                }
+              }
+              if ( 0x01 != plane_mask )
+              {
+                plane_mask >>= 1;
+              }
+              else
+              {
+                if ( d==dd )
+                {
+                  raw->contents.structured.sensor_data.bitplanes[plane_item] = plane_byte;
+                }
+                plane_item++;
+                plane_byte = 0;
+                plane_mask = 0x80;
               }
             }
-            if ( 0x01 != plane_mask ) {
-              plane_mask >>= 1;
-            } else {
-              if ( d==dd ) {
-                raw->contents.structured.sensor_data.bitplanes[plane_item] = plane_byte;
-              }
-              plane_item++;
-              plane_byte = 0;
-              plane_mask = 0x80;
-            }
-          }
           }
         }
 
@@ -1271,27 +1306,27 @@ tlm_send ( "SBP\r\n", 5, 0 );
         //
 # warning FIX TransFer Packet Spectrometer Auxiliary Content
         int nn = d*SPEC_AUX_SERIAL_SIZE;
-        serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.acquisition_time.tv_sec );   nn+=4;
-        serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.acquisition_time.tv_usec );  nn+=4;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.integration_time );          nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.sample_number );             nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.dark_average );              nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.dark_noise );                nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.light_minus_dark_up_shift ); nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.spectrometer_temperature  ); nn+=2;
-        serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.pressure );                  nn+=4;
+        serialize_4byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.acquisition_time.tv_sec );   nn+=4;
+        serialize_4byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.acquisition_time.tv_usec );  nn+=4;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.integration_time );          nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.sample_number );             nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.dark_average );              nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.dark_noise );                nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.light_minus_dark_up_shift ); nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.spectrometer_temperature  ); nn+=2;
+        serialize_4byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.pressure );                  nn+=4;
 /*DBG*/ //serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.pressure_T_counts );         nn+=4;
 /*DBG*/ //serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.pressure_T_duration );       nn+=4;
 /*DBG*/ //serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.pressure_P_counts );         nn+=4;
 /*DBG*/ //serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.pressure_P_duration );       nn+=4;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.sun_azimuth  );              nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.housing_heading  );          nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.housing_pitch  );            nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.housing_roll  );             nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.spectrometer_pitch  );       nn+=2;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.spectrometer_roll  );        nn+=2;
-        serialize_4byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.tag );                       nn+=4;
-        serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.side  );                     nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.sun_azimuth  );              nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.housing_heading  );          nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.housing_pitch  );            nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.housing_roll  );             nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.spectrometer_pitch  );       nn+=2;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.spectrometer_roll  );        nn+=2;
+        serialize_4byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.tag );                       nn+=4;
+        serialize_2byte ( raw->contents.structured.aux_data.spec_serial + nn, static_spec_data->aux.side  );                     nn+=2;
 /*DBG*/ //serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.spec_min  );                 nn+=2;
 /*DBG*/ //serialize_2byte ( raw->contents.structured.aux_data.spec_serial+nn, static_spec_data->aux.spec_max  );                 nn+=2;
       }
@@ -2032,7 +2067,7 @@ static int pmg_profile_transmission (uint16_t         profileID,
 
         if ( 0 == packet_in_transfer )
         {
-          info_packet_retrieve_native( &transferring_pip, packet_file_name );
+          info_packet_retrieve_native (&transferring_pip, packet_file_name );
         }
         else
         {
@@ -2480,7 +2515,8 @@ static int16_t rudics_connect ()
   //
   char dial[32];
   DialString( dial, 31 );
-  io_out_string ( dial ); io_out_string ( "\r\n" );
+  io_out_string ( dial );
+  io_out_string ( "\r\n" );
 
   //if ( mdm_connect("ATD00881600005183\r", 90) <= 0 ) {
   if  (mdm_connect (dial, 90) <= 0)
@@ -3328,56 +3364,61 @@ static void profile_manager_loop( __attribute__((unused)) void* pvParameters )
 
           if ( FullRAM == received_data_package.state ) {
 
-           if ( PMG_Profiling == pmg_state || PMG_Offloading == pmg_state ) {
+            if ( PMG_Profiling == pmg_state || PMG_Offloading == pmg_state ) {
+            
+              switch ( received_data_type ) {
+              
+              case DE_Type_Spectrometer_Data:
+              
+                if  ( 1 == write_spec_data ( profile_id, received_data_package.address ) )
+                {
+                  Spectrometer_Data_t* sdt = received_data_package.address;
+                  if ( 0 == sdt->aux.side )
+                  {
+                    profile_frames[PMG_DT_Port_Radiometer]++;
+                  }
 
-            switch ( received_data_type ) {
-
-            case DE_Type_Spectrometer_Data:
-
-              if ( 1 == write_spec_data ( profile_id, received_data_package.address ) ) {
-                Spectrometer_Data_t* sdt = received_data_package.address;
-                if ( 0 == sdt->aux.side ) {
-                  profile_frames[PMG_DT_Port_Radiometer]++;
-                } else if ( 1 == sdt->aux.side ) {
-                  profile_frames[PMG_DT_Starboard_Radiometer]++;
+                  else if ( 1 == sdt->aux.side )
+                  {
+                    profile_frames[PMG_DT_Starboard_Radiometer]++;
+                  }
                 }
+                break;
+              
+              case DE_Type_OCR_Frame:
+              
+                if ( 1 == write_ocr_data ( profile_id, received_data_package.address ) ) {
+                  profile_frames[PMG_DT_OCR]++;
+                }
+                break;
+              
+              case DE_Type_MCOMS_Frame:
+              
+                if ( 1 == write_mcoms_data ( profile_id, received_data_package.address ) ) {
+                  profile_frames[PMG_DT_MCOMS]++;
+                }
+                break;
+              
+              case DE_Type_Ping:
+              case DE_Type_Command:
+              case DE_Type_Response:
+              case DE_Type_Syslog_Message:
+              case DE_Type_Configuration_Data:
+              case DE_Type_Profile_Info_Packet:
+              case DE_Type_Profile_Data_Packet:
+              case DE_Type_Nothing:
+              //  Ignore, cannot happen
+                break;
+              
               }
-              break;
-
-            case DE_Type_OCR_Frame:
-
-              if ( 1 == write_ocr_data ( profile_id, received_data_package.address ) ) {
-                profile_frames[PMG_DT_OCR]++;
-              }
-              break;
-
-            case DE_Type_MCOMS_Frame:
-
-              if ( 1 == write_mcoms_data ( profile_id, received_data_package.address ) ) {
-                profile_frames[PMG_DT_MCOMS]++;
-              }
-              break;
-
-            case DE_Type_Ping:
-            case DE_Type_Command:
-            case DE_Type_Response:
-            case DE_Type_Syslog_Message:
-            case DE_Type_Configuration_Data:
-            case DE_Type_Profile_Info_Packet:
-            case DE_Type_Profile_Data_Packet:
-            case DE_Type_Nothing:
-            //  Ignore, cannot happen
-              break;
-
+            
+             received_data_type = DE_Type_Nothing;
+             received_data_package.state = EmptyRAM;
+            
+            } else {
+              //  Unexpectedly received data
+              //  TODO   re-stop DAQ!
             }
-
-            received_data_type = DE_Type_Nothing;
-            received_data_package.state = EmptyRAM;
-
-           } else {
-             //  Unexpectedly received data
-             //  TODO   re-stop DAQ!
-           }
           }
         }
 

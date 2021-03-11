@@ -903,6 +903,8 @@ static S16 Cmd_SystemMonitor(void)
     return ret;
 }
 
+
+
 //  Set of options / values understood by Cmd_Modem()
 //
 //    option     value
@@ -911,21 +913,25 @@ static S16 Cmd_SystemMonitor(void)
 //    COMM       -
 //    AT         Manual, Automatic
 //
-static S16 Cmd_Modem( char* option, char* value) {
-
+static S16 Cmd_Modem (char* option, char* value)
+{
   S16 ret = CEC_Ok; 
   char* msg = "";
   char rt[64];
 
-  if ( 0 == strcasecmp( "BAUD", option ) ) {
+  if ( 0 == strcasecmp( "BAUD", option ) )
+  {
+    U32 baudrate = atoi (value);
 
-    U32 baudrate = atoi ( value );
-
-    if ( MDM_OK != mdm_setBaudrate  ( baudrate) ) {
+    if ( MDM_OK != mdm_setBaudrate  (baudrate))
+    {
       ret = CEC_Failed;
     }
 
-  } else if ( 0 == strcasecmp( "WAIT", option ) ) {
+  }
+
+  else if ( 0 == strcasecmp( "WAIT", option ))
+  {
 
     int continue_checking = 1;
     int unresponsive = 1;
@@ -964,7 +970,10 @@ static S16 Cmd_Modem( char* option, char* value) {
     mdm_dtr(0);
     mdm_rts(0);
 
-  } else if ( 0 == strcasecmp( "MONITOR", option ) ) {
+  }
+  
+  else if ( 0 == strcasecmp( "MONITOR", option ) )
+  {
 
     gHNV_SetupCmdCtrlTask_Status = TASK_IN_SETUP;
 
@@ -972,7 +981,12 @@ static S16 Cmd_Modem( char* option, char* value) {
 
     do {
 
-      snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n", mdm_carrier_detect()?"CD+":"cd-", mdm_get_dsr()?"DSR+":"dsr-", mdm_get_dtr()?"DTR+":"dtr-", mdm_get_cts()?"CTS+":"cts-" );
+      snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n",
+                     mdm_carrier_detect() ? "CD+" : "cd-",
+                     mdm_get_dsr () ? "DSR+" : "dsr-",
+                     mdm_get_dtr () ? "DTR+" : "dtr-",
+                     mdm_get_cts () ? "CTS+":"cts-" );
+
       tlm_send ( rt, strlen(rt), 0 );
 
       char in;
@@ -999,12 +1013,15 @@ static S16 Cmd_Modem( char* option, char* value) {
     vTaskDelay((portTickType)TASK_DELAY_MS(500));
     snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n", mdm_carrier_detect()?"CD+":"cd-", mdm_get_dsr()?"DSR+":"dsr-", mdm_get_dtr()?"DTR+":"dtr-", mdm_get_cts()?"CTS+":"cts-" );
     tlm_send ( rt, strlen(rt), 0 );
+
     vTaskDelay((portTickType)TASK_DELAY_MS(500));
     snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n", mdm_carrier_detect()?"CD+":"cd-", mdm_get_dsr()?"DSR+":"dsr-", mdm_get_dtr()?"DTR+":"dtr-", mdm_get_cts()?"CTS+":"cts-" );
     tlm_send ( rt, strlen(rt), 0 );
+
     vTaskDelay((portTickType)TASK_DELAY_MS(500));
     snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n", mdm_carrier_detect()?"CD+":"cd-", mdm_get_dsr()?"DSR+":"dsr-", mdm_get_dtr()?"DTR+":"dtr-", mdm_get_cts()?"CTS+":"cts-" );
     tlm_send ( rt, strlen(rt), 0 );
+
     vTaskDelay((portTickType)TASK_DELAY_MS(500));
     snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n", mdm_carrier_detect()?"CD+":"cd-", mdm_get_dsr()?"DSR+":"dsr-", mdm_get_dtr()?"DTR+":"dtr-", mdm_get_cts()?"CTS+":"cts-" );
     tlm_send ( rt, strlen(rt), 0 );
@@ -1027,16 +1044,22 @@ static S16 Cmd_Modem( char* option, char* value) {
         updateMonitor++;
       }
 
-      if ( tlm_recv( &in, 1, TLM_PEEK | TLM_NONBLOCK ) ) {
+      if  ( tlm_recv( &in, 1, TLM_PEEK | TLM_NONBLOCK ) ) {
 
         tlm_recv ( &in, 1, TLM_NONBLOCK );
 
-        if ( in == '$' ) {
+        if ( in == '$' )
+        {
           terminated = 1;
-        } else {
-          if ( in == '\r' ) {
+        }
+        else
+        {
+          if ( in == '\r' )
+          {
             updateMonitor = 0;
-          } else {
+          }
+          else
+          {
             updateMonitor = -40;
           }
           tlm_send ( &in, 1, 0 );
@@ -1055,7 +1078,8 @@ static S16 Cmd_Modem( char* option, char* value) {
       vTaskDelay((portTickType)TASK_DELAY_MS(50));
 
       cnt_alive++;
-      if ( cnt_alive>=100 ) {
+      if  ( cnt_alive>=100 )
+      {
         msg = "Alive\r\n";
         tlm_send ( msg, strlen(msg), 0 );
         cnt_alive = 0;
@@ -1066,7 +1090,10 @@ static S16 Cmd_Modem( char* option, char* value) {
     mdm_dtr(0);
     mdm_rts(0);
 
-  } else if ( 0 == strcasecmp( "*", option ) ) {
+  }
+
+  else if ( 0 == strcasecmp( "*", option ) )
+  {
 
     mdm_rts(1);
 
@@ -1180,20 +1207,26 @@ static S16 Cmd_Modem( char* option, char* value) {
     msg = "Modem configuration: ";
     tlm_send ( msg, strlen(msg), 0 );
     int rv;
-    if ( 1 == ( rv = mdm_configure () ) ) {
+    if ( 1 == ( rv = mdm_configure () ) )
+    {
         msg = "OK\r\n";
         tlm_send ( msg, strlen(msg), 0 );
-    } else {
+    }
+    else
+    {
         snprintf ( rt, 63, "N/A %d\r\n", rv );
         tlm_send ( rt, strlen(rt), 0 );
     }
 
     msg = "Modem reg:   ";
     tlm_send ( msg, strlen(msg), 0 );
-    if ( !mdm_isRegistered () ) {
+    if ( !mdm_isRegistered () )
+    {
         msg = "Failed\r\n";
         tlm_send ( msg, strlen(msg), 0 );
-    } else {
+    }
+    else
+    {
         msg = "OK\r\n";
         tlm_send ( msg, strlen(msg), 0 );
 
@@ -1206,46 +1239,61 @@ static S16 Cmd_Modem( char* option, char* value) {
           msg = "Modem sgnal: ";
           tlm_send ( msg, strlen(msg), 0 );
           int num, min, avg, max;
-          if ( ( num = mdm_getSignalStrength ( 3+attempt, &min, &avg, &max ) ) > 0 ) {
+          if ( ( num = mdm_getSignalStrength ( 3+attempt, &min, &avg, &max ) ) > 0 )
+          {
             signalStrength = avg;
             snprintf ( rt, 63, "%d (%d) [%d..%d]\r\n", avg, num, min, max );
             tlm_send ( rt, strlen(rt), 0 );
-          } else {
+          }
+          else
+          {
             msg = "N/A";
             tlm_send ( msg, strlen(msg), 0 );
           }
 
         } while ( attempt++<=5 && signalStrength < neededSignalStrength );
 
-        if ( signalStrength >= neededSignalStrength ) {
-
+        if ( signalStrength >= neededSignalStrength )
+        {
           msg = "Modem dial:  ";
           tlm_send ( msg, strlen(msg), 0 );
 
-          if ( mdm_connect("ATD00881600005183\r", 90) <= 0 ) {
+          if ( mdm_connect ("ATD00881600005183\r", 90) <= 0 )
+          {
             msg = "Failed\r\n";
             tlm_send ( msg, strlen(msg), 0 );
 
             snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n", mdm_carrier_detect()?"CD+":"cd-", mdm_get_dsr()?"DSR+":"dsr-", mdm_get_dtr()?"DTR+":"dtr-", mdm_get_cts()?"CTS+":"cts-" );
             tlm_send ( rt, strlen(rt), 0 );
 
-          } else {
+          }
+          else
+          {
             msg = "Connected\r\n";
             tlm_send ( msg, strlen(msg), 0 );
 
-            snprintf ( rt, sizeof(rt), "Modem %s %s %s %s\r\n", mdm_carrier_detect()?"CD+":"cd-", mdm_get_dsr()?"DSR+":"dsr-", mdm_get_dtr()?"DTR+":"dtr-", mdm_get_cts()?"CTS+":"cts-" );
+            snprintf (rt, sizeof(rt), "Modem %s %s %s %s\r\n",
+                      mdm_carrier_detect() ? "CD+" : "cd-",
+                      mdm_get_dsr() ? "DSR+" : "dsr-",
+                      mdm_get_dtr() ? "DTR+" : "dtr-",
+                      mdm_get_cts() ? "CTS+" : "cts-"
+                     );
+
             tlm_send ( rt, strlen(rt), 0 );
 
 # if 1
             msg = "Modem login: ";
             tlm_send ( msg, strlen(msg), 0 );
 
-            if ( mdm_login(120, "f0002\r", "S(n)=2n\r" ) <= 0 ) {
+            if ( mdm_login(120, "f0002\r", "S(n)=2n\r" ) <= 0 )
+            {
 
               msg = "NO PROMPT\r\n";
               tlm_send ( msg, strlen(msg), 0 );
 
-            } else {
+            }
+            else
+            {
 
               msg = "got prompt\r\n";
               tlm_send ( msg, strlen(msg), 0 );
@@ -1255,7 +1303,8 @@ static S16 Cmd_Modem( char* option, char* value) {
 
               int bytesSent;
               int mdm_rv;
-              if ( (mdm_rv = mdm_communicate( 300, 20, &bytesSent ) ) <= 0 ) {
+              if ( (mdm_rv = mdm_communicate( 300, 20, &bytesSent ) ) <= 0 )
+              {
 
                 if ( 0 == mdm_rv ) {
                   msg = "Timed Out\r\n";
@@ -1264,7 +1313,10 @@ static S16 Cmd_Modem( char* option, char* value) {
                 }
                 tlm_send ( msg, strlen(msg), 0 );
 
-              } else {
+              }
+
+              else
+              {
 
                 snprintf ( rt, sizeof(rt), "sent %d bytes\r\n", bytesSent );
                 tlm_send ( rt, strlen(rt), 0 );
@@ -1372,43 +1424,53 @@ static S16 Cmd_Modem( char* option, char* value) {
 
 
 
-S16 DialString( char dial[], int len ) {
+S16 DialString (char dial[], int len)
+{
 
   fHandler_t fh;
-  if ( FILE_OK != f_open ( "0:\\DIAL", O_RDONLY, &fh ) ) {
+  if ( FILE_OK != f_open ( "0:\\DIAL", O_RDONLY, &fh ) )
+  {
     return CEC_Failed;
   }
 
   char rd;
   int i = 0;
-  while ( 1 == f_read ( &fh, &rd, 1 ) ) {
-    if (i<len-1) dial[i++] = rd;
+  while ( 1 == f_read ( &fh, &rd, 1 ) )
+  {
+    if  (i < len - 1)
+      dial[i++] = rd;
   }
   dial[i] = 0;
 
   return CEC_Ok;
 }
 
-static S16 Cmd_Dial( char* option ) {
 
 
-  if ( !option || !option[0] ) {
-
+static S16 Cmd_Dial (char* option)
+{
+  if  ( !option || !option[0] )
+  {
     char dial[32];
 
-    if ( CEC_Ok == DialString( dial, 31 ) ) {
-        io_out_string( dial );
-        io_out_string( "\r\n" );
-    } else {
-        return CEC_Failed;
+    if  (CEC_Ok == DialString( dial, 31 ) )
+    {
+      io_out_string( dial );
+      io_out_string( "\r\n" );
+    }
+    else
+    {
+      return CEC_Failed;
     }
 
-  } else {
-
+  }
+  else
+  {
     fHandler_t fh;
 
-    if ( FILE_OK != f_open ( "0:\\DIAL", O_WRONLY | O_CREAT, &fh ) ) {
-        return CEC_Failed;
+    if  ( FILE_OK != f_open ( "0:\\DIAL", O_WRONLY | O_CREAT, &fh ) )
+    {
+      return CEC_Failed;
     }
 
     f_write ( &fh, option, strlen(option) );
@@ -1420,6 +1482,9 @@ static S16 Cmd_Dial( char* option ) {
 
   return CEC_Ok;
 }
+
+
+
 
 //
 //  An ancillary RS232 sensor subsystem test.
@@ -1773,113 +1838,135 @@ static ShellCommand_t shellCmd[] = {
         { "$",           CS_Dollar }     //  Support legacy command for SUNACom convenience
 };
 
-static const S16 MAX_SHELL_CMDS = sizeof(shellCmd)/sizeof(ShellCommand_t);
+static const S16 MAX_SHELL_CMDS = sizeof(shellCmd) / sizeof (ShellCommand_t);
 
 
-static void CMD_Handle ( char* cmd, Access_Mode_t* access_mode, int* ui_flag ) {
+static void CMD_Handle ( char* cmd, Access_Mode_t* access_mode, int* ui_flag )
+{
 
-    gHNV_SetupCmdCtrlTask_Status = TASK_IN_SETUP;
+  gHNV_SetupCmdCtrlTask_Status = TASK_IN_SETUP;
 
-    bool changed_cfg = false;
-    Bool needReboot = false;
+  bool changed_cfg = false;
+  Bool needReboot = false;
 
-    S32  waitReboot = 0;
-    Bool match = false;
-    S16 try = 0;
-    char* arg = 0;
+  S32  waitReboot = 0;
+  Bool match = false;
+  S16 try = 0;
+  char* arg = 0;
 
-    //  Skip leading white space
-    while ( *cmd == ' ' || *cmd == '\t' ) cmd++;
+  //  Skip leading white space
+  while ( *cmd == ' ' || *cmd == '\t' ) cmd++;
 
-    do {
-        if ( 0 == strncasecmp ( cmd, shellCmd[try].name, strlen(shellCmd[try].name) ) ) {
-            match = true;
-            arg = cmd + strlen(shellCmd[try].name);
-        } else {
-            try++;
-        }
-    } while ( !match && try < MAX_SHELL_CMDS );
+  do 
+  {
+    if  (0 == strncasecmp (cmd, shellCmd[try].name, strlen (shellCmd[try].name)))
+    {
+      match = true;
+      arg = cmd + strlen(shellCmd[try].name);
+    }
+    else
+    {
+      try++;
+    }
+  } while ( !match && try < MAX_SHELL_CMDS );
 
-    S16 cec = CEC_Ok;
-    char result[64];
-    result[0] = 0;
+  S16 cec = CEC_Ok;
+  char result[64];
+  result[0] = 0;
 
-    if ( try == MAX_SHELL_CMDS ) {
-        if ( *cmd == 0 ) {
-            cec = CEC_EmptyCommand;
-        } else {
-            cec = CEC_UnknownCommand;
-        }
-    } else {
-        //  Split the remainder of the command into
-        //  option and (optional) value parts
+  if  ( try == MAX_SHELL_CMDS )
+  {
+    if  (*cmd == 0)
+    {
+      cec = CEC_EmptyCommand;
+    }
+    else
+    {
+      cec = CEC_UnknownCommand;
+    }
+  }
+  
+  else
+  {
+    //  Split the remainder of the command into
+    //  option and (optional) value parts
 
-        //  Skip over spaces and "--" option prefix.
-        //  Nothing will be done if this is an option-less command.
-        while ( *arg == ' '
-             || *arg == '\t'
-             || *arg == '-' ) {
-            arg++;
-        }
-        //  Option argument to current command starts now
-        char* option = arg;
+    //  Skip over spaces and "--" option prefix.
+    //  Nothing will be done if this is an option-less command.
+    while ( *arg == ' '
+         || *arg == '\t'
+         || *arg == '-' )
+    {
+      arg++;
+    }
+    //  Option argument to current command starts now
+    char* option = arg;
 
-        //  Skip over option argument characters to see if value string is following
-        while ( isalnum ( *arg )
-             || *arg == '_'
-             || *arg == '#'
-             || *arg == '*' ) {
-            arg++;
-        }
+    //  Skip over option argument characters to see if value string is following
+    while ( isalnum ( *arg )
+         || *arg == '_'
+         || *arg == '#'
+         || *arg == '*' )
+    {
+      arg++;
+    }
 
-        char* value;
+    char* value;
 
-        if ( 0 == *arg ) {
-            //  No value in command string.
-            value = "";
-        } else {
-            //  Skip over white space / assignment character
-            while ( *arg == ' '
-                 || *arg == '\t'
-                 || *arg == '=' ) {
-                *arg = 0;   //  Terminate the option string.
-                arg++;
-            }
-            value = arg;    //  Value starts at first non-space/non-assignment next character.
-        }
+    if ( 0 == *arg )
+    {
+      //  No value in command string.
+      value = "";
+    }
+    
+    else
+    {
+      //  Skip over white space / assignment character
+      while ( *arg == ' '
+           || *arg == '\t'
+           || *arg == '=' )
+      {
+        *arg = 0;   //  Terminate the option string.
+        arg++;
+      }
+      value = arg;    //  Value starts at first non-space/non-assignment next character.
+    }
 
-        if ( CFG_Get_Message_Level() >= CFG_Message_Level_Trace ) {
-            io_out_string ( "CMD:\t" );
-            io_out_string ( shellCmd[try].name );
-            io_out_string ( "\t" );
-            io_out_string ( option );
-            io_out_string ( "\t" );
-            io_out_string ( value );
-            io_out_string ( "\r\n" );
-        }
+    if ( CFG_Get_Message_Level() >= CFG_Message_Level_Trace )
+    {
+      io_out_string ( "CMD:\t" );
+      io_out_string ( shellCmd[try].name );
+      io_out_string ( "\t" );
+      io_out_string ( option );
+      io_out_string ( "\t" );
+      io_out_string ( value );
+      io_out_string ( "\r\n" );
+    }
 
-        //  Make sure firmware will not get stuck while executing command
-        if ( true /* CFG_Watchdog_On == CFG_Get_Watchdog() */ ) {
-            watchdog_reenable();
-        }
+    //  Make sure firmware will not get stuck while executing command
+    if ( true /* CFG_Watchdog_On == CFG_Get_Watchdog() */ )
+    {
+      watchdog_reenable();
+    }
 
-        switch ( shellCmd[try].id ) {
+    switch ( shellCmd[try].id )
+    {
 
-        //  General Information - Only at Op_Idle
-//      case CS_Info:        cec = Cmd_Info     ( option, result, sizeof(result) ); break;
-        case CS_SelfTest:    cec = Cmd_SelfTest ();                                 break;
-        case CS_Sensor:      cec = Cmd_Sensor   ( option );                         break;
+    //  General Information - Only at Op_Idle
+//    case CS_Info:        cec = Cmd_Info     ( option, result, sizeof(result) ); break;
+      case CS_SelfTest:    cec = Cmd_SelfTest ();                                 break;
+      case CS_Sensor:      cec = Cmd_Sensor   ( option );                         break;
 
-        //  Configuration parameters - Only at Op_Idle
-        case CS_Get:         cec = CFG_CmdGet   ( option, result, sizeof(result) ); break;
-        case CS_Set:         cec = CFG_CmdSet   ( option, value, *access_mode );
-                             if ( CEC_Ok == cec ) { changed_cfg = true; }
-                             break;
+      //  Configuration parameters - Only at Op_Idle
+      case CS_Get:         cec = CFG_CmdGet   ( option, result, sizeof(result) ); break;
+      case CS_Set:         cec = CFG_CmdSet   ( option, value, *access_mode );
+                           if ( CEC_Ok == cec ) { changed_cfg = true; }
+                           break;
 
-        //  Setup
+      //  Setup
 # ifdef STEPWISE_UNSHELVING
-        case CS_CompassCal:  cec = Cmd_CompassCal  ();
-        case CS_AccelerCal:  cec = Cmd_AccelerCal  ();
+      case CS_CompassCal:  cec = Cmd_CompassCal  ();
+      case CS_AccelerCal:  cec = Cmd_AccelerCal  ();
 # endif
         //  File access - Only at Op_Idle
         case CS_List:        cec = FSYS_CmdList    ( option                     );            break;
@@ -1915,17 +2002,22 @@ static void CMD_Handle ( char* cmd, Access_Mode_t* access_mode, int* ui_flag ) {
 
         case CS_FirmwareUpgrade:
                              cec = CMD_DropToBootloader();
-                             if ( CEC_Ok == cec ) {
+                             if ( CEC_Ok == cec )
+                             {
                                CFG_Set_Firmware_Upgrade ( CFG_Firmware_Upgrade_Yes );
                                needReboot = true;
-                               if ( option[0] ) waitReboot = atoi ( option );
+                               if  ( option[0] )
+                                 waitReboot = atoi ( option );
                              }
                              break;
 
         case CS_Reboot:      cec = CEC_Ok;
                              needReboot = true;
-                             if ( option[0] ) waitReboot = atoi ( option );
+                             if  (option[0])
+                               waitReboot = atoi ( option );
                              break;
+
+
         case CS_Dollar:      //  Accept "$", "$$", ...
                              //  Reject "$[^$]*"
                              while ( *cmd == '$' ) cmd++;
