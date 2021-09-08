@@ -476,7 +476,8 @@ int16_t frm_out_or_log (
     V.tmp_S16 = hsd->aux.light_minus_dark_up_shift;
     to_write = 2;
 
-    if( to_file ) {
+    if  (to_file)
+    {
 # if WRITE_EACH
       if ( to_write != DLF_Write ( V.tmp_mem, to_write ) )    { return (int16_t)-17; }
 # else
@@ -485,13 +486,17 @@ int16_t frm_out_or_log (
 # endif
       for ( i=0; i<to_write; i++) log_check_sum -= V.tmp_mem[i];
     }
-    if ( to_tlm ) {
-      if ( ASCII ) {
+    if ( to_tlm )
+    {
+      if ( ASCII )
+      {
         snprintf ( tmp_buf, sizeof(tmp_buf), ",%hd", V.tmp_S16 );
         to_write = strlen(tmp_buf);
         if ( to_write != tlm_send  ( tmp_buf, to_write, 0 ) ) { return (int16_t)-18; }
         for ( i=0; i<to_write; i++) tlm_check_sum -= tmp_buf[i];
-      } else {
+      }
+      else
+      {
         if ( to_write != tlm_send  ( V.tmp_mem, to_write, 0 ) ) { return (int16_t)-18; }
         for ( i=0; i<to_write; i++) tlm_check_sum -= V.tmp_mem[i];
       }
@@ -502,7 +507,8 @@ int16_t frm_out_or_log (
     V.tmp_S16 = hsd->aux.spectrometer_temperature;
     to_write = 2;
 
-    if( to_file ) {
+    if  ( to_file )
+    {
 # if WRITE_EACH
       if ( to_write != DLF_Write ( V.tmp_mem, to_write ) )    { return (int16_t)-19; }
 # else
@@ -511,8 +517,10 @@ int16_t frm_out_or_log (
 # endif
       for ( i=0; i<to_write; i++) log_check_sum -= V.tmp_mem[i];
     }
-    if ( to_tlm ) {
-      if ( ASCII ) {
+    if  ( to_tlm )
+    {
+      if ( ASCII )
+      {
         snprintf ( tmp_buf, sizeof(tmp_buf), ",%hd", V.tmp_S16 );
         to_write = strlen(tmp_buf);
         if ( to_write != tlm_send  ( tmp_buf, to_write, 0 ) ) { return (int16_t)-20; }
@@ -528,7 +536,8 @@ int16_t frm_out_or_log (
     V.tmp_S32 = hsd->aux.pressure;
     to_write = 4;
 
-    if( to_file ) {
+    if  ( to_file )
+    {
 # if WRITE_EACH
       if ( to_write != DLF_Write ( V.tmp_mem, to_write ) )    { return (int16_t)-21; }
 # else
@@ -537,7 +546,9 @@ int16_t frm_out_or_log (
 # endif
       for ( i=0; i<to_write; i++) log_check_sum -= V.tmp_mem[i];
     }
-    if ( to_tlm ) {
+
+    if ( to_tlm )
+    {
       if ( ASCII ) {
         snprintf ( tmp_buf, sizeof(tmp_buf), ",%ld", V.tmp_S32 );
         to_write = strlen(tmp_buf);

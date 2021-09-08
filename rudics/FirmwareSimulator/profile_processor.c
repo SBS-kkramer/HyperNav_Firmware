@@ -363,12 +363,15 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
   //
   data_exchange_address_t const myAddress = DE_Addr_ProfileProcessor;
 
-  while ( 1 /* eternal loop */ ) {
+  while ( 1 /* eternal loop */ )
+  {
 
-    if ( !runTask ) {
+    if ( !runTask )
+    {
       taskIsRunning = 0;
-
-    } else {
+    }
+    else
+    {
       taskIsRunning = 1;
       //  Keep the task manager informed that this task is not stuck
       gHNV_ProfileProcessorTask_Status = TASK_IS_RUNNING;
@@ -376,13 +379,16 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
       //  Check for incoming packet and process command or data
       //
       data_exchange_packet_t packet;
-      if ( 0 == profile_processor_dequeuePacket( &packet) ) {
-
-        if ( packet.to != myAddress ) {
+      if ( 0 == profile_processor_dequeuePacket( &packet) )
+      {
+        if ( packet.to != myAddress )
+        {
           io_out_string ( "ERROR PPR RX misaddressed packet\r\n" );
           //  TODO - Release potential data pointer back to sender!
 
-        } else {
+        }
+        else
+        {
           //  If there is a need to respond,
           //  the following address will be overwritten.
           //  A non DE_Addr_Nobody value will be used as a flag
@@ -390,11 +396,13 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
           data_exchange_packet_t packet_response;
           packet_response.to = DE_Addr_Nobody;
 
-          switch ( packet.type ) {
+          switch ( packet.type )
+          {
 
           case DE_Type_Command:
 
-            switch ( packet.data.Command.Code ) {
+            switch ( packet.data.Command.Code )
+            {
 
             //  Start a profile transmission
             case CMD_PPR_StartTransfer:
@@ -407,9 +415,11 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
               }
             # endif
 
-              for ( p=0; p<NPACK; p++ ) {
+              for ( p=0; p<NPACK; p++ )
+              {
                 pckt_state[p] = PPR_PCKT_NonExistent;
-                for( b=0; b<NBRST; b++ ) {
+                for( b=0; b<NBRST; b++ )
+                {
                   brst_state[p][b] = PPR_BRST_NonExistent;
                 }
               }
@@ -417,42 +427,44 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
               ntw_state = PPR_NTW_Connect;
               ptx_state = PPR_PTX_RequestInfoPacket;
               packet_request_number = 0;
-	      break;
+	            break;
 
             case CMD_PPR_StopTransfer:
 
               ntw_state = PPR_NTW_Disconnect;
               ptx_state = PPR_PTX_Idle;
-	      break;
+	            break;
 
             default:
               //  This should never happen!
               //  This task only handles the above commands.
-	      break;
+	            break;
 
             } // switch ( packet.data.Command.Code ) {
 
-	    break;
+	          break;
 
           case DE_Type_Profile_Info_Packet:
 
-            if ( ptx_state != PPR_PTX_WaitingForPacket ) {
+            if ( ptx_state != PPR_PTX_WaitingForPacket )
+            {
               //  Unexpected!
             }
 
             ptx_state = PPR_PTX_ProcessInfoPacket:
 
-	    break;
+	          break;
 
           case DE_Type_Profile_Data_Packet:
 
-            if ( ptx_state != PPR_PTX_WaitingForPacket ) {
+            if ( ptx_state != PPR_PTX_WaitingForPacket )
+            {
               //  Unexpected!
             }
 
             ptx_state = PPR_PTX_ProcessPacket:
 
-	    break;
+	          break;
 
 
           default:
@@ -460,11 +472,11 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
             //  This task only handles commands
             //  or received transfer packets.
 
-	    break;
+	          break;
 	    
-	  } // switch ( packet.type ) {
+	        } // switch ( packet.type ) {
 
-	}
+	      }
 
       }
 
@@ -480,7 +492,8 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
 
       //  (1) Network connect/disconnect //////////////////////////////////////////////////
       //
-      switch ( ntw_state ) {
+      switch ( ntw_state )
+      {
 
       case PPR_NTW_IsDisconnected:
         //  Do nothing
@@ -493,30 +506,36 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
         //  ntw_state = PPR_NTW_Connecting
         //  Else (assume for now)
             ntw_state = PPR_NTW_IsConnected
-        break;
+            break;
 
       case PPR_NTW_Connecting:
         //  If connecting can be done in stages,
         //  check for status & when connected,
             ntw_state = PPR_NTW_IsConnected
-        break;
+            break;
 
       case PPR_NTW_IsConnected:
         //  Check that network did not fail
-        if ( NTW_ConnectionFailed() ) {
+        if  ( NTW_ConnectionFailed() )
+        {
           //  TODO - Either report back to Profile Manager, and wait for re-connect command
           //  ???
           //         Or     try reconnecting (with max_#_retries & overall timeout
           //  implemented...
-          if ( reconnect_attempts <= 0 ) {
+          if ( reconnect_attempts <= 0 )
+          {
             //  Give up, terminate this profile transfer attempt
             ntw_state = PPR_NTW_IsDisconnected;
             //  TODO - Report back to profile manager that transfer failed at this point in time.
-          } else {
+          }
+          else
+          {
             reconnect_attempts--;
             ntw_state = PPR_NTW_Connect;
           }
-        } else {
+        }
+        else
+        {
           //  PPR_NTW_IsConnected ==> burst transfers will proceed (see below)
         }
         break;
@@ -540,7 +559,8 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
 
       //  (2) Packet request/receive /////////////////////////////////////////////////////////
       //
-      switch ( ptx_state ) {
+      switch  (ptx_state)
+      {
       case PPR_PTX_Idle:
         //  Do nothing
         break;
@@ -560,7 +580,8 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
         break;
 
       case PPR_PTX_WaitingForPacket:
-        if( time((time_t*)0) > packet_request_time + packet_exchange_timeout ) {
+        if  ( time((time_t*)0) > packet_request_time + packet_exchange_timeout )
+        {
           //    profile_manager slow to respond!!!
           //    FIXME Handle situation
         }
@@ -580,14 +601,15 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
         profile_number_of_packets = 4;  //  TODO: Get from info packet: nSBRD+nPORT+nOCR+nMCOMS
         assert ( profile_number_of_packets<=NPACK );
 
-          pckt_state[0] = PPR_PCKT_ReadyToSend;
-        for ( p=1; p<profile_number_of_packets; p++ ) {
+        pckt_state[0] = PPR_PCKT_ReadyToSend;
+        for ( p=1; p<profile_number_of_packets; p++ )
+        {
           pckt_state[p] = PPR_PCKT_WaitToReceive;
         }
 
-          brst_state[0][0] = PPR_BRST_ReadyToSend;
-          brst_state[0][1] = PPR_BRST_ReadyToSend;
-          brst_state[0][2] = PPR_BRST_ReadyToSend;
+        brst_state[0][0] = PPR_BRST_ReadyToSend;
+        brst_state[0][1] = PPR_BRST_ReadyToSend;
+        brst_state[0][2] = PPR_BRST_ReadyToSend;
 
         //
         //  Immediately request first data packet.
@@ -605,13 +627,17 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
         assert ( received_packet==sane );
         //
         p = 1; // TODO: Get from received data packet
-        if ( p <= profile_number_of_packets ) {
+        if ( p <= profile_number_of_packets )
+        {
           pckt_state[p] = PPR_PCKT_ReadyToSend;
           uint16_t nb = 5; // Number of burst in this packet. Get from received data packet
-          for ( b=0; b<=nb; b++ ) {
+          for ( b=0; b<=nb; b++ )
+          {
             brst_state[p][b] = PPR_BRST_ReadyToSend;
           }
-        } else {
+        }
+        else
+        {
           //  ERROR
         }
         //  TODO - convert packet into encoded bursts
@@ -636,7 +662,8 @@ static taskReturnValue profile_processor_theTask( void* arg ) {
       
       //  (3) Burst generation/transfer  //////////////////////////////////////////////////
       //
-      if ( profile_yyddd > 0 ) {
+      if ( profile_yyddd > 0 )
+      {
 
       } // if ( profile_yyddd > 0 )
     }

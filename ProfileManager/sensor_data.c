@@ -25,52 +25,64 @@ void generate_fake_hyper ( Spectrometer_Data_t* h, uint16_t side ) {
 }
 
 
-void generate_fake_ocr( OCR_Data_t* o ) {
+
+void  generate_fake_ocr (OCR_Data_t* o)
+{
   int p;
-  for ( p=0; p<4; p++ ) {
+  for  (p = 0;  p < 4;  p++)
+  {
     o->channel[p] = 0x0040 + ( 0x1FFF & random() );
   }
-  o->aux.sample_number    = 1;
+  o->aux.sample_number = 1;
   gettimeofday ( &(o->aux.acquisition_time), (void*) 0 );
 }
 
 
-void generate_fake_mcoms( MCOMS_Data_t* m ) {
+
+void generate_fake_mcoms( MCOMS_Data_t* m )
+{
   int p, q;
-  for ( p=0; p<4; p++ ) {
-  for ( q=0; q<3; q++ ) {
-    m->rawdata[q][p] = 0x0040 + ( 0x1FFF & random() );
+  for  (p = 0;  p < 4;  p++)
+  {
+    for  (q = 0;  q < 3;  q++)
+    {
+      m->rawdata[q][p] = 0x0040 + (0x1FFF & random ());
+    }
   }
-  }
+
   m->aux.sample_number    = 1;
-  gettimeofday ( &(m->aux.acquisition_time), (void*) 0 );
+  gettimeofday (&(m->aux.acquisition_time), (void*) 0 );
 }
 
-// FIXME ??
-void save_measurement( Measurement_t* m, const char* data_dir, uint16_t profile_yyddd ) {
 
+
+// FIXME ??
+void  save_measurement (Measurement_t* m, const char* data_dir, uint16_t profile_yyddd )
+{
   char fname[32];
 
-  switch( m->type ) {
-  case 'S': sprintf ( fname, "%05hu/M.sbd", profile_yyddd ); break;
-  case 'P': sprintf ( fname, "%05hu/M.prt", profile_yyddd ); break;
-  case 'O': sprintf ( fname, "%05hu/M.ocr", profile_yyddd ); break;
-  case 'M': sprintf ( fname, "%05hu/M.mcm", profile_yyddd ); break;
+  switch  (m->type)
+  {
+  case 'S': sprintf (fname, "%05hu/M.sbd", profile_yyddd); break;
+  case 'P': sprintf (fname, "%05hu/M.prt", profile_yyddd); break;
+  case 'O': sprintf (fname, "%05hu/M.ocr", profile_yyddd); break;
+  case 'M': sprintf (fname, "%05hu/M.mcm", profile_yyddd); break;
   default : fname[0] = 0;
   }
 
-  if ( fname[0] ) {
-    FILE* fp = fopen ( fname, "a" );
-    if ( fp ) {
-      switch( m->type ) {
-      case 'S': fwrite ( &(m->data.hyper), sizeof(Spectrometer_Data_t), 1, fp ); break;
-      case 'P': fwrite ( &(m->data.hyper), sizeof(Spectrometer_Data_t), 1, fp ); break;
-      case 'O': fwrite ( &(m->data.ocr  ), sizeof(OCR_Data_t), 1, fp ); break;
-      case 'M': fwrite ( &(m->data.mcoms), sizeof(MCOMS_Data_t), 1, fp ); break;
+  if  (fname[0])
+  {
+    FILE* fp = fopen (fname, "a");
+    if  (fp)
+    {
+      switch (m->type)
+      {
+      case 'S': fwrite (&(m->data.hyper), sizeof (Spectrometer_Data_t), 1, fp); break;
+      case 'P': fwrite (&(m->data.hyper), sizeof (Spectrometer_Data_t), 1, fp); break;
+      case 'O': fwrite (&(m->data.ocr  ), sizeof (OCR_Data_t),          1, fp); break;
+      case 'M': fwrite (&(m->data.mcoms), sizeof (MCOMS_Data_t),        1, fp); break;
       }
-      fclose  ( fp );
+      fclose  (fp);
     }
   }
 }
-
-

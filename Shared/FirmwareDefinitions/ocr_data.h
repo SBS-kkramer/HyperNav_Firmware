@@ -21,21 +21,20 @@
 
 typedef uint32_t OCR_Pixel;
 
-typedef struct OCR_Aux_Data {
-
+typedef struct OCR_Aux_Data
+{
   struct timeval acquisition_time;
-
 } OCR_Aux_Data_t;
 
-typedef struct OCR_Data {
-
+typedef struct OCR_Data
+{
   OCR_Pixel      pixel[N_OCR_PIX];
   OCR_Aux_Data_t aux;
-
 } OCR_Data_t;
 
 # define OCR_FRAME_LENGTH 46
-typedef struct OCR_Frame {
+typedef struct OCR_Frame
+{
 
   //  The frame is always fixed length
   uint8_t frame[OCR_FRAME_LENGTH];

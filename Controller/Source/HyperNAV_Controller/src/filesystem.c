@@ -668,14 +668,19 @@ S16 FSYS_CmdCRC ( char const* option, char const* specifier, char* result, S16 r
 	//	Execution never gets here
 }
 
-S16 FSYS_CmdDisplay ( char const* option, char const* specifier, Access_Mode_t const* const access_mode, char how ) {
+S16 FSYS_CmdDisplay (char const*                option,
+										 char const*                specifier,
+										 Access_Mode_t const* const access_mode,
+										 char                       how
+                    )
+{
 
 	if ( !option ) return CEC_Failed;
 	if ( !specifier ) return CEC_FileNameMissing;
 
-	if ( 0 == strncasecmp ( option, "LOG", 4 ) ) {
-
-        char const* syslog_dir = syslog_LogDirName();
+	if ( 0 == strncasecmp ( option, "LOG", 4 ) )
+	{
+    char const* syslog_dir = syslog_LogDirName();
 		char fullFileName [ strlen(syslog_dir) + 1 + strlen(specifier) + 1 ];
 
 		strcpy ( fullFileName, syslog_dir );
@@ -684,26 +689,34 @@ S16 FSYS_CmdDisplay ( char const* option, char const* specifier, Access_Mode_t c
 
 		return fsys_dispFile ( fullFileName, how );
 
-	} else if ( /* *access_mode >= Access_Admin
-			&& */ 0 == strncasecmp ( option, "*", 1 ) ) {
+	}
+	else if (0 == strncasecmp ( option, "*", 1 ) )
+	{
 
 		return fsys_dispFile ( specifier, how );
 
-	} else {
+	}
+	else
+	{
 		return CEC_CmdDspUnknown;
 	}
 
 	//	Execution will not get here.
 }
 
+
+
+
+
 S16 FSYS_CmdDelete ( char const* option, char const* specifier, Access_Mode_t const* const access_mode ) {
 
 	if ( !option ) return CEC_Failed;
 	if ( !specifier ) return CEC_FileNameMissing;
 
-	if ( 0 == strncasecmp ( option, "LOG", 3 ) ) {
+	if ( 0 == strncasecmp ( option, "LOG", 3 ) )
+	{
 
-        char const* syslog_dir = syslog_LogDirName();
+    char const* syslog_dir = syslog_LogDirName();
 		char fullFileName [ strlen(syslog_dir) + 1 + strlen(specifier) + 1 ];
 
 		strcpy ( fullFileName, syslog_dir );

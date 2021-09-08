@@ -74,7 +74,8 @@ static xQueueHandle rxPackets = NULL;
 //  two for actively collecting,
 //  and two that are sent around via packets to other task
 
-typedef union {
+typedef union
+{
   Spectrometer_Data_t spec_data;
 } any_acquired_data_t;
 
@@ -135,7 +136,8 @@ static char* flt2str ( float f, char string[], int dd ) {
 }
 # endif
 
-static char* int2str ( int v, char string[] ) {
+static char* int2str ( int v, char string[] )
+{
 
   if ( !v ) { string[0] = '0'; string[1] = 0; return string; }
 
@@ -159,6 +161,7 @@ static char* int2str ( int v, char string[] ) {
 
   return string;
 }
+
 
 static void Init_GPS_Position ( gps_data_t* gps ) {
   gps -> lon = CFG_Get_Longitude();
@@ -293,7 +296,8 @@ typedef enum {
 //PRF_Delay_10m   // ETA at 10 minutes
 } Profile_Action_t;
 
-static Profile_Action_t measureNow ( double current, float point[], int next, int last ) {
+static Profile_Action_t measureNow ( double current, float point[], int next, int last )
+{
 
 //char ppp[16];
 //io_out_string ( "NeasureNow " );
@@ -581,8 +585,9 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
           //  if one possible packet type was missed.
           }
 
-        } else {
-
+        }
+        else
+        {
           //  If there is a need to respond,
           //  the following address will be overwritten.
           //  A non DE_Addr_Nobody value will be used as a flag
@@ -841,16 +846,20 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                 firstSpec = CFG_Get_Frame_Port_Serial_Number()      ? 0 : 1;
                 lastSpec  = CFG_Get_Frame_Starboard_Serial_Number() ? 1 : 0;
 
-                if ( run_pressure_sensor ) {
-                 float const start_pressure = CFG_Get_Pres_Simulated_Depth();
-                 float const ascent_rate    = 0.01*CFG_Get_Pres_Simulated_Ascent_Rate();
-                 if ( start_pressure>0 && ascent_rate>0 ) {
-                  simulate_pressure_profile = true;
-                  PRES_fake( start_pressure, ascent_rate );
-                  run_pressure_sensor = false;
-                 } else {
-                  simulate_pressure_profile = false;
-                 }
+                if ( run_pressure_sensor )
+                {
+                  float const start_pressure = CFG_Get_Pres_Simulated_Depth();
+                  float const ascent_rate    = 0.01*CFG_Get_Pres_Simulated_Ascent_Rate();
+                  if ( start_pressure>0 && ascent_rate>0 )
+                  {
+                    simulate_pressure_profile = true;
+                    PRES_fake( start_pressure, ascent_rate );
+                    run_pressure_sensor = false;
+                  }
+                  else
+                  {
+                    simulate_pressure_profile = false;
+                  }
                 }
 
 
@@ -859,12 +868,15 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                   //
                   PRES_power(true);
                   vTaskDelay(1000);
-                  if ( PRES_Initialize() ) {
-                      //  Failed to initialize, don't collect pressure during data acquisition
-                      run_pressure_sensor = false;
-                  } else {
-                      vTaskDelay(250);
-                      Init_DigiQuartz_Calibration_Coefficients ( &dq_cc );
+                  if ( PRES_Initialize() )
+                  {
+                    //  Failed to initialize, don't collect pressure during data acquisition
+                    run_pressure_sensor = false;
+                  }
+                  else
+                  {
+                    vTaskDelay(250);
+                    Init_DigiQuartz_Calibration_Coefficients ( &dq_cc );
                   }
                 }
 
@@ -879,7 +891,8 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
                 //  Start data acquisition
                 //
-                for ( spectrometer=0; spectrometer<NumSpectrometers; spectrometer++ ) {
+                for  (spectrometer = 0;  spectrometer < NumSpectrometers;  spectrometer++)
+                {
                      dark_sample_number [spectrometer] = 0;
                     light_sample_number [spectrometer] = 0;
                 }
@@ -914,7 +927,8 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
               //
               if ( DAQ_state == DAQ_Stt_FloatProfile
                 || DAQ_state == DAQ_Stt_StreamLMD
-                || DAQ_state == DAQ_Stt_StreamLandD ) {
+                || DAQ_state == DAQ_Stt_StreamLandD )
+              {
                 packet_response.to   = DE_Addr_AuxDataAcquisition;
                 packet_response.from = myAddress;
                 packet_response.type = DE_Type_Command;
@@ -961,20 +975,20 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
                 //  Start at longest integration time
                 //
-                for ( spectrometer=0; spectrometer<NumSpectrometers; spectrometer++ )
+                for  (spectrometer = 0;  spectrometer < NumSpectrometers;  spectrometer++)
                 {
-                  current_integration_idx [spectrometer] = number_of_integration_times-1;
-                  current_integration_time[spectrometer] = available_integration_times[current_integration_idx[spectrometer]];
-                  next_integration_idx [spectrometer] = current_integration_idx [spectrometer];
+                  current_integration_idx  [spectrometer] = number_of_integration_times - 1;
+                  current_integration_time [spectrometer] = available_integration_times [current_integration_idx[spectrometer]];
+                  next_integration_idx     [spectrometer] = current_integration_idx     [spectrometer];
                 }
 
                 //  Start Pressure Sensor
                 //
                 run_pressure_sensor = true;
                 {
-                  float const start_pressure = CFG_Get_Pres_Simulated_Depth();
-                  float const ascent_rate    = 0.01*CFG_Get_Pres_Simulated_Ascent_Rate();
-                  if ( start_pressure>0 && ascent_rate>0 )
+                  float const start_pressure = CFG_Get_Pres_Simulated_Depth ();
+                  float const ascent_rate    = 0.01 * CFG_Get_Pres_Simulated_Ascent_Rate ();
+                  if  (start_pressure>0 && ascent_rate > 0)
                   {
                     simulate_pressure_profile = true;
                     PRES_fake( start_pressure, ascent_rate );
@@ -1008,7 +1022,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
                 //  Initialize last known GPS position
                 //
-                Init_GPS_Position( &gps_pos );
+                Init_GPS_Position (&gps_pos);
 
                 //  Start housing tilt and heading sensor
                 //
@@ -1017,7 +1031,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
                 //  Start data acquisition
                 //
-                for ( spectrometer=0; spectrometer<NumSpectrometers; spectrometer++ )
+                for  (spectrometer = 0;  spectrometer < NumSpectrometers;  spectrometer++)
                 {
                   dark_sample_number  [spectrometer] = 0;
                   light_sample_number [spectrometer] = 0;
@@ -1080,10 +1094,14 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
             //  Unexpected.
             //  Clean up data regardless.
 
-            if ( pdTRUE == xSemaphoreTake ( packet_rx_via_queue.data.DataPackagePointer->mutex, portMAX_DELAY ) ) {
-              if ( packet_rx_via_queue.data.DataPackagePointer->state == FullRAM ) {
+            if ( pdTRUE == xSemaphoreTake ( packet_rx_via_queue.data.DataPackagePointer->mutex, portMAX_DELAY ) )
+            {
+              if ( packet_rx_via_queue.data.DataPackagePointer->state == FullRAM )
+              {
                 packet_rx_via_queue.data.DataPackagePointer->state = EmptyRAM;
-              } else if ( packet_rx_via_queue.data.DataPackagePointer->state == FullSRAM ) {
+              }
+              else if ( packet_rx_via_queue.data.DataPackagePointer->state == FullSRAM )
+              {
                 packet_rx_via_queue.data.DataPackagePointer->state = EmptySRAM;
               }
               xSemaphoreGive ( packet_rx_via_queue.data.DataPackagePointer->mutex );
@@ -1356,7 +1374,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
           default:                       io_out_string( "-" ); break;
         }
 
-        for  ( spectrometer=0; spectrometer<NumSpectrometers; spectrometer++ )
+        for  ( spectrometer = 0;  spectrometer < NumSpectrometers;  spectrometer++ )
         {
           if ( run_pressure_sensor )
           {
@@ -1379,10 +1397,10 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                 F64 Temperature_period;  int Temperature_counts = 0;  U32 Temperature_duration = 0;
                 F64    Pressure_period;  int    Pressure_counts = 0;  U32    Pressure_duration = 0;
 
-                if ( PRES_Ok == PRES_GetPerioduSecs(DIGIQUARTZ_TEMPERATURE, &dq_sensor, &Temperature_period, &Temperature_counts, &Temperature_duration, CFG_Get_Pres_TDiv() )
-                   && PRES_Ok == PRES_GetPerioduSecs(DIGIQUARTZ_PRESSURE,    &dq_sensor, &Pressure_period,    &Pressure_counts,    &Pressure_duration,    CFG_Get_Pres_PDiv() ) )
+                if ( PRES_Ok == PRES_GetPerioduSecs (DIGIQUARTZ_TEMPERATURE, &dq_sensor, &Temperature_period, &Temperature_counts, &Temperature_duration, CFG_Get_Pres_TDiv() )
+                  && PRES_Ok == PRES_GetPerioduSecs (DIGIQUARTZ_PRESSURE,    &dq_sensor, &Pressure_period,    &Pressure_counts,    &Pressure_duration,    CFG_Get_Pres_PDiv() ) )
                 {
-                  if ( time_diff < 1000000.0 )
+                  if  ( time_diff < 1000000.0 )
                   {
                     //io_out_string ( "+" );
                     gettimeofday( &now, NULL) ;
@@ -1407,12 +1425,12 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
             //  If pressure is not measuring,
             //  start now.
             //
-            if ( !pressure_started )
+            if  (!pressure_started)
             {
-              PRES_StartMeasurement(DIGIQUARTZ_TEMPERATURE);
-              PRES_StartMeasurement(DIGIQUARTZ_PRESSURE);
+              PRES_StartMeasurement (DIGIQUARTZ_TEMPERATURE);
+              PRES_StartMeasurement (DIGIQUARTZ_PRESSURE);
               pressure_started = true;
-              gettimeofday ( &pressure_start_time, NULL );
+              gettimeofday (&pressure_start_time, NULL);
             }
           }
 
@@ -1422,6 +1440,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
           switch ( spectrometer )
           {
+            //                                                          ((U16*)AVR32_EBI_CS2_ADDRESS)
             case  0: SpecID = SPEC_A; componentID = component_A; fifo = FIFO_DATA_A; break;
             case  1: SpecID = SPEC_B; componentID = component_B; fifo = FIFO_DATA_B; break;
             default: break;
@@ -1452,7 +1471,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
             }
           }
 
-          switch ( DAQ_Phase[spectrometer] )
+          switch  (DAQ_Phase[spectrometer])
           {
           case DAQ_PHS_Idle:
             //  Do nothing
@@ -1462,7 +1481,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
             //io_out_string ( "C" );
             //{ uint32_t gplp0 = pcl_read_gplp(0); gplp0 |= (0x00001000<<spectrometer); pcl_write_gplp ( 0, gplp0 ); }
 
-            if  ( firstSpec<=lastSpec )
+            if  ( firstSpec <= lastSpec )
             {
 # if UVDARKS
 # else
@@ -1500,7 +1519,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
             //{ uint32_t gplp0 = pcl_read_gplp(0); gplp0 |= (0x00004000<<spectrometer); pcl_write_gplp ( 0, gplp0 ); }
 
-            if  ( firstSpec<=lastSpec )
+            if  (firstSpec <= lastSpec)
             {
               //  Make sure the critical sections in the SPI transfers cannot interfere with the spectrometer readouts
               //  data_exchange_spectrometer_pauseTask();    //  FIXME -- May no longer be needed for REV_B Boards
@@ -1508,7 +1527,9 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
               int const num_clearout = CFG_Get_Number_of_Clearouts();
               U32 endReadout;
               
-              if  ( CGS_OK != CGS_StartSampling( SpecID, (double)current_integration_time[spectrometer], num_clearout, 1, &endReadout ) )
+              if  (CGS_OK != CGS_StartSampling (SpecID, 
+                                                (double)current_integration_time[spectrometer],
+                                                num_clearout, 1, &endReadout ) )
               {
                 //  Abort
                 //  { uint32_t gplp0 = pcl_read_gplp(0); gplp0 |= 0x40000000; pcl_write_gplp ( 0, gplp0 ); }
@@ -1530,9 +1551,9 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
             //io_out_string ( "D" );
             //{ uint32_t gplp0 = pcl_read_gplp(0); gplp0 |= (0x00010000<<spectrometer); pcl_write_gplp ( 0, gplp0 ); }
-            if ( firstSpec<=lastSpec )
+            if  ( firstSpec <= lastSpec )
             {
-              if ( SN74V283_GetNumOfSpectra(componentID)>0 )
+              if  ( SN74V283_GetNumOfSpectra (componentID) > 0 )
               {
                 int8_t twi_channel;
                 if ( 0 == spectrometer )
@@ -1545,9 +1566,12 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                 }
 
                 float T;
-                if ( MAX6633_OK == max6633_measure ( twi_channel, &T ) ) {
+                if ( MAX6633_OK == max6633_measure ( twi_channel, &T ) )
+                {
                     spectrometer_temp[spectrometer] = (int16_t)(100 * T);
-                } else {
+                }
+                else
+                {
                     spectrometer_temp[spectrometer] = (int16_t)-9999;
                 }
 
@@ -1561,16 +1585,21 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 
                 int px;
 
-                uint16_t nClear = SN74V283_GetNumOfCleared(componentID);
+                uint16_t nClear = SN74V283_GetNumOfCleared (componentID);
 
+                // kurt,  Assuming every refernces to fifo causes a 2 byte data to pop off a queue
+                //  This next loop is to clear out rows of pixel data from fifo.
                 int cc;
-                for ( cc=0; cc<nClear; cc++ ) {
-                  for ( px=0; px<N_SPEC_PIX+N_SPEC_MARGINS; px++ ) {
+                for  (cc = 0;  cc < nClear;  cc++)
+                {
+                  for  (px = 0;  px < N_SPEC_PIX + N_SPEC_MARGINS;  px++)
+                  {
                     U16 discard = fifo[0];
                   }
                 }
 
-                for ( px=N_SPEC_PIX+N_SPEC_MARGINS-1; px>=0; px-- ) {
+                for  (px = N_SPEC_PIX + N_SPEC_MARGINS - 1;  px >= 0;  px--)
+                {
                   darkSpectrum[spectrometer][px] = fifo[0];
                 }
 
@@ -1580,10 +1609,10 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
 					      // Burkhard typically see ~10 unaccounted for pixels. Unknown reasons VS 5/17/18
 					      // We are reading all of the pixels we expect to see but the fifo receives more pin triggers than expected
 					      // Need to look into why fifo is triggered to read these extra values, not sure if before or after data acq
-                while ( !SN74V283_IsEmpty ( componentID )  &&  dark_fifo_over [ spectrometer ] < 99 )
+                while  (!SN74V283_IsEmpty ( componentID )  &&  dark_fifo_over [ spectrometer ] < 99)
                 {
                   U16 discard = fifo[0];
-                  dark_fifo_over [ spectrometer ] ++;
+                  dark_fifo_over [spectrometer]++;
                 }
 
                 SN74V283_Start(componentID);
@@ -1596,8 +1625,11 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                   }
                   d_avg /= 64;
 # else
-                  for ( px=10-dark_fifo_over[spectrometer];
-                        px<10-dark_fifo_over[spectrometer]+N_SPEC_PIX; px++ ) {
+                  for (px = 10 - dark_fifo_over[spectrometer];
+                       px < 10 - dark_fifo_over[spectrometer] + N_SPEC_PIX;
+                       px++
+                      )
+                  {
                     d_avg += darkSpectrum[spectrometer][px];
                   }
                   d_avg /= N_SPEC_PIX;
@@ -1686,48 +1718,49 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
             else
             {
 
-                    switch ( DAQ_state ) {
-                      case DAQ_Stt_StreamLandD:
-                      case DAQ_Stt_Calibrate:
-                            lights_after_dark[spectrometer] = 0;
-                      case DAQ_Stt_DarkCharacterize:
-                            DAQ_Phase[spectrometer] = DAQ_PHS_TransferD;
-                            break;
-                      case DAQ_Stt_FloatProfile:
-                      case DAQ_Stt_StreamLMD:
-                            lights_after_dark[spectrometer] = 0;
-                            DAQ_Phase[spectrometer] = DAQ_PHS_OpenShutter;
-                            break;
-                      case DAQ_Stt_Idle:        /* Cannot happen */
-                            DAQ_Phase[spectrometer] = DAQ_PHS_Idle;
-                            break;
-                      }
-                    }
+              switch ( DAQ_state )
+              {
+                case DAQ_Stt_StreamLandD:
+                case DAQ_Stt_Calibrate:
+                      lights_after_dark[spectrometer] = 0;
+                case DAQ_Stt_DarkCharacterize:
+                      DAQ_Phase[spectrometer] = DAQ_PHS_TransferD;
+                      break;
+                case DAQ_Stt_FloatProfile:
+                case DAQ_Stt_StreamLMD:
+                      lights_after_dark[spectrometer] = 0;
+                      DAQ_Phase[spectrometer] = DAQ_PHS_OpenShutter;
+                      break;
+                case DAQ_Stt_Idle:        /* Cannot happen */
+                      DAQ_Phase[spectrometer] = DAQ_PHS_Idle;
+                      break;
+              }
+            }
 
-                    break;
+            break;
 
-         case DAQ_PHS_OpenShutter:
+          case DAQ_PHS_OpenShutter:
 
 //  io_out_string ( "O" );
-//         { uint32_t gplp0 = pcl_read_gplp(0); gplp0 |= (0x00040000<<spectrometer); pcl_write_gplp ( 0, gplp0 ); }
-           if  (firstSpec <= lastSpec)
-           {
+//          { uint32_t gplp0 = pcl_read_gplp(0); gplp0 |= (0x00040000<<spectrometer); pcl_write_gplp ( 0, gplp0 ); }
+            if  (firstSpec <= lastSpec)
+            {
 # if UVDARKS
 # else
-             switch ( spectrometer )
-             {
-                 //  Proper delay is done inside shutter_._close() call
-                 case 0: shutter_A_open(); break;
-                 case 1: shutter_B_open(); break;
-                 default: break;
-             }
-             shutter_is_closed[spectrometer] = 0;
+              switch ( spectrometer )
+              {
+                //  Proper delay is done inside shutter_._close() call
+                case 0: shutter_A_open(); break;
+                case 1: shutter_B_open(); break;
+                default: break;
+              }
+              shutter_is_closed[spectrometer] = 0;
 # endif
-           }
+            }
 
-           DAQ_Phase[spectrometer] = DAQ_PHS_StartLight;
+            DAQ_Phase[spectrometer] = DAQ_PHS_StartLight;
 
-           break;
+            break;
 
 
 
@@ -1958,7 +1991,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                   }
 
                   pressure_value[ 0 /* spectrometer */ ] = last_pressure_value;
-                  pressure_time [ 0 /* spectrometer */ ].tv_sec = last_pressure_time.tv_sec;
+                  pressure_time [ 0 /* spectrometer */ ].tv_sec  = last_pressure_time.tv_sec;
                   pressure_time [ 0 /* spectrometer */ ].tv_usec = last_pressure_time.tv_usec;
 
                   int px;
@@ -1984,8 +2017,9 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                   lght_fifo_over[ spectrometer ] = 0;
 
                   while ( !SN74V283_IsEmpty ( componentID )
-                       && lght_fifo_over [ spectrometer ] < 99 ) {
-                      U16 discard = fifo[0];
+                       && lght_fifo_over [ spectrometer ] < 99 )
+                  {
+                      U16  discard = fifo[0];
                       lght_fifo_over [ spectrometer ] ++;
                   }
 
@@ -1994,7 +2028,8 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                   {
                     U32 l_avg = 0;
                     for ( px=10-lght_fifo_over[spectrometer];
-                          px<10-lght_fifo_over[spectrometer]+N_SPEC_PIX; px++ ) {
+                          px<10-lght_fifo_over[spectrometer]+N_SPEC_PIX; px++ )
+                    {
                       l_avg += lghtSpectrum[spectrometer][px];
                     }
                     l_avg /= N_SPEC_PIX;
@@ -2002,8 +2037,10 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                     U32 l_sdv = 0;
                     U32 l_min = 0xFFFF;
                     U32 l_max = 0;
-                    for ( px=10-lght_fifo_over[spectrometer];
-                          px<10-lght_fifo_over[spectrometer]+N_SPEC_PIX; px++ ) {
+                    
+                    for ( px = 10 - lght_fifo_over[spectrometer];  
+                          px < 10 - lght_fifo_over[spectrometer] + N_SPEC_PIX;  px++)
+                    {
                       S32 val  = lghtSpectrum[spectrometer][px];
                       if ( l_max < val ) l_max = val;
                       if ( l_min > val ) l_min = val;
@@ -2031,9 +2068,9 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                   //  TODO Spectrometer Tilt
                   //
                   //  Currently a FAKE!
-                  spectrometer_pitch[spectrometer][0] = 0;
-                  spectrometer_roll [spectrometer][0] = 0;
-                  spectrometer_measurement[spectrometer] = 1;
+                  spectrometer_pitch       [spectrometer][0] = 0;
+                  spectrometer_roll        [spectrometer][0] = 0;
+                  spectrometer_measurement [spectrometer] = 1;
 
                   int8_t twi_channel;
                   if  ( 0 == spectrometer )
@@ -2075,8 +2112,8 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                     }
                   }
 
-                  lights_after_dark[spectrometer]++;
-                  light_sample_number[spectrometer]++;
+                  lights_after_dark   [spectrometer]++;
+                  light_sample_number [spectrometer]++;
 
                   switch ( DAQ_state )
                   {
@@ -2397,7 +2434,7 @@ int const DBG = 0;  //  ALERT: Changing to 1 typically causes watchdog resets !!
                     }
 
 
-+                   else if  ( DAQ_PHS_TransferL == DAQ_Phase[spectrometer] )
+                    else if  ( DAQ_PHS_TransferL == DAQ_Phase[spectrometer] )
                     {
                       local_data_pointer -> aux.tag |= ( SAD_TAG_DATA_MASK & SAD_TAG_LIGHT );
 

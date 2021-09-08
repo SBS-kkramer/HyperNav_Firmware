@@ -30,15 +30,21 @@ static int packet_process_transmit ( Profile_Data_Packet_t* original, transmit_i
     
   //  TODO: Round to proper position before graycoding if noise_remove>0
 
-  if ( tx_instruct->representation == REP_GRAY ) {
+  if  (tx_instruct->representation == REP_GRAY)
+  {
     memset( &represent, 0, sizeof(Profile_Data_Packet_t) );
-    if ( data_packet_bin2gray( &original, &represent ) ) {
+    if ( data_packet_bin2gray( &original, &represent ) )
+    {
       fprintf ( stderr, "Failed in data_packet_bin2gray()\n" );
       return 1;
-    } else {
+    }
+    else
+    {
       data_packet_save ( &represent, data_dir, "G" );
     }
-  } else {
+  }
+  else
+  {
     memcpy( &represent, &original, sizeof(Profile_Data_Packet_t) );
   }
   //fprintf ( stderr, "  gray %d\n", p );
@@ -48,15 +54,19 @@ static int packet_process_transmit ( Profile_Data_Packet_t* original, transmit_i
 
   Profile_Data_Packet_t arranged;
 
-  if ( tx_instruct->use_bitplanes == BITPLANE ) {
+  if  ( tx_instruct->use_bitplanes == BITPLANE )
+  {
     memset( &arranged, 0, sizeof(Profile_Data_Packet_t) );
-    if ( data_packet_bitplane( &represent, &arranged, tx_instruct->noise_bits_remove ) ) {
+    if ( data_packet_bitplane( &represent, &arranged, tx_instruct->noise_bits_remove ) )
+    {
       fprintf ( stderr, "Failed in data_packet_bitplane()\n" );
       return 1;
     }
     data_packet_save ( &arranged, data_dir, "B" );
-  } else {
-    memcpy( &arranged, &represent, sizeof(Profile_Data_Packet_t) );
+  }
+  else
+  {
+    memcpy ( &arranged, &represent, sizeof(Profile_Data_Packet_t) );
   }
   //fprintf ( stderr, "  plne %d\n", p );
 
@@ -65,10 +75,12 @@ static int packet_process_transmit ( Profile_Data_Packet_t* original, transmit_i
 
   Profile_Data_Packet_t compressed;
     
-  if ( tx_instruct->compression == ZLIB ) {
+  if ( tx_instruct->compression == ZLIB )
+  {
     memset( &compressed, 0, sizeof(Profile_Data_Packet_t) );
     char compression = 'G';
-    if ( data_packet_compress( &arranged, &compressed, compression ) ) {
+    if ( data_packet_compress( &arranged, &compressed, compression ) )
+    {
       fprintf ( stderr, "Failed in data_packet_compress()\n" );
       return 1;
     }
@@ -83,20 +95,27 @@ static int packet_process_transmit ( Profile_Data_Packet_t* original, transmit_i
 
   Profile_Data_Packet_t encoded;
     
-  if ( tx_instruct->encoding != NO_ENCODING ) {
+  if ( tx_instruct->encoding != NO_ENCODING )
+  {
     memset( &encoded, 0, sizeof(Profile_Data_Packet_t) );
     char encoding;
-    switch ( tx_instruct->encoding ) {
+  
+    switch ( tx_instruct->encoding )
+    {
     case ASCII85: encoding = 'A'; break;
     case BASE64 : encoding = 'B'; break;
     default     : encoding = 'N'; break;
     }
-    if ( data_packet_encode( &compressed, &encoded, encoding ) ) {
+    
+    if  ( data_packet_encode ( &compressed, &encoded, encoding ) )
+    {
       fprintf ( stderr, "Failed in data_packet_compress()\n" );
       return 1;
     }
     data_packet_save ( &encoded, data_dir, "E" );
-  } else {
+  }
+  else
+  {
     memcpy( &encoded, &compressed, sizeof(Profile_Data_Packet_t) );
   }
   //fprintf ( stderr, "  zlib %d\n", p );
@@ -106,6 +125,8 @@ static int packet_process_transmit ( Profile_Data_Packet_t* original, transmit_i
 
   return data_packet_txmit ( &encoded, tx_instruct->burst_size, tx_fd, bstStatus );
 }
+
+
 
 int profile_transmit ( const char*              data_dir,
                        uint16_t                 proID,
@@ -345,9 +366,11 @@ int profile_transmit ( const char*              data_dir,
   uint16_t p;
   uint16_t b;
 
-  for ( p=0; p<num_packets; p++ ) {
+  for  (p = 0;  p < num_packets;  p++)
+  {
     pckStatus[p] = 1;
-    for ( b=0; b<maxBrsts; b++ ) {
+    for  (b = 0;  b < maxBrsts;  b++)
+    {
       bstStatus[p][b] = 1;
     }
   }
@@ -360,10 +383,10 @@ int profile_transmit ( const char*              data_dir,
 
     uint8_t newResendRequest = 0;
 
-    for ( p=0; p<num_packets && !newResendRequest; p++ )
+    for ( p = 0;  p < num_packets  &&  !newResendRequest;  p++ )
     {
 
-      if ( 1 != pckStatus[p] )
+      if  (1 != pckStatus[p])
       {
         //fprintf ( stderr, "Tx %hu not required\n", p );
       }
@@ -376,7 +399,7 @@ int profile_transmit ( const char*              data_dir,
           if  ( 0 == info_packet_txmit ( &info_packet, tx_instruct->burst_size, tx_fd, bstStatus[p] ) )
           {
             pckStatus[p] = 0;  //  transmit was ok, done this one
-            for ( b=0; b<maxBrsts; b++ )
+            for  (b = 0;  b < maxBrsts;  b++ )
             {
               bstStatus[p][b] = 0;
             }
@@ -393,7 +416,7 @@ int profile_transmit ( const char*              data_dir,
           // Read a packet
           //
           Profile_Data_Packet_t original;
-          memset( &original, 0, sizeof(Profile_Data_Packet_t) );
+          memset ( &original, 0, sizeof (Profile_Data_Packet_t) );
           data_packet_retrieve ( &original, data_dir, "Z", proID, p );
           //fprintf ( stderr, "  read %d\n", p );
 	        //
@@ -406,7 +429,6 @@ int profile_transmit ( const char*              data_dir,
               bstStatus[p][b] = 0;
             }
 	        }
-
         }
       }
 
@@ -414,7 +436,7 @@ int profile_transmit ( const char*              data_dir,
       //
     # define RXBUFSZ 4096
       char buf[RXBUFSZ];
-      ssize_t n;
+      size_t n;
 
       if ( 0 >= ( n = read ( tx_fd, buf, RXBUFSZ ) ) )
       {
@@ -446,10 +468,10 @@ int profile_transmit ( const char*              data_dir,
           uint16_t hID, prID, paID, bID;
           uint32_t crcRX;
 
-          if        ( 0 == strncmp ( all_input+start_input, "RXED", 4 ) ) 
+          if  ( 0 == strncmp ( all_input+start_input, "RXED", 4 ) ) 
           {
 
-            sscanf ( all_input+start_input+4, ",%hu,%hu,%hu,%hu,%x",
+            sscanf ( all_input + start_input + 4, ",%hu,%hu,%hu,%hu,%x",
                             &hID, &prID, &paID, &bID, &crcRX );
             
             if  ( hID != profile_description.profiler_sn    ||    prID != profile_description.profile_yyddd )
@@ -459,7 +481,7 @@ int profile_transmit ( const char*              data_dir,
             else
             {
               uLong crc = crc32 ( 0L, Z_NULL, 0 );
-              crc = crc32 ( crc, all_input+start_input, 25 );
+              crc = crc32 ( crc, all_input + start_input, 25 );
 
               if  ( crc != crcRX )
               {
@@ -469,7 +491,7 @@ int profile_transmit ( const char*              data_dir,
               {
 
                 fprintf ( stderr, "<- Server RXED Packet %hu\n", paID );
-                if ( paID < num_packets )
+                if  ( paID < num_packets )
                 {
                   switch ( pckStatus[paID] )
                   {
@@ -483,14 +505,18 @@ int profile_transmit ( const char*              data_dir,
             }
           }
 
-          else if ( 0 == strncmp ( all_input+start_input, "RSND", 4 ) )
+          else if  ( 0 == strncmp ( all_input + start_input, "RSND", 4 ) )
           {
 
-            sscanf ( all_input+start_input+4, ",%hu,%hu,%hu,%hu,%x",
-                            &hID, &prID, &paID, &bID, &crcRX );
+            sscanf ( all_input+start_input + 4, ",%hu,%hu,%hu,%hu,%x",
+                            &hID,
+                            &prID,
+                            &paID,
+                            &bID,
+                            &crcRX
+                   );
 
-            if ( hID != profile_description.profiler_sn
-              || prID != profile_description.profile_yyddd )
+            if  ( hID != profile_description.profiler_sn  ||  prID != profile_description.profile_yyddd )
             {
               fprintf ( stderr, "<- Server RSND incorrect IDs: %s\n", all_input+start_input );
             }
@@ -598,5 +624,3 @@ int profile_transmit ( const char*              data_dir,
 
   return 0;
 }
-
-

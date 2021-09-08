@@ -175,11 +175,13 @@ static void serialize_4byte ( uint8_t* destination, uint32_t value ) {
 //! return   0  OK
 //! return  -1  FAILED due to misformatted profileID parameter
 //! return  -2  FAILED due to file system access failure
-static int16_t profile_start( uint16_t profileID ) {
+static int16_t profile_start( uint16_t profileID )
+{
 
   //  Check for valid profileID
   //
-  if ( !profileID ) {
+  if ( !profileID )
+  {
     return -1;
   }
 
@@ -204,8 +206,10 @@ static int16_t profile_start( uint16_t profileID ) {
   //
   strncpy ( fname, EMMC_DRIVE PMG_PROFILE_FOLDER, 64 );
 
-  if ( !f_exists( fname ) ) {
-    if ( !FILE_OK == file_mkDir( fname ) ) {
+  if ( !f_exists( fname ) )
+  {
+    if ( !FILE_OK == file_mkDir( fname ) )
+    {
       return -11;
     }
   }
@@ -217,12 +221,16 @@ static int16_t profile_start( uint16_t profileID ) {
   //
   strncpy ( fname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" PMG_PROFILE_FOLDER ".NRF", 64 );
 
-  if ( !f_exists( fname ) ) {
-    if ( FILE_OK != f_open ( fname, O_WRONLY | O_CREAT, &fh ) ) {
+  if ( !f_exists( fname ) )
+  {
+    if ( FILE_OK != f_open ( fname, O_WRONLY | O_CREAT, &fh ) )
+    {
       return -21;
     }
     f_close ( &fh );
-  } else {
+  }
+  else
+  {
 
     //  Make sure there is no entry for current profileID.
     //
@@ -232,44 +240,52 @@ static int16_t profile_start( uint16_t profileID ) {
 
     int conflict = 0;
 
-    while ( 8 == f_read( &fh, msg, 8 ) ) {
+    while ( 8 == f_read( &fh, msg, 8 ) )
+    {
       //  Make sure 8 byte record is well formatted:
       //  Expect [ACTZ]%05d\r\n
       if ( ( msg[0] == 'A' || msg[0] == 'C' || msg[0] == 'T' || msg[0] == 'Z' )
-        && msg[6] == '\r' && msg[7] == '\n' ) {
-
+        && msg[6] == '\r' && msg[7] == '\n' )
+      {
         //  Find out if an entry for this profile is already present.
         //
-        if ( profileID == atoi( msg+1 ) ) {
+        if ( profileID == atoi( msg+1 ) )
+        {
 
           f_seek ( &fh, 8, FS_SEEK_CUR_RE );  //  Rewind 8 bytes
           msg[0] = 'X';  //  Indicate profile renamed
           f_write ( &fh, msg, 1 );
 
-	  int renamed = 0;
-	  char letter;
-
-	  for ( letter='A'; letter<='Z' && !renamed; letter++ ) {
-
-	    strcpy ( fname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
-	    strcat ( fname, pID_str );
-
+	        int renamed = 0;
+	        char letter;
+          
+	        for  (letter = 'A';  letter <= 'Z' &&  !renamed; letter++ )
+          {
+	          strcpy ( fname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
+	          strcat ( fname, pID_str );
+          
             char gname[64];
-	    strcpy ( gname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
-	    strcat ( gname, pID_str );
+	          strcpy (gname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
+	          strcat (gname, pID_str );
+          
+	          char ulz[4];
+              ulz[0] = '_';
+              ulz[1] = letter;
+              ulz[2] = 0;
 
-	    char ulz[4]; ulz[0] = '_'; ulz[1] = letter; ulz[2] = 0;
-	    strcat ( gname, ulz );
-
-	    if ( !f_exists( gname ) ) {
-              f_move ( fname, gname );
-	      renamed = 1;
-	    }
-	  }
-
-	  if ( letter>'Z' ) {
-            conflict = 1;
-	  }
+	          strcat (gname, ulz);
+          
+	          if  (!f_exists (gname))
+            {
+              f_move (fname, gname);
+	            renamed = 1;
+	          }
+	        }
+          
+	        if  (letter > 'Z')
+          {
+             conflict = 1;
+	        }
 
         }
       }
@@ -277,7 +293,8 @@ static int16_t profile_start( uint16_t profileID ) {
 
     f_close ( &fh );
 
-    if ( conflict ) {
+    if ( conflict )
+    {
       return -23;
     }
   }
@@ -286,11 +303,13 @@ static int16_t profile_start( uint16_t profileID ) {
   //  If it does not exist, create it.
   //  If creation fails, return error code.
   //
-  strcpy ( fname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
-  strcat ( fname, pID_str );
+  strcpy (fname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
+  strcat (fname, pID_str );
 
-  if ( !f_exists(fname) ) {
-    if ( !FILE_OK == file_mkDir( fname ) ) {
+  if ( !f_exists(fname) ) 
+  {
+    if ( !FILE_OK == file_mkDir( fname ) )
+    {
       return -31;
     }
   }
@@ -331,10 +350,8 @@ static int16_t profile_start( uint16_t profileID ) {
   f_close ( &fh );
 
   //  Create data log files
-  //
-
-  for ( i=0; i<PMG_N_DATAFILES; i++ ) {
-
+  for ( i=0; i<PMG_N_DATAFILES; i++ )
+  {
     char data_file_name[34];
     strcpy ( data_file_name, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
     strcat ( data_file_name, pID_str );
@@ -343,17 +360,18 @@ static int16_t profile_start( uint16_t profileID ) {
     strcat ( data_file_name, "." );
     strcat ( data_file_name, pmg_datafile_extension[i] );
 
-    if ( f_exists ( data_file_name ) ) {
-
+    if ( f_exists ( data_file_name ) )
+    {
       //  Unexpected: This data log file should not exist.
       //
       return -(51-2*i);
-
-    } else {
-
+    }
+    else
+    {
       //  Create data log file.
       //
-      if ( FILE_OK != f_open ( data_file_name, O_WRONLY | O_CREAT, &fh ) ) {
+      if ( FILE_OK != f_open ( data_file_name, O_WRONLY | O_CREAT, &fh ) )
+      {
         return -(51-2*i-1);
       }
 
@@ -362,10 +380,10 @@ static int16_t profile_start( uint16_t profileID ) {
   }
 
   //  Add current profile to navis profile record file (NRF).
-  //
   strncpy ( fname, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" PMG_PROFILE_FOLDER ".NRF", 64 );
 
-  if ( FILE_OK != f_open ( fname, O_WRONLY | O_APPEND, &fh ) ) {
+  if ( FILE_OK != f_open ( fname, O_WRONLY | O_APPEND, &fh ) )
+  {
     return -61;
   }
 
@@ -373,7 +391,8 @@ static int16_t profile_start( uint16_t profileID ) {
   strcat ( msg, pID_str );
   strcat ( msg, "\r\n" );
 
-  if ( 8 != f_write( &fh, msg, 8 ) ) {
+  if ( 8 != f_write( &fh, msg, 8 ) )
+  {
     f_close ( &fh );
     return -62;
   }
@@ -446,7 +465,10 @@ static int16_t write_spec_data ( uint16_t profileID, Spectrometer_Data_t* spec_d
   }
 }
 
-static int16_t write_ocr_data ( uint16_t profileID, OCR_Frame_t* ocr_frame ) {
+
+
+static int16_t write_ocr_data ( uint16_t profileID, OCR_Frame_t* ocr_frame )
+{
 
   if ( !ocr_frame ) return -1;
 
@@ -463,74 +485,81 @@ static int16_t write_ocr_data ( uint16_t profileID, OCR_Frame_t* ocr_frame ) {
   strcat ( data_file_name, "." );
   strcat ( data_file_name, extension );
 
-  if ( !f_exists ( data_file_name ) ) {
+  if ( !f_exists ( data_file_name ) )
+  {
 
       //  Unexpected: This data log file should exist.
       //
       return -3;
 
-  } else {
+  }
+  else
+  {
+    //  Append to data log file.
+    //
+    fHandler_t fh;
 
-      //  Append to data log file.
-      //
-      fHandler_t fh;
+    if  (FILE_OK != f_open (data_file_name, O_WRONLY | O_APPEND, &fh))
+    {
+      return -10;
+    }
 
-      if ( FILE_OK != f_open ( data_file_name, O_WRONLY | O_APPEND, &fh ) ) {
-        return -10;
+    //  Data Frame Format:
+    //  AS10 SATDI4####
+    //  AS10 Timer
+    //  BS2  Delay
+    //  BU4  Pixel1
+    //  BU4  Pixel2
+    //  BU4  Pixel3
+    //  BU4  Pixel4
+    //  BU2  Volts
+    //  BU2  Temperature
+    //  BU1  Frame Counter
+    //  BU1  Check Sum
+    //  BU2  CRLF Terminator
+    //    46 total bytes
+    //
+
+    uint16_t checksum = 0;
+
+    //  TODO calculate checksum
+
+    int16_t written = -12;
+
+    if  (!checksum)
+    {
+      OCR_Data_t od;
+
+      memcpy (&(od.pixel[0]), ocr_frame->frame + 22, 4);
+      memcpy (&(od.pixel[1]), ocr_frame->frame + 26, 4);
+      memcpy (&(od.pixel[2]), ocr_frame->frame + 30, 4);
+      memcpy (&(od.pixel[3]), ocr_frame->frame + 34, 4);
+
+      od.aux.acquisition_time = ocr_frame->aux.acquisition_time;
+
+      if   (sizeof (OCR_Data_t) == f_write (&fh, &od, sizeof (OCR_Data_t)))
+      {
+        written = 1;
       }
+    }
 
-      //  Data Frame Format:
-      //  AS10 SATDI4####
-      //  AS10 Timer
-      //  BS2  Delay
-      //  BU4  Pixel1
-      //  BU4  Pixel2
-      //  BU4  Pixel3
-      //  BU4  Pixel4
-      //  BU2  Volts
-      //  BU2  Temperature
-      //  BU1  Frame Counter
-      //  BU1  Check Sum
-      //  BU2  CRLF Terminator
-      //    46 total bytes
-      //
+    f_close (&fh);
 
-      uint16_t checksum = 0;
-
-      //  TODO calculate checksum
-
-      int16_t written = -12;
-
-      if ( !checksum ) {
-
-        OCR_Data_t od;
-
-        memcpy ( &(od.pixel[0]), ocr_frame->frame+22, 4 );
-        memcpy ( &(od.pixel[1]), ocr_frame->frame+26, 4 );
-        memcpy ( &(od.pixel[2]), ocr_frame->frame+30, 4 );
-        memcpy ( &(od.pixel[3]), ocr_frame->frame+34, 4 );
-
-        od.aux.acquisition_time = ocr_frame->aux.acquisition_time;
-
-        if ( sizeof(OCR_Data_t) == f_write( &fh, &od, sizeof(OCR_Data_t) ) ) {
-          written = 1;
-        }
-      }
-
-      f_close ( &fh );
-
-      return written;
+    return written;
   }
 }
 
-static int16_t write_mcoms_data ( uint16_t profileID, MCOMS_Frame_t* mcoms_frame ) {
 
-  if ( !mcoms_frame ) return -1;
+
+static int16_t write_mcoms_data ( uint16_t profileID, MCOMS_Frame_t* mcoms_frame )
+{
+  if  (!mcoms_frame)
+    return -1;
 
   char const* extension = pmg_datafile_extension[PMG_DT_MCOMS];
 
   char pID_str[8];
-  S32_to_str_dec ( (S32)profileID, pID_str, sizeof(pID_str), 5 );
+  S32_to_str_dec ((S32)profileID, pID_str, sizeof(pID_str), 5 );
 
   char data_file_name[34];
   strcpy ( data_file_name, EMMC_DRIVE PMG_PROFILE_FOLDER "\\" );
@@ -540,49 +569,49 @@ static int16_t write_mcoms_data ( uint16_t profileID, MCOMS_Frame_t* mcoms_frame
   strcat ( data_file_name, "." );
   strcat ( data_file_name, extension );
 
-  if ( !f_exists ( data_file_name ) ) {
+  if  (!f_exists (data_file_name))
+  {
+    //  Unexpected: This data log file should exist.
+    //
+    return -3;
+  }
+  else
+  {
+    //  Append to data log file.
+    //
+    fHandler_t fh;
 
-      //  Unexpected: This data log file should exist.
-      //
-      return -3;
+    if ( FILE_OK != f_open ( data_file_name, O_WRONLY | O_APPEND, &fh ) ) {
+      return -10;
+    }
 
-  } else {
+    //  MCOMS is variable length frame.
+    //  The address points to the start of the frame, but the frame is not NUL character terminated.
+    //  Search for CRLF terminator in frame, but cannot use strstr() due to non NUL termination.
+    //  Start searching from the end of the frame.
+    //
+    MCOMS_Data_t md;
 
-      //  Append to data log file.
-      //
-      fHandler_t fh;
+    int16_t written = -12;
 
-      if ( FILE_OK != f_open ( data_file_name, O_WRONLY | O_APPEND, &fh ) ) {
-        return -10;
+    if ( 12 == sscanf ( (char*)mcoms_frame->frame, "MCOMSC-%*d"
+                                            "\t%hd\t%hd\t%hd\t%ld"
+                                            "\t%hd\t%hd\t%hd\t%ld"
+                                       "\t%*d\t%hd\t%hd\t%hd\t%ld\r\n",
+                        &(md.chl_led),  &(md.chl_low),  &(md.chl_hgh),  &(md.chl_value),
+                         &(md.bb_led),   &(md.bb_low),   &(md.bb_hgh),   &(md.bb_value),
+                       &(md.fdom_led), &(md.fdom_low), &(md.fdom_hgh), &(md.fdom_value) ) ) {
+
+      md.aux.acquisition_time = mcoms_frame->aux.acquisition_time;
+
+      if ( sizeof(MCOMS_Data_t) == f_write( &fh, &md, sizeof(MCOMS_Data_t) ) ) {
+        written = 1;
       }
+    }
 
-      //  MCOMS is variable length frame.
-      //  The address points to the start of the frame, but the frame is not NUL character terminated.
-      //  Search for CRLF terminator in frame, but cannot use strstr() due to non NUL termination.
-      //  Start searching from the end of the frame.
-      //
-      MCOMS_Data_t md;
-
-      int16_t written = -12;
-
-      if ( 12 == sscanf ( (char*)mcoms_frame->frame, "MCOMSC-%*d"
-                                              "\t%hd\t%hd\t%hd\t%ld"
-                                              "\t%hd\t%hd\t%hd\t%ld"
-                                         "\t%*d\t%hd\t%hd\t%hd\t%ld\r\n",
-                          &(md.chl_led),  &(md.chl_low),  &(md.chl_hgh),  &(md.chl_value),
-                           &(md.bb_led),   &(md.bb_low),   &(md.bb_hgh),   &(md.bb_value),
-                         &(md.fdom_led), &(md.fdom_low), &(md.fdom_hgh), &(md.fdom_value) ) ) {
-
-        md.aux.acquisition_time = mcoms_frame->aux.acquisition_time;
-
-        if ( sizeof(MCOMS_Data_t) == f_write( &fh, &md, sizeof(MCOMS_Data_t) ) ) {
-          written = 1;
-        }
-      }
-
-      f_close ( &fh );
+    f_close ( &fh );
   
-      return written;
+    return written;
   }
 }
 
@@ -1468,11 +1497,15 @@ tlm_send ( "PTP\r\n", 5, 0 );
       memcpy ( raw->header.sensor_ID, "SATYLU0000", 10 );  //  FIXME
 
       uint16_t number_of_data;
-      if ( pP<ppd->numPackets_PORT ) {
+      if ( pP<ppd->numPackets_PORT )
+      {
        number_of_data = MXHNV;
-      } else {  //  The last packet may contain fewer items
-       number_of_data =  ppd->numData_PORT
-                      - (ppd->numPackets_PORT-1)*MXHNV;
+      }
+      else
+      {
+        //  The last packet may contain fewer items
+        number_of_data =  ppd->numData_PORT
+                       - (ppd->numPackets_PORT-1)*MXHNV;
       }
 
       S32_to_str_dec ( (S32)number_of_data, numString, sizeof(numString), 4 );
@@ -1483,17 +1516,18 @@ tlm_send ( "PTP\r\n", 5, 0 );
       int    const    LSB_Divisor = 1<<tx_instruct->noise_bits_remove;
 
       int d;
-      for ( d=0; d<number_of_data; d++ ) {
-
+      for ( d=0; d<number_of_data; d++ )
+      {
         Spectrometer_Data_t* static_spec_data = &sp;
 
-        f_read( &pfh, static_spec_data, sizeof(Spectrometer_Data_t) );
+        f_read ( &pfh, static_spec_data, sizeof(Spectrometer_Data_t) );
 
         //
         //  In-place: LSB-round and gray-code.
         //
         int p;
-        for ( p=0; p<N_SPEC_PIX; p++ ) {
+        for ( p=0; p<N_SPEC_PIX; p++ )
+        {
           uint16_t const rndPx = (uint16_t) round ( ( (double)static_spec_data->hnv_spectrum[p] ) / LSB_Divisor );
           static_spec_data->hnv_spectrum[p] = rndPx ^ (rndPx>>1);
         }
@@ -1611,27 +1645,29 @@ tlm_send ( "PTP\r\n", 5, 0 );
   //
   {
   char ocr_file_name[34];
-  strncpy ( ocr_file_name, EMMC_DRIVE PMG_PROFILE_FOLDER "\\", 34 );
+  strncpy (ocr_file_name, EMMC_DRIVE PMG_PROFILE_FOLDER "\\", 34 );
   S32_to_str_dec ( (S32)(*tx_profile_id), numString, sizeof(numString), 5 );
-  strncat ( ocr_file_name, numString, 5 );
-  strcat  ( ocr_file_name, "\\" );
-  strncat ( ocr_file_name, numString, 5 );
-  strcat  ( ocr_file_name, "." );
+  strncat (ocr_file_name, numString, 5 );
+  strcat  (ocr_file_name, "\\" );
+  strncat (ocr_file_name, numString, 5 );
+  strcat  (ocr_file_name, "." );
   S32_to_str_dec ( (S32)num_packets, numString, sizeof(numString), 2 );
   strcat ( ocr_file_name, pmg_datafile_extension[PMG_DT_OCR] );
 
-  if ( f_exists ( ocr_file_name ) ) {
+  if ( f_exists ( ocr_file_name ) )
+  {
 
     fHandler_t ofh;   //  ocr file handler
 
-    if ( FILE_OK != f_open ( ocr_file_name, O_RDONLY, &ofh ) ) {
+    if ( FILE_OK != f_open ( ocr_file_name, O_RDONLY, &ofh ) )
+    {
       return -10;
     }
 
     uint16_t oP;
-    for ( oP=1; oP<=ppd->numPackets_OCR; oP++, num_packets++  ) {
-
-tlm_send ( "OCP\r\n", 5, 0 );
+    for  (oP = 1;  oP <= ppd->numPackets_OCR;  oP++, num_packets++)
+    {
+      tlm_send ( "OCP\r\n", 5, 0 );
 
       Profile_Data_Packet_t* raw = (Profile_Data_Packet_t*)sram_PMG_1;
 
@@ -1644,12 +1680,17 @@ tlm_send ( "OCP\r\n", 5, 0 );
       memcpy ( raw->header.sensor_ID, "SATYLU0000", 10 );  //  FIXME
 
       uint16_t number_of_data;
-      if ( oP<ppd->numPackets_OCR ) {
+      if ( oP<ppd->numPackets_OCR )
+      {
        number_of_data = MXOCR;
-      } else {  //  The last packet may contain fewer items
-       number_of_data =  ppd->numData_OCR
-                      - (ppd->numPackets_OCR-1)*MXOCR;
       }
+      else
+      {  
+        //  The last packet may contain fewer items
+        number_of_data =  ppd->numData_OCR
+                       - (ppd->numPackets_OCR - 1) * MXOCR;
+      }
+
       S32_to_str_dec ( (S32)number_of_data, numString, sizeof(numString), 4 );
       memcpy ( raw->header.number_of_data, numString, 4 );
 
@@ -1659,18 +1700,19 @@ tlm_send ( "OCP\r\n", 5, 0 );
       raw->header.ASCII_encoding     = 'N';
 
       int d;
-      for ( d=0; d<number_of_data; d++ ) {
-
+      for (d = 0;  d < number_of_data;  d++)
+      {
         OCR_Data_t od;
         f_read( &ofh, &od, sizeof(OCR_Data_t) );
 
-        int const offset = 4*4*d;
+        int const offset = 4 * 4 * d;
         int p;
-        for ( p=0; p<4; p++ ) {
-          serialize_4byte ( raw->contents.structured.sensor_data.ocr_serial+offset+4*p, od.pixel[p] );
+        for (p = 0;  p < 4;  p++ )
+        {
+          serialize_4byte (raw->contents.structured.sensor_data.ocr_serial + offset + 4 * p,  od.pixel[p]);
         }
 
-        serialize_4byte ( raw->contents.structured.aux_data.ocr_serial+d*OCR_AUX_SERIAL_SIZE, od.aux.acquisition_time.tv_sec );
+        serialize_4byte (raw->contents.structured.aux_data.ocr_serial+d*OCR_AUX_SERIAL_SIZE, od.aux.acquisition_time.tv_sec );
 
         //  Copy to flat_bytes
         //
@@ -1692,7 +1734,8 @@ tlm_send ( "OCP\r\n", 5, 0 );
       S32_to_str_dec ( (S32)num_packets, numString, sizeof(numString), 2 );
       strncat ( packet_file_name, numString, 2 );
 
-      if ( 0 > data_packet_save_native ( raw, packet_file_name ) ) {
+      if  (0 > data_packet_save_native (raw, packet_file_name))
+      {
         f_close( &ofh );
         return -1;
       }
@@ -2080,7 +2123,7 @@ static int pmg_profile_transmission (uint16_t         profileID,
 
     if  (packet_in_transfer == NO_PACKET_IN_TRANSFER )
     {
-      if ( connected )
+      if  ( connected )
       {
         //  Let BRX terminate, then log out
         vTaskDelay( (portTickType)TASK_DELAY_MS( 75000 ) );
@@ -2394,7 +2437,7 @@ static Transfer_Status_t profile_fake( uint16_t profileID )
   else
   {
     int p;
-    for ( p=0; p<numPackets; p++ )
+    for ( p = 0;  p < numPackets;  p++ )
     {
       packet_status[p] = PCK_Unsent;
       packet_bursts[p] = 0;
@@ -2531,7 +2574,7 @@ static int16_t rudics_connect ()
   //
   char login[8];
   login[0] = 'f';
-  S32_to_str_dec ( (S32)CFG_Get_Serial_Number(), login+1, sizeof(6), 4 );
+  S32_to_str_dec ( (S32)CFG_Get_Serial_Number(), login + 1, sizeof (6), 4 );
   login[5] = '\r';
   login[6] = 0;
 

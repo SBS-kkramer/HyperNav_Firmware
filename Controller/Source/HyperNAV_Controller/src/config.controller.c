@@ -3173,7 +3173,8 @@ S16 CFG_Set_Number_of_Clearouts_AsString( char* new_value ) {
 		return CFG_FAIL;
 }
 
-S16 CFG_CmdGet ( char* option, char* result, S16 r_max_len ) {
+S16 CFG_CmdGet ( char* option, char* result, S16 r_max_len )
+{
 	S16 const r_max_len_m1 = r_max_len-1;
 
 	S16 cec = CEC_Ok;

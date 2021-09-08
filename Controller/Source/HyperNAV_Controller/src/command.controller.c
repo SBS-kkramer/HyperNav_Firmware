@@ -107,10 +107,11 @@ typedef struct {
     Access_Mode_t id;
 } Access_Option_t;
 
-static Access_Option_t accessOption[] = {
-        { "User", Access_User },
-        { "Admin", Access_Admin },
-        { "Factory", Access_Factory }
+static Access_Option_t accessOption[] =
+{
+  { "User", Access_User },
+  { "Admin", Access_Admin },
+  { "Factory", Access_Factory }
 };
 
 static const S16 MAX_ACCESS_OPTIONS = sizeof(accessOption)/sizeof(Access_Option_t);
@@ -161,16 +162,18 @@ static uint8_t timeval_compare_to_now ( struct timeval* tv ) {
   }
 }
 # endif
-static S16 Cmd_Ping ( char* option ) {
-
+static S16 Cmd_Ping ( char* option )
+{
   data_exchange_packet_t packet;
 
   packet.from       = DE_Addr_ControllerBoard_Commander;
   packet.type       = DE_Type_Ping;
   memcpy ( packet.data.Ping_Message, "Ping", 4 );
 
-  for ( packet.to = DE_Addr_Nobody+1; packet.to < DE_Addr_Void; packet.to++ ) {
-    if ( 0 == strcasecmp ( option, taskAcronym( packet.to ) ) ) {
+  for ( packet.to = DE_Addr_Nobody+1; packet.to < DE_Addr_Void; packet.to++ )
+  {
+    if ( 0 == strcasecmp ( option, taskAcronym( packet.to ) ) )
+    {
       data_exchange_packet_router( DE_Addr_ControllerBoard_Commander, &packet );
     }
   }
@@ -178,8 +181,9 @@ static S16 Cmd_Ping ( char* option ) {
   return CEC_Ok;
 }
 
-static S16 Cmd_AllPing () {
 
+static S16 Cmd_AllPing ()
+{
   data_exchange_packet_t packet;
 
   packet.from       = DE_Addr_ControllerBoard_Commander;
@@ -191,6 +195,7 @@ static S16 Cmd_AllPing () {
 
   return CEC_Ok;
 }
+
 
 static S16 Cmd_Query ( char* option ) {
 
@@ -581,7 +586,9 @@ static void Cmd_Test_FSYS() {
                            : io_out_string ( "FSYS_Setup() failed\r\n" );
                            }
                            break;
-        case FS_List:      if ( FILE_OK == file_initListing( EMMC_DRIVE ) ) {
+
+        case FS_List:      if ( FILE_OK == file_initListing( EMMC_DRIVE ) )
+                           {
 
                              io_out_string ( "Listing: " );
                              io_out_string ( EMMC_DRIVE );
@@ -603,6 +610,7 @@ static void Cmd_Test_FSYS() {
                              io_out_string ( "\r\n" );
                            }
                            break;
+
         case FS_MkDir:     {
                            char dir[32];
                            strcpy ( dir, EMMC_DRIVE );
@@ -689,33 +697,40 @@ static void Cmd_Test_SRAM( char* value ) {
 //
 static S16 Cmd_Test ( char* option, char* value, Access_Mode_t access_mode ) {
 
-  if ( 1 || access_mode >= Access_Admin ) {
+  if ( 1 || access_mode >= Access_Admin )
+  {
 
-    if ( 0 == strncasecmp ( "RTC", option, 3 ) ) {
+    if ( 0 == strncasecmp ( "RTC", option, 3 ) )
+    {
 
       gHNV_SetupCmdCtrlTask_Status = TASK_IN_SETUP;
       Cmd_Test_RTC();
       gHNV_SetupCmdCtrlTask_Status = TASK_RUNNING;
       return CEC_Ok;
+    }
 
-    } else if ( 0 == strncasecmp ( "FSYS", option, 4 ) ) {
+    else if ( 0 == strncasecmp ( "FSYS", option, 4 ) )
+    {
 
       //  TODO - Move code from 'Special' to here.
       gHNV_SetupCmdCtrlTask_Status = TASK_IN_SETUP;
       Cmd_Test_FSYS( value );
       gHNV_SetupCmdCtrlTask_Status = TASK_RUNNING;
       return CEC_Ok;
+    }
 
-    } else if ( 0 == strncasecmp ( "SRAM", option, 4 ) ) {
-
+    else if ( 0 == strncasecmp ( "SRAM", option, 4 ) )
+    {
       //  TODO - Move code from 'Special' to here.
       gHNV_SetupCmdCtrlTask_Status = TASK_IN_SETUP;
       Cmd_Test_SRAM( value );
       gHNV_SetupCmdCtrlTask_Status = TASK_RUNNING;
       return CEC_Ok;
 
-    } else if ( 0 == strncasecmp ( "Stream", option, 4 ) ) {
-
+    }
+    
+    else if ( 0 == strncasecmp ( "Stream", option, 4 ) )
+    {
       data_exchange_packet_t packet;
 
       packet.from               = DE_Addr_ControllerBoard_Commander;
@@ -955,11 +970,14 @@ static S16 Cmd_Modem (char* option, char* value)
       mdm_rts(1);
 
       int dsr = mdm_get_dsr();
-      if( mdm_chat("AT","OK",2,"\r") > 0 ) {
+      if  ( mdm_chat("AT","OK",2,"\r") > 0 )
+      {
         snprintf ( rt, 63, "Modem is  responding, dsr=%d\r\n", dsr );
         tlm_send ( rt, strlen(rt), 0 );
         unresponsive= 0;
-      } else {
+      }
+      else
+      {
         snprintf ( rt, 63, "Modem not responding, dsr=%d\r\n", dsr );
         tlm_send ( rt, strlen(rt), 0 );
         vTaskDelay((portTickType)TASK_DELAY_MS(500));
@@ -967,8 +985,8 @@ static S16 Cmd_Modem (char* option, char* value)
 
     } while ( continue_checking && unresponsive );
 
-    mdm_dtr(0);
-    mdm_rts(0);
+    mdm_dtr (0);
+    mdm_rts (0);
 
   }
   
@@ -1099,7 +1117,8 @@ static S16 Cmd_Modem (char* option, char* value)
 
     gHNV_SetupCmdCtrlTask_Status = TASK_IN_SETUP;
 
-    if ( !mdm_wait_for_dsr() ) {
+    if ( !mdm_wait_for_dsr() )
+    {
       msg = "Modem did NOT assert DSR. ABORT.\r\n";
       tlm_send ( msg, strlen(msg), 0 );
 
@@ -1110,10 +1129,13 @@ static S16 Cmd_Modem (char* option, char* value)
       return CEC_Failed;
     }
 
-    if ( mdm_getAtOk() ) {
+    if ( mdm_getAtOk () )
+    {
         msg = "Modem responding\r\n";
         tlm_send ( msg, strlen(msg), 0 );
-    } else {
+    }
+    else
+    {
         msg = "Modem is NOT responding\r\n";
         tlm_send ( msg, strlen(msg), 0 );
 
@@ -1126,7 +1148,8 @@ static S16 Cmd_Modem (char* option, char* value)
 
     msg = "Modem  init: ";
     tlm_send ( msg, strlen(msg), 0 );
-    if ( mdm_isRegistered () <= 0 ) {
+    if ( mdm_isRegistered () <= 0 )
+    {
         msg = "Failed\r\n";
         tlm_send ( msg, strlen(msg), 0 );
 
@@ -1136,7 +1159,9 @@ static S16 Cmd_Modem (char* option, char* value)
 
         return CEC_Failed;
 
-    } else {
+    }
+    else
+    {
         msg = "OK\r\n";
         tlm_send ( msg, strlen(msg), 0 );
     }
@@ -1234,7 +1259,8 @@ static S16 Cmd_Modem (char* option, char* value)
         int signalStrength = 0;
         int const neededSignalStrength = 25;
 
-        do {
+        do
+        {
 
           msg = "Modem sgnal: ";
           tlm_send ( msg, strlen(msg), 0 );
@@ -1700,15 +1726,24 @@ static S16 Cmd_SelfTest () {
 
 static S16 Cmd_Sensor ( char* option ) {
 
-    if ( 0 == strcasecmp ( "ID", option ) ) {
+    if ( 0 == strcasecmp ( "ID", option ) )
+    {
         Info_SensorID ( (fHandler_t*)0, "SATFHR," );
-    } else if ( 0 == strcasecmp ( "State", option ) ) {
+    }
+    else if ( 0 == strcasecmp ( "State", option ) )
+    {
         Info_SensorState ( (fHandler_t*)0, "SATFHR," );
-    } else if ( 0 == strcasecmp ( "Devices", option ) ) {
+    }
+    else if ( 0 == strcasecmp ( "Devices", option ) )
+    {
         Info_SensorDevices ( (fHandler_t*)0, "SATFHR," );
-    } else if ( 0 == strcasecmp ( "Processing", option ) ) {
+    }
+    else if ( 0 == strcasecmp ( "Processing", option ) )
+    {
         Info_ProcessingParameters ( (fHandler_t*)0, "SATFHR," );
-    } else {
+    }
+    else
+    {
         return CEC_Failed;
     }
 
@@ -1820,7 +1855,7 @@ static ShellCommand_t shellCmd[] = {
         { "Ping",        CS_Ping },
         { "AllPing",     CS_AllPing },
         { "Query",       CS_Query },
-        { "Test",        CS_Test },
+        { "Test",         },
 //      { "SPItest",     CS_SPItest },
 //      { "SPIpins",     CS_SPIpins },
         { "OCRTest",     CS_OCR },
@@ -4031,25 +4066,31 @@ if ( 65535 == CFG_Get_Serial_Number() ) {
 
         // if supercaps haven't discharged, lowPowerStall() may trigger a watchdog reset
         // which can fool fixed time mode, therefore must check supervisor
-        if (haveSupervisor) {
+        if (haveSupervisor)
+        {
             U8 check_value;
             S8 errval;
-            if ( PCBSUPERVISOR_OK == supervisorReadUserRegister ( (U8)SPV_CHECK_REG, &check_value, &errval ) ) {
-                if (check_value == SPV_CHECK_REG_CKVAL) {
+            if ( PCBSUPERVISOR_OK == supervisorReadUserRegister ( (U8)SPV_CHECK_REG, &check_value, &errval ) )
+            {
+                if (check_value == SPV_CHECK_REG_CKVAL)
+                {
                     // we had a watchdog timeout when in deep sleep, most likely due to supercaps not discharging
                     checkSupervisorWakeup = true;
                     // reset register
-                    if (PCBSUPERVISOR_FAIL == supervisorWriteUserRegister(SPV_CHECK_REG, SPV_CHECK_REG_RSTVAL, &errval)) {
+                    if (PCBSUPERVISOR_FAIL == supervisorWriteUserRegister(SPV_CHECK_REG, SPV_CHECK_REG_RSTVAL, &errval))
+                    {
                         syslog_out( SYSLOG_WARNING, "StartController", "Failed to write SV user register (%hd).", (S16)errval );
                     }
                     else syslog_out( SYSLOG_DEBUG, "StartController", "Reset SV user register." );
                 }
-                else {
+                else
+                {
                     syslog_out(SYSLOG_DEBUG, "StartController", "SV user register: %hd.", (S16)check_value);
                 }
 
             }
-            else {
+            else
+            {
                 syslog_out( SYSLOG_WARNING, "StartController", "Failed to read SV user register." );
             }
 
@@ -4093,24 +4134,30 @@ if ( 65535 == CFG_Get_Serial_Number() ) {
 
         U8 wakeupCause;
         S8 errorval;
-        if ( PCBSUPERVISOR_OK == supervisorReadUserRegister ( (U8)SPV_WAKEUP_SOURCE_REG, &wakeupCause, &errorval ) ) {
-            switch ( wakeupCause ) {
+        if ( PCBSUPERVISOR_OK == supervisorReadUserRegister ( (U8)SPV_WAKEUP_SOURCE_REG, &wakeupCause, &errorval ) )
+        {
+            switch ( wakeupCause )
+            {
             case SPV_WOKE_FROM_RTC:     //  Real Time Clock
                 supervisor_wakeup = PWR_EXTRTC_WAKEUP;
                 svsrMsg = ", sv clock wakeup";
                 break;
+
             case SPV_WOKE_FROM_RS232:   //  RS-232
                 supervisor_wakeup = PWR_TELEMETRY_WAKEUP;
                 svsrMsg = ", sv telemetry wakeup";
                 break;
+
             case SPV_WOKE_FROM_USB_INSERTION:
                 supervisor_wakeup = PWR_TELEMETRY_WAKEUP;
                 svsrMsg = ", sv usb insert wakeup";
                 break;
+
             case SPV_WOKE_FROM_OC:      //  Unused: Open-Circuit Telemetry
                 //  Ignore
                 svsrMsg = ", sv unknown wakeup";
                 break;
+
             default:            //  Other
                 svsrMsg = ", sv default wakeup";
                 break;
